@@ -1,0 +1,5 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling.Database\bin\Debug\CarPooling.Database.dacpac
+D:\Internship\SQL\CarPoolingEF\CarPooling.Database\bin\Debug\CarPooling.Database.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Database\bin\Debug\CarPooling.Database.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Database\obj\Debug\CarPooling.Database.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Database\obj\Debug\CarPooling.Database.pdb
