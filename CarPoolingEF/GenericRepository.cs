@@ -7,14 +7,14 @@ namespace CarPooling
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
-        private CarPoolingContext context = null;
-        private DbSet<T> table = null;
+        private CarPoolingContext context;
+        private DbSet<T> table;
         public GenericRepository()
         {
             context = new CarPoolingContext();
             table = context.Set<T>();
         }
-        public void Delete(object id)
+        public void Delete(T id)
         {
             T elem = table.Find(id);
             table.Remove(elem);

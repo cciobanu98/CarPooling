@@ -1,0 +1,6 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling.Db\bin\Debug\CarPooling.Db.dacpac
+D:\Internship\SQL\CarPoolingEF\CarPooling.Db\bin\Debug\CarPooling.Db.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Db\bin\Debug\CarPooling.Db.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\CarPooling.Db.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\CarPooling.Db.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\CarPooling.Db.sqlprojAssemblyReference.cache

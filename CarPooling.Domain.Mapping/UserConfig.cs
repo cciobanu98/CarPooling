@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
+using System;
 namespace CarPooling.Domain.Mapping
 {
     public class UserConfig : IEntityTypeConfiguration<User>
@@ -16,8 +16,6 @@ namespace CarPooling.Domain.Mapping
             builder.Property(x => x.LastName)
                 .IsRequired()
                 .HasMaxLength(32);
-            builder.Property(x => x.Date_created)
-                .IsRequired();
             builder.Property(x => x.Password)
                 .IsRequired();
             builder.Property(x => x.Phone)

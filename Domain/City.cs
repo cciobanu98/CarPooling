@@ -10,6 +10,7 @@ namespace CarPooling.Domain
         public string CityName { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
+        public Request Request { get; set; }
 
     }
 }

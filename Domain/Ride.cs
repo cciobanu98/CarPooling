@@ -10,10 +10,12 @@ namespace CarPooling.Domain
         public Car Car { get; set; }
         public DateTime TravelStartDateTime { get; set; }
         public DateTime CreatedDateTime { get; set; }
+        //public int SourceCityId { get; set; }
         public City SourceCity { get; set; }
+        //public int DestinationCityId { get; set; }
         public City DestinationCity { get; set; }
-        public List<City> EnrouteCities { get; set; } = new List<City>();
+        public List<EnrouteCity> EnrouteCities { get; set; } = new List<EnrouteCity>();
         public int Price { get; set; }
-        public List<Request> Requests { get; set; }
+        public List<Request> Requests { get; set; } = new List<Request>();
     }
 }

@@ -7,6 +7,8 @@ namespace CarPooling.Domain.Mapping
     {
         public void Configure(EntityTypeBuilder<Preferences> builder)
         {
+            builder.Property(x => x.Description)
+                .HasMaxLength(255);
         }
     }
 }

@@ -15,7 +15,7 @@ namespace CarPooling.Domain
         public char? Gender { get; set; }
         public int? Age { get; set; }
         public List<MemberCar> Cars { get; set; } = new List<MemberCar>();
-        public int? PreferencesId { get; set; }
         public Preferences Preferences { get; set; }
+        public Request Request { get; set; }
     }
 }

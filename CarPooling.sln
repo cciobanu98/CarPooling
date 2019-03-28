@@ -7,9 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPooling", "CarPoolingEF\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPooling.Domain", "Domain\CarPooling.Domain.csproj", "{D4CB0E53-04D7-49D8-886F-470550DC5AAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPooling.Context", "CarPooling.Context\CarPooling.Context.csproj", "{A0AA6146-EE98-45B7-9A8F-2851B6E47A25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPooling.Context", "CarPooling.Context\CarPooling.Context.csproj", "{A0AA6146-EE98-45B7-9A8F-2851B6E47A25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarPooling.Domain.Mapping", "CarPooling.Domain.Mapping\CarPooling.Domain.Mapping.csproj", "{96911B6C-3063-4382-891C-60AF7992A8FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarPooling.Domain.Mapping", "CarPooling.Domain.Mapping\CarPooling.Domain.Mapping.csproj", "{96911B6C-3063-4382-891C-60AF7992A8FA}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CarPooling.Db", "CarPooling.Db\CarPooling.Db.sqlproj", "{495640E3-108D-4854-B244-060D14FF253B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,12 @@ Global
 		{96911B6C-3063-4382-891C-60AF7992A8FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96911B6C-3063-4382-891C-60AF7992A8FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96911B6C-3063-4382-891C-60AF7992A8FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495640E3-108D-4854-B244-060D14FF253B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{495640E3-108D-4854-B244-060D14FF253B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{495640E3-108D-4854-B244-060D14FF253B}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{495640E3-108D-4854-B244-060D14FF253B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{495640E3-108D-4854-B244-060D14FF253B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{495640E3-108D-4854-B244-060D14FF253B}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -41,20 +41,6 @@ namespace CarPooling.Context.Migrations
                     b.ToTable("Cars");
                 });
 
-            modelBuilder.Entity("CarPooling.Domain.ChatPreference", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Description")
-                        .HasMaxLength(255);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ChatPreferences");
-                });
-
             modelBuilder.Entity("CarPooling.Domain.City", b =>
                 {
                     b.Property<int>("Id")
@@ -69,17 +55,26 @@ namespace CarPooling.Context.Migrations
                         .IsRequired()
                         .HasMaxLength(64);
 
-                    b.Property<int?>("RideId");
-
                     b.Property<string>("State")
                         .IsRequired()
                         .HasMaxLength(64);
 
                     b.HasKey("Id");
 
+                    b.ToTable("Cities");
+                });
+
+            modelBuilder.Entity("CarPooling.Domain.EnrouteCity", b =>
+                {
+                    b.Property<int>("CityId");
+
+                    b.Property<int>("RideId");
+
+                    b.HasKey("CityId", "RideId");
+
                     b.HasIndex("RideId");
 
-                    b.ToTable("Cities");
+                    b.ToTable("EnrouteCity");
                 });
 
             modelBuilder.Entity("CarPooling.Domain.MemberCar", b =>
@@ -95,7 +90,7 @@ namespace CarPooling.Context.Migrations
                     b.ToTable("MembersCars");
                 });
 
-            modelBuilder.Entity("CarPooling.Domain.MusicPreference", b =>
+            modelBuilder.Entity("CarPooling.Domain.Preferences", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -104,38 +99,19 @@ namespace CarPooling.Context.Migrations
                     b.Property<string>("Description")
                         .HasMaxLength(255);
 
-                    b.Property<int?>("Volume");
+                    b.Property<string>("Discriminator")
+                        .IsRequired();
+
+                    b.Property<int>("UserId");
 
                     b.HasKey("Id");
 
-                    b.ToTable("MusicPreferences");
-                });
-
-            modelBuilder.Entity("CarPooling.Domain.Preferences", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<bool?>("Allow_pet");
-
-                    b.Property<bool?>("Allow_smoke");
-
-                    b.Property<int?>("ChatPreferenceId");
-
-                    b.Property<int?>("MusicPreferenceId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ChatPreferenceId")
-                        .IsUnique()
-                        .HasFilter("[ChatPreferenceId] IS NOT NULL");
-
-                    b.HasIndex("MusicPreferenceId")
-                        .IsUnique()
-                        .HasFilter("[MusicPreferenceId] IS NOT NULL");
+                    b.HasIndex("UserId")
+                        .IsUnique();
 
                     b.ToTable("Preferences");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Preferences");
                 });
 
             modelBuilder.Entity("CarPooling.Domain.Request", b =>
@@ -148,17 +124,19 @@ namespace CarPooling.Context.Migrations
 
                     b.Property<int>("EnrouteCityId");
 
-                    b.Property<int?>("RequesterId");
+                    b.Property<int>("RequesterId");
 
-                    b.Property<int?>("RideId");
+                    b.Property<int>("RideId");
 
                     b.Property<bool?>("Status");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EnrouteCityId");
+                    b.HasIndex("EnrouteCityId")
+                        .IsUnique();
 
-                    b.HasIndex("RequesterId");
+                    b.HasIndex("RequesterId")
+                        .IsUnique();
 
                     b.HasIndex("RideId");
 
@@ -225,26 +203,55 @@ namespace CarPooling.Context.Migrations
                     b.Property<string>("Phone")
                         .HasMaxLength(32);
 
-                    b.Property<int?>("PreferencesId");
-
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(32);
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PreferencesId")
-                        .IsUnique()
-                        .HasFilter("[PreferencesId] IS NOT NULL");
-
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("CarPooling.Domain.City", b =>
+            modelBuilder.Entity("CarPooling.Domain.ChatPreferences", b =>
                 {
-                    b.HasOne("CarPooling.Domain.Ride")
+                    b.HasBaseType("CarPooling.Domain.Preferences");
+
+                    b.Property<int?>("Talkative");
+
+                    b.HasDiscriminator().HasValue("ChatPreferences");
+                });
+
+            modelBuilder.Entity("CarPooling.Domain.GeneralPreferences", b =>
+                {
+                    b.HasBaseType("CarPooling.Domain.Preferences");
+
+                    b.Property<bool?>("Allow_pet");
+
+                    b.Property<bool?>("Allow_smoke");
+
+                    b.HasDiscriminator().HasValue("GeneralPreferences");
+                });
+
+            modelBuilder.Entity("CarPooling.Domain.MusicPreferences", b =>
+                {
+                    b.HasBaseType("CarPooling.Domain.Preferences");
+
+                    b.Property<int?>("Volume");
+
+                    b.HasDiscriminator().HasValue("MusicPreferences");
+                });
+
+            modelBuilder.Entity("CarPooling.Domain.EnrouteCity", b =>
+                {
+                    b.HasOne("CarPooling.Domain.City", "City")
+                        .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("CarPooling.Domain.Ride", "Ride")
                         .WithMany("EnrouteCities")
-                        .HasForeignKey("RideId");
+                        .HasForeignKey("RideId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CarPooling.Domain.MemberCar", b =>
@@ -262,29 +269,28 @@ namespace CarPooling.Context.Migrations
 
             modelBuilder.Entity("CarPooling.Domain.Preferences", b =>
                 {
-                    b.HasOne("CarPooling.Domain.ChatPreference", "ChatPreference")
+                    b.HasOne("CarPooling.Domain.User", "User")
                         .WithOne("Preferences")
-                        .HasForeignKey("CarPooling.Domain.Preferences", "ChatPreferenceId");
-
-                    b.HasOne("CarPooling.Domain.MusicPreference", "MusicPreference")
-                        .WithOne("Preferences")
-                        .HasForeignKey("CarPooling.Domain.Preferences", "MusicPreferenceId");
+                        .HasForeignKey("CarPooling.Domain.Preferences", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CarPooling.Domain.Request", b =>
                 {
                     b.HasOne("CarPooling.Domain.City", "EnrouteCity")
-                        .WithMany()
-                        .HasForeignKey("EnrouteCityId")
+                        .WithOne("Request")
+                        .HasForeignKey("CarPooling.Domain.Request", "EnrouteCityId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("CarPooling.Domain.User", "Requester")
-                        .WithMany()
-                        .HasForeignKey("RequesterId");
+                        .WithOne("Request")
+                        .HasForeignKey("CarPooling.Domain.Request", "RequesterId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("CarPooling.Domain.Ride", "Ride")
                         .WithMany("Requests")
-                        .HasForeignKey("RideId");
+                        .HasForeignKey("RideId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CarPooling.Domain.Ride", b =>
@@ -300,13 +306,6 @@ namespace CarPooling.Context.Migrations
                     b.HasOne("CarPooling.Domain.City", "SourceCity")
                         .WithMany()
                         .HasForeignKey("SourceCityId");
-                });
-
-            modelBuilder.Entity("CarPooling.Domain.User", b =>
-                {
-                    b.HasOne("CarPooling.Domain.Preferences", "Preferences")
-                        .WithOne("User")
-                        .HasForeignKey("CarPooling.Domain.User", "PreferencesId");
                 });
 #pragma warning restore 612, 618
         }

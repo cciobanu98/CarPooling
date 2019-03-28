@@ -17,6 +17,15 @@ namespace CarPooling.Domain.Mapping
             //    .IsRequired();
             builder.Property(x => x.Price)
                 .IsRequired();
+           // builder.HasKey(x => x.Id);
+            //builder.HasOne(x => x.SourceCity)
+            //    .WithOne(x => x.RideSorce)
+            //    .HasForeignKey<Ride>(y => y.SourceCityId)
+            //    .OnDelete(DeleteBehavior.Restrict);
+            //builder.HasOne(x => x.DestinationCity)
+            //  .WithOne(x => x.RideDestination)
+            //  .HasForeignKey<Ride>(y => y.DestinationCityId)
+            //  .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

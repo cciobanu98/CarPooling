@@ -2,39 +2,36 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using CarPooling.Domain.Mapping;
+using System.Reflection;
+
 namespace CarPooling.Context
 {
     public class CarPoolingContext : DbContext
-    { 
+    {
         public DbSet<User> Users { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Preferences> Preferences { get; set; }
-        public DbSet<ChatPreference> ChatPreferences { get; set; }
-        public DbSet<MusicPreference> MusicPreferences { get; set; }
+        public DbSet<ChatPreferences> ChatPreferences { get; set; }
+        public DbSet<MusicPreferences> MusicPreferences { get; set; }
         public DbSet<City> Cities { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Ride> Rides { get; set; }
         public DbSet<MemberCar> MemberCars { get; set; }
+        public DbSet<GeneralPreferences> GeneralPreferences {get; set;}
+        public DbSet<EnrouteCity> EnrouteCities { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            var assembly = typeof(UserConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(CarConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(ChatPreferenceConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(CityConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(MemberCarConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(MusicPreferenceConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(PreferencesConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(RequestConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
-            assembly = typeof(RideConfig).Assembly;
-            modelBuilder.ApplyConfigurationsFromAssembly(assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+
+            //modelBuilder.ApplyConfiguration(new UserConfig());
+            //modelBuilder.ApplyConfiguration(new CarConfig());
+            //modelBuilder.ApplyConfiguration(new PreferencesConfig());
+            //modelBuilder.ApplyConfiguration(new CityConfig());
+            //modelBuilder.ApplyConfiguration(new MemberCarConfig());
+            //modelBuilder.ApplyConfiguration(new PreferencesConfig());
+            //modelBuilder.ApplyConfiguration(new RequestConfig());
+            //modelBuilder.ApplyConfiguration(new RideConfig());
+            //modelBuilder.ApplyConfiguration(new EnrouteCityConfig());
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
