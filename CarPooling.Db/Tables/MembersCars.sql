@@ -1,0 +1,26 @@
+﻿CREATE TABLE [dbo].[MembersCars](
+	[CarId] [int] NOT NULL,
+	[UserId] [int] NOT NULL,
+ CONSTRAINT [PK_MembersCars] PRIMARY KEY CLUSTERED 
+(
+	[CarId] ASC,
+	[UserId] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[MembersCars]  WITH CHECK ADD  CONSTRAINT [FK_MembersCars_Cars_CarId] FOREIGN KEY([CarId])
+REFERENCES [dbo].[Cars] ([Id])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[MembersCars] CHECK CONSTRAINT [FK_MembersCars_Cars_CarId]
+GO
+
+ALTER TABLE [dbo].[MembersCars]  WITH CHECK ADD  CONSTRAINT [FK_MembersCars_Users_UserId] FOREIGN KEY([UserId])
+REFERENCES [dbo].[Users] ([Id])
+ON DELETE CASCADE
+GO
+
+ALTER TABLE [dbo].[MembersCars] CHECK CONSTRAINT [FK_MembersCars_Users_UserId]
+GO

@@ -57,11 +57,23 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Table1.sql" />
+    <Build Include="Tables\Cars.sql" />
+    <Build Include="Tables\Cities.sql" />
+    <Build Include="Tables\EnrouteCity.sql" />
+    <Build Include="Tables\MembersCars.sql" />
+    <Build Include="Tables\Preferences.sql" />
+    <Build Include="Tables\Requests.sql" />
+    <Build Include="Tables\Rides.sql" />
+    <Build Include="Tables\Users.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CarPooling.Db.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\UserInsert.sql" />
   </ItemGroup>
 </Project>

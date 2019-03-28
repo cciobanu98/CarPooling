@@ -1,0 +1,23 @@
+﻿** Highlights
+     Tables that will be rebuilt
+       None
+     Clustered indexes that will be dropped
+       None
+     Clustered indexes that will be created
+       None
+     Possible data issues
+       None
+
+** User actions
+     Drop
+       [dbo].[EnrouteCity].[IX_EnrouteCity_RideId] (Index)
+       [dbo].[MembersCars].[IX_MembersCars_UserId] (Index)
+       [dbo].[Preferences].[IX_Preferences_UserId] (Index)
+       [dbo].[Requests].[IX_Requests_EnrouteCityId] (Index)
+       [dbo].[Requests].[IX_Requests_RequesterId] (Index)
+       [dbo].[Requests].[IX_Requests_RideId] (Index)
+       [dbo].[Rides].[IX_Rides_CarId] (Index)
+       [dbo].[Rides].[IX_Rides_DestinationCityId] (Index)
+       [dbo].[Rides].[IX_Rides_SourceCityId] (Index)
+
+** Supporting actions

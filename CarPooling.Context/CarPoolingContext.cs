@@ -21,17 +21,17 @@ namespace CarPooling.Context
         public DbSet<EnrouteCity> EnrouteCities { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+          //  modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            //modelBuilder.ApplyConfiguration(new UserConfig());
-            //modelBuilder.ApplyConfiguration(new CarConfig());
-            //modelBuilder.ApplyConfiguration(new PreferencesConfig());
-            //modelBuilder.ApplyConfiguration(new CityConfig());
-            //modelBuilder.ApplyConfiguration(new MemberCarConfig());
-            //modelBuilder.ApplyConfiguration(new PreferencesConfig());
-            //modelBuilder.ApplyConfiguration(new RequestConfig());
-            //modelBuilder.ApplyConfiguration(new RideConfig());
-            //modelBuilder.ApplyConfiguration(new EnrouteCityConfig());
+            modelBuilder.ApplyConfiguration(new UserConfig());
+            modelBuilder.ApplyConfiguration(new CarConfig());
+            modelBuilder.ApplyConfiguration(new PreferencesConfig());
+            modelBuilder.ApplyConfiguration(new CityConfig());
+            modelBuilder.ApplyConfiguration(new MemberCarConfig());
+            modelBuilder.ApplyConfiguration(new PreferencesConfig());
+            modelBuilder.ApplyConfiguration(new RequestConfig());
+            modelBuilder.ApplyConfiguration(new RideConfig());
+            modelBuilder.ApplyConfiguration(new EnrouteCityConfig());
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
