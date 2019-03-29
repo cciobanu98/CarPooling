@@ -23,6 +23,8 @@ namespace CarPooling.Domain.Mapping
             builder.Property(x => x.Email)
                 .IsRequired()
                 .HasMaxLength(128);
+            builder.Property(x => x.RowVersion)
+                .IsRowVersion();
         }
     }
 }

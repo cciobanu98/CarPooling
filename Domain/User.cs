@@ -17,5 +17,6 @@ namespace CarPooling.Domain
         public List<MemberCar> Cars { get; set; } = new List<MemberCar>();
         public Preferences Preferences { get; set; }
         public Request Request { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

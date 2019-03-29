@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v2.1": {
       "CarPooling/1.0.0": {
         "dependencies": {
-          "CarPooling.Context": "1.0.0"
+          "CarPooling.Context": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "2.2.3"
         },
         "runtime": {
           "CarPooling.dll": {}

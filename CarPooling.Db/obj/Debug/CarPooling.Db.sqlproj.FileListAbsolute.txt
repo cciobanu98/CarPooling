@@ -4,7 +4,3 @@ D:\Internship\SQL\CarPoolingEF\CarPooling.Db\bin\Debug\CarPooling.Db.pdb
 D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\CarPooling.Db.dll
 D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\CarPooling.Db.pdb
 D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\CarPooling.Db.sqlprojAssemblyReference.cache
-D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\Model.xml
-D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\refactor.xml
-D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\postdeploy.sql
-D:\Internship\SQL\CarPoolingEF\CarPooling.Db\obj\Debug\predeploy.sql

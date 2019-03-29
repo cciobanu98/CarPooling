@@ -203,6 +203,10 @@ namespace CarPooling.Context.Migrations
                     b.Property<string>("Phone")
                         .HasMaxLength(32);
 
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate();
+
                     b.Property<string>("Username")
                         .IsRequired()
                         .HasMaxLength(32);
