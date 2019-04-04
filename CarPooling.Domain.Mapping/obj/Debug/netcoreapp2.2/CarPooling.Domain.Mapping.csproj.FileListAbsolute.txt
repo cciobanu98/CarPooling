@@ -1,0 +1,12 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\bin\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.deps.json
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\bin\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\bin\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\bin\Debug\netcoreapp2.2\CarPooling.Domain.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\bin\Debug\netcoreapp2.2\CarPooling.Domain.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.csprojAssemblyReference.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.csproj.CoreCompileInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.AssemblyInfoInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.AssemblyInfo.cs
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.csproj.CopyComplete
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Domain.Mapping\obj\Debug\netcoreapp2.2\CarPooling.Domain.Mapping.pdb

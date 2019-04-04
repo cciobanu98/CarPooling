@@ -3,7 +3,7 @@ using CarPooling.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
-namespace CarPooling
+namespace CarPooling.DataAcces.Repository
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

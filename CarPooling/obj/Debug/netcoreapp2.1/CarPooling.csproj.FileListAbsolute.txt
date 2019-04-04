@@ -1,0 +1,11 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling\bin\Debug\netcoreapp2.1\CarPooling.deps.json
+D:\Internship\SQL\CarPoolingEF\CarPooling\bin\Debug\netcoreapp2.1\CarPooling.runtimeconfig.json
+D:\Internship\SQL\CarPoolingEF\CarPooling\bin\Debug\netcoreapp2.1\CarPooling.runtimeconfig.dev.json
+D:\Internship\SQL\CarPoolingEF\CarPooling\bin\Debug\netcoreapp2.1\CarPooling.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling\bin\Debug\netcoreapp2.1\CarPooling.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling\obj\Debug\netcoreapp2.1\CarPooling.csprojAssemblyReference.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling\obj\Debug\netcoreapp2.1\CarPooling.csproj.CoreCompileInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling\obj\Debug\netcoreapp2.1\CarPooling.AssemblyInfoInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling\obj\Debug\netcoreapp2.1\CarPooling.AssemblyInfo.cs
+D:\Internship\SQL\CarPoolingEF\CarPooling\obj\Debug\netcoreapp2.1\CarPooling.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling\obj\Debug\netcoreapp2.1\CarPooling.pdb

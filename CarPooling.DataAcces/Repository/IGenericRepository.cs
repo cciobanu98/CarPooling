@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
-namespace CarPooling
+
+namespace CarPooling.DataAcces.Repository
 {
     public interface IGenericRepository<T> where T: class
     {

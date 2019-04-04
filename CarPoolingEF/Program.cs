@@ -203,7 +203,7 @@ namespace CarPooling
             var context = new CarPoolingContext();
             var gr = context.Rides.Select(x => new
             {
-                EnrouteCityNumber = x.EnrouteCities.Select(y => y.CityId).Count(),
+                EnrouteCityNumber = x.EnrouteCities.Count(),
                 x.Id
 
             }).Where(y => y.EnrouteCityNumber > 3);
@@ -211,6 +211,51 @@ namespace CarPooling
             {
                 Console.WriteLine($"{g.EnrouteCityNumber} {g.Id}");
             }
+        }
+        static void Test5()
+        {
+            var context = new CarPoolingContext();
+            var gr = context.Users.Select(x => new
+            {
+                x.Id,
+                carsModel = context.MemberCars.Where(y => x.Id == y.UserId).Select(z => z.Car.Model)
+            });
+            foreach(var g in gr)
+            {
+                Console.WriteLine($"{g.Id}");
+                foreach(var g2 in g.carsModel)
+                {
+                    Console.WriteLine($"{g2}");
+                }
+            }
+        }
+        static void Test6()
+        {
+            var context = new CarPoolingContext();
+            var gr = context.MemberCars.Select(x => x.CarId);
+            foreach(var g in gr)
+            {
+                Console.WriteLine($"{g}");
+            }
+        }
+        static void Test7()
+        {
+            var context = new CarPoolingContext();
+            var gr = context.Users.Join(context.MemberCars,
+                x => x.Id,
+                y => y.UserId,
+                (x, y) => new { x, y }).Join(context.Cars,
+                xx => xx.y.CarId,
+                z => z.Id,
+                (xx, z) => new { xx.x.FirstName,  z.Model});
+            foreach(var g in gr)
+            {
+                Console.WriteLine($"{g.FirstName} {g.Model}");
+            }
+        }
+        static void Test8()
+        {
+
         }
         static void Main(string[] args)
         {
@@ -225,7 +270,7 @@ namespace CarPooling
             //DynamicFilter(f3 : true);
             //Pagination(2, 1);
             //Test();
-            Test4();
+            Test7();
             Console.ReadKey();
         }
     }

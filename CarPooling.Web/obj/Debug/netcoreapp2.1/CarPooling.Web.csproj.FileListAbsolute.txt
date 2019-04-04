@@ -1,0 +1,11 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.BussinesLogic.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.Context.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.Domain.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.Domain.Mapping.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.Context.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.Domain.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\bin\Debug\netcoreapp2.1\CarPooling.Domain.Mapping.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.1\CarPooling.Web.csprojAssemblyReference.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.1\CarPooling.Web.csproj.CoreCompileInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.1\CarPooling.Web.AssemblyInfoInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.1\CarPooling.Web.AssemblyInfo.cs
