@@ -42,5 +42,9 @@ namespace CarPooling.Web.Controllers
         {
             return View("~/Views/Home/single-post.cshtml");
         }
+        public IActionResult Login()
+        {
+            return View("~/Views/Home/Login.cshtml");
+        }
     }
 }

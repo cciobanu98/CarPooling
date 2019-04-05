@@ -40,3 +40,4 @@ D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\View
 D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\rides.g.cshtml.cs
 D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\single-article.g.cshtml.cs
 D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\single-post.g.cshtml.cs
+D:\Internship\SQL\CarPoolingEF\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.g.cshtml.cs
