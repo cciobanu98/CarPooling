@@ -13,7 +13,7 @@ namespace CarPooling.Domain
         public int EnrouteCityId { get; set; }
         public City EnrouteCity { get; set; }
         public DateTime CreatedDateTime { get; set; }
-        public int RequesterId { get; set; }
-        public User Requester { get; set; }
+        public int UserId { get; set; }
+        public User User { get; set; }
     }
 }

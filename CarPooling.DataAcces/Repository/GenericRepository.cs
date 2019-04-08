@@ -11,7 +11,7 @@ namespace CarPooling.DataAcces.Repository
         private DbSet<T> table;
         public GenericRepository()
         {
-            context = new CarPoolingContext();
+           // context = new CarPoolingContext();
             table = context.Set<T>();
         }
         public void Delete(T id)

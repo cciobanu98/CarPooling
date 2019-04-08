@@ -9,6 +9,10 @@ namespace CarPooling.Domain.Mapping
         {
             builder.Property(x => x.Description)
                 .HasMaxLength(255);
+            builder.HasKey(x => x.Id);
+            builder.HasOne(x => x.User)
+                .WithOne(x => x.Preferences)
+                .HasForeignKey<Preferences>(y => y.UserId);
         }
     }
 }

@@ -1,0 +1,9 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\bin\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.deps.json
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\bin\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\bin\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.csprojAssemblyReference.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.csproj.CoreCompileInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.AssemblyInfoInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.AssemblyInfo.cs
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.DataAcces.Dto\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.Dto.pdb

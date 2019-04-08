@@ -67,6 +67,8 @@
         "dependencies": {
           "CarPooling.Domain": "1.0.0",
           "CarPooling.Domain.Mapping": "1.0.0",
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0",
           "Microsoft.EntityFrameworkCore": "2.2.3",
           "Microsoft.EntityFrameworkCore.Design": "2.2.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.2.3",
@@ -92,6 +94,11 @@
         }
       },
       "CarPooling.Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore": "2.2.0",
+          "Microsoft.AspNetCore.Identity": "2.2.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.2.0"
+        },
         "runtime": {
           "CarPooling.Domain.dll": {}
         },

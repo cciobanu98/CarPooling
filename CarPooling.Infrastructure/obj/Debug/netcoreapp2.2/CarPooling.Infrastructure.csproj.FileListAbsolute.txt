@@ -1,0 +1,9 @@
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\CarPooling.Infrastructure.deps.json
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\CarPooling.Infrastructure.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\CarPooling.Infrastructure.pdb
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\obj\Debug\netcoreapp2.2\CarPooling.Infrastructure.csprojAssemblyReference.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\obj\Debug\netcoreapp2.2\CarPooling.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\obj\Debug\netcoreapp2.2\CarPooling.Infrastructure.AssemblyInfoInputs.cache
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\obj\Debug\netcoreapp2.2\CarPooling.Infrastructure.AssemblyInfo.cs
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\obj\Debug\netcoreapp2.2\CarPooling.Infrastructure.dll
+D:\Internship\SQL\CarPoolingEF\CarPooling.Infrastructure\obj\Debug\netcoreapp2.2\CarPooling.Infrastructure.pdb

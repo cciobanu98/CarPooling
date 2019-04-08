@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
 
 <html>
 <head>
@@ -37,17 +42,73 @@
             <div class="top-menu">
                 <section class="container">
                     <div class="row">
-                        <div class="col-md-4 col-sm-4 col-xs-12">
-                            <div class="user-log">
-                                <a data-toggle="modal" data-target="#loginModal">
-                                    Log in
-                                </a> /
-                                <a data-toggle="modal" data-target="#regModal">
-                                    Sign up
-                                </a>
-                            </div><!-- end .user-log -->
-                        </div><!-- end .col-sm-4 -->
-                        <div class="col-md-8 col-sm-8 col-xs-12">
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            {
+                                <div class="navbar-left ">
+                                    <ul class="nav navbar-nav">
+
+                                        <!-- User Account -->
+                                        <li class="dropdown user-menu">
+                                            <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                                <img src="~/img/avatar-2.jpg" class="user-image" alt="User Image" />
+                                            
+                                            </button>
+                                            <ul class="dropdown-menu dropdown-menu-left">
+                                                <!-- User image -->
+                                                <li class="dropdown-header">
+                                                    <img src="~/img/avatar-2.jpg" class="img-circle" alt="User Image" />
+                                                    <div class="d-inline-block">
+                                                        @User.Identity.Name<small class="pt-1"></small>
+                                                    </div>
+                                                </li>
+
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="mdi mdi-account"></i> My Profile
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="mdi mdi-email"></i> Message
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"> <i class="mdi mdi-settings"></i> Account Settings </a>
+                                                </li>
+
+                                                <li class="dropdown-footer">
+                                                    <form method = "post" action = "@Url.Action("LogOff", "Account")">
+                                                        <button type="submit">
+                                                            <a>
+                                                                <i class="mdi mdi-logout"> </i>
+                                                                Log Out
+                                                            </a>
+                                                        </button>
+                                                    </form>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <div class="col-md-4 col-sm-4 col-xs-12">
+                                <div class="user-log">
+                                    <a data-toggle="modal" data-target="#loginModal">
+                                        Log in
+                                    </a> / Sign-up
+                                    <a data-toggle="modal" data-target="#regModal">
+                                    </a>
+                                </div><!-- end .user-log -->
+                            </div><!-- end .col-sm-4 -->
+                        }
+                        <div class="navbar-right">
                             <ul class="social-icons">
                                 <li>
                                     <a class="facebook" href="#">
@@ -67,7 +128,7 @@
                             </ul>
                         </div><!-- end .col-sm-8 -->
                     </div><!-- end .row -->
-                </section><!-- end .container -->
+</section><!-- end .container -->
             </div><!-- end .top-menu -->
             <div class="main-baner">
                 <div class="fullscreen background parallax clearfix" style="background-image:url('/img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg');" data-img-width="1600" data-img-height="1064">
@@ -125,6 +186,88 @@
             </div><!-- end .main-baner -->
         </header><!-- end .header -->
         @RenderBody()
+        <footer id="footer">
+            <div class="footer-copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            Copyright by My ride
+                        </div>
+                    </div><!-- end .row -->
+                </div><!-- end .container -->
+            </div><!-- end .footer-copyright -->
+        </footer><!-- end #footer -->
+        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div><!-- end .modal-header -->
+                    <div class="modal-body">
+                        <<form method="post" action="@Url.Action("Login", "Account")" novalidate autocomplete="off" class="idealforms login">
+                            <div class="log-header">
+                                <span class="log-in">Log in</span>
+                            </div>
+                            <div class="user-log">
+                                <a data-toggle="modal" data-target="#regModal">
+                                    Sign up
+                                </a>
+                            </div>
+                            <div class="field">
+                                <input asp-for="UserName" name="username" type="text" placeholder="Username">
+                                <span class="error"></span>
+                            </div>
+                            <div class="field">
+                                <input asp-for="Password" type="password" name="password" placeholder="Password">
+                                <span class="error"></span>
+                            </div>
+                            <div class="field buttons">
+                                <button type="submit" class="submit btn green-color">Log in</button>
+                            </div>
+                            <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>
+                            <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>
+                            <div class="clearfix"></div>
+                        </form><!-- end .login -->
+                    </div><!-- end .modal-body -->
+                </div><!-- end .modal-content -->
+            </div><!-- end .modal-dialog -->
+        </div><!-- end .modal -->
+        <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="@Url.Action("Register", "Account")" novalidate autocomplete="off" class="idealforms reg">
+                            <div class="log-header">
+                                <span class="log-in">Sign up</span>
+                            </div>
+                            <div class="field">
+                                <input asp-for="UserName" name="username" type="text" placeholder="Username">
+                                <span asp-validation-for="UserName"></span>
+                            </div>
+                            <div class="field">
+                                <input name="email" type="email" placeholder="E-Mail">
+                                <span class="error" asp-validation-for="Email"></span>
+                            </div>
+                            <div class="field">
+                                <input asp-for="Password" type="password" name="password" placeholder="Password">
+                                <span asp-validation-for="Password"></span>
+                            </div>
+                            <div class="field">
+                                <input asp-for="PasswordConfirm" type="password" name="passwordconfirm" placeholder="PasswordConform">
+                                <span asp-validation-for="PasswordConfirm"></span>
+                            </div>
+                            <div class="field buttons">
+                                <button type="submit" class="submit btn green-color">Sign up</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form><!-- end .reg -->
+                    </div><!-- end .modal-body -->
+                </div><!-- end .modal-content -->
+            </div><!-- end .modal-dialog -->
+        </div><!-- end .modal -->
     </div>
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

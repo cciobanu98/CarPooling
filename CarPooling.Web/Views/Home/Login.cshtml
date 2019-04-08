@@ -45,7 +45,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div><!-- end .modal-header -->
                 <div class="modal-body">
-                    <form action="" novalidate autocomplete="off" class="idealforms login">
+                    <form method="post" action="@Url.Action("Login", "Account")" novalidate autocomplete="off" class="idealforms login">
                         <div class="log-header">
                             <span class="log-in">Log in</span>
                         </div>
@@ -55,11 +55,11 @@
                             </a>
                         </div>
                         <div class="field">
-                            <input name="username" type="text" placeholder="Username">
+                            <input asp-for="UserName" name="username" type="text" placeholder="Username">
                             <span class="error"></span>
                         </div>
                         <div class="field">
-                            <input type="password" name="password" placeholder="Password">
+                            <input asp-for="Password"type="password" name="password" placeholder="Password">
                             <span class="error"></span>
                         </div>
                         <div class="field buttons">
@@ -80,25 +80,25 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                    <form action="" novalidate autocomplete="off" class="idealforms reg">
+                    <form method="post" action="@Url.Action("Register", "Account")" novalidate autocomplete="off" class="idealforms reg">
                         <div class="log-header">
                             <span class="log-in">Sign up</span>
                         </div>
                         <div class="field">
-                            <input name="username" type="text" placeholder="Username">
-                            <span class="error"></span>
+                            <input asp-for="UserName" name="username" type="text" placeholder="Username">
+                            <span asp-validation-for="UserName"></span>
                         </div>
                         <div class="field">
                             <input name="email" type="email" placeholder="E-Mail">
-                            <span class="error"></span>
+                            <span class="error" asp-validation-for="Email"></span>
                         </div>
                         <div class="field">
-                            <input type="password" name="password" placeholder="Password">
-                            <span class="error"></span>
+                            <input asp-for="Password"type="password" name="password" placeholder="Password">
+                            <span asp-validation-for="Password"></span>
                         </div>
                         <div class="field">
-                            <input name="confirmpass" type="password" placeholder="Password">
-                            <span class="error"></span>
+                            <input asp-for="PasswordConfirm" type="password" name="passwordconfirm" placeholder="PasswordConform">
+                            <span asp-validation-for="PasswordConfirm"></span>
                         </div>
                         <div class="field buttons">
                             <button type="submit" class="submit btn green-color">Sign up</button>

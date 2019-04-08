@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using CarPooling.Domain.Mapping;
 using System.Reflection;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace CarPooling.Context
 {
-    public class CarPoolingContext : DbContext
+    public class CarPoolingContext : IdentityDbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Car> Cars { get; set; }
@@ -19,6 +19,11 @@ namespace CarPooling.Context
         public DbSet<MemberCar> MemberCars { get; set; }
         public DbSet<GeneralPreferences> GeneralPreferences {get; set;}
         public DbSet<EnrouteCity> EnrouteCities { get; set; }
+        public CarPoolingContext(DbContextOptions<CarPoolingContext> options)
+            : base(options)
+        {
+            Database.EnsureCreated();
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
           //  modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
@@ -32,12 +37,13 @@ namespace CarPooling.Context
             modelBuilder.ApplyConfiguration(new RequestConfig());
             modelBuilder.ApplyConfiguration(new RideConfig());
             modelBuilder.ApplyConfiguration(new EnrouteCityConfig());
+            base.OnModelCreating(modelBuilder);
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            //var connectionString = CarPoolingAppSettings.ConfigurationRoot.GetConnectionString("CarPoolingConnection");
-            var connectionString = "Data Source=.;Initial Catalog=CarPoolingEF;Integrated Security=True;";
-            optionsBuilder.UseSqlServer(connectionString);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    //var connectionString = CarPoolingAppSettings.ConfigurationRoot.GetConnectionString("CarPoolingConnection");
+        //    var connectionString = "Data Source=.;Initial Catalog=CarPoolingEF;Integrated Security=True;";
+        //    optionsBuilder.UseSqlServer(connectionString);
+        //}
     }
 }
