@@ -37,6 +37,12 @@
     <![endif]-->
 </head>
 <body>
+    @if (ViewData.ModelState.ErrorCount> 0)
+    {
+    <div class="alert alert-danger" role="alert">
+        @Html.ValidationSummary(false)
+    </div>
+    }
     <div>
         <header class="header">
             <div class="top-menu">
@@ -52,7 +58,7 @@
                                         <li class="dropdown user-menu">
                                             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                                 <img src="~/img/avatar-2.jpg" class="user-image" alt="User Image" />
-                                            
+
                                             </button>
                                             <ul class="dropdown-menu dropdown-menu-left">
                                                 <!-- User image -->
@@ -62,7 +68,6 @@
                                                         @User.Identity.Name<small class="pt-1"></small>
                                                     </div>
                                                 </li>
-
                                                 <li>
                                                     <a href="#">
                                                         <i class="mdi mdi-account"></i> My Profile
@@ -77,11 +82,16 @@
                                                     <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
                                                 </li>
                                                 <li>
-                                                    <a href="#"> <i class="mdi mdi-settings"></i> Account Settings </a>
+                                                    <a href="@Url.Action("Index", "Settings")"> <i class="mdi mdi-settings"></i> Account Settings </a>
                                                 </li>
-
+                                                @if (User.IsInRole("admin"))
+                                                {
+                                                    <li>
+                                                        <a href="#"> <i class="mdi mdi-settings"></i>Administration</a>
+                                                    </li>
+                                                }
                                                 <li class="dropdown-footer">
-                                                    <form method = "post" action = "@Url.Action("LogOff", "Account")">
+                                                    <form method="post" action="@Url.Action("LogOff", "Account")">
                                                         <button type="submit">
                                                             <a>
                                                                 <i class="mdi mdi-logout"> </i>
@@ -128,7 +138,7 @@
                             </ul>
                         </div><!-- end .col-sm-8 -->
                     </div><!-- end .row -->
-</section><!-- end .container -->
+                </section><!-- end .container -->
             </div><!-- end .top-menu -->
             <div class="main-baner">
                 <div class="fullscreen background parallax clearfix" style="background-image:url('/img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg');" data-img-width="1600" data-img-height="1064">
@@ -146,33 +156,33 @@
                                             <nav id="nav" class="main-navigation">
                                                 <ul class="navigation">
                                                     <li>
-                                                        @Html.ActionLink("Home", "Index");
+                                                        @Html.ActionLink("Home", "Index", "Home")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Rides", "rides");
+                                                        @Html.ActionLink("Rides", "rides", "Home")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Add Ride", "addride");
+                                                        @Html.ActionLink("Add Ride", "addride", "Home")
                                                     </li>
                                                     <li>
                                                         <a href="#">Pages</a>
                                                         <ul class="sub-menu">
                                                             <li>
-                                                                @Html.ActionLink("Events", "events");
+                                                                @Html.ActionLink("Events", "events", "Home")
                                                             </li>
                                                             <li>
-                                                                @Html.ActionLink("Single post", "singlepost")
+                                                                @Html.ActionLink("Single post", "singlepost", "Home")
                                                             </li>
                                                             <li>
-                                                                @Html.ActionLink("Single article", "singlearticle");
+                                                                @Html.ActionLink("Single article", "singlearticle", "Home")
                                                             </li>
                                                         </ul>
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Blog", "blog");
+                                                        @Html.ActionLink("Blog", "blog", "Home")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Contact", "contactpage");
+                                                        @Html.ActionLink("Contact", "contactpage", "Home")
                                                     </li>
                                                 </ul>
                                             </nav><!-- end .main-navigation -->

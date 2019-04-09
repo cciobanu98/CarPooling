@@ -31,6 +31,7 @@ namespace CarPooling.Web.Controllers
                 if (result.Succeeded)
                 {
                     // Cookie
+                    await _userManager.AddToRoleAsync(user, "user");
                     await _signInManager.SignInAsync(user, false);
                     return RedirectToAction("Index", "Home");
                 }
@@ -53,6 +54,7 @@ namespace CarPooling.Web.Controllers
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
+
             if (ModelState.IsValid)
             {
                 var result =
@@ -73,7 +75,7 @@ namespace CarPooling.Web.Controllers
                     ModelState.AddModelError("", "Username/Password incorect");
                 }
             }
-            return View("~/Views/Home/Index.cshtml",model);
+            return View("~/Views/Home/Index.cshtml", model);
         }
 
         [HttpPost]

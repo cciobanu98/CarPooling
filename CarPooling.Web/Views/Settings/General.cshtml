@@ -1,0 +1,26 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Settingslayout";
+    ViewBag.Title = "Settings";
+}
+<form name="general_information" method="post" novalidate="novalidate" class="form-container">
+    <fieldset class="span9">
+        <section>
+            <div>
+                <div class="control-label">
+                    Gender
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="profile_general_firstname">First name</label>
+                </div>
+                <div>
+                    <input type="text" id="profile_general_firstname" required="required" value=@User.Identity.Name>
+                </div>
+            </div>
+        </section>
+    </fieldset>
+</form>
