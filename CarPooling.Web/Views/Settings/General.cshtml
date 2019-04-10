@@ -1,11 +1,12 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model CarPooling.Web.ViewModels.Settings.GeneralInformationViewModel
 @{
     Layout = "_Settingslayout";
     ViewBag.Title = "Settings";
 }
-<form name="general_information" method="post" novalidate="novalidate" class="form-container">
+<form name="general_information" method="post" action="@Url.Action("GeneralInformation", "Settings")" novalidate="novalidate" class="form-container">
     <fieldset class="span9">
         <section>
             <div>
@@ -18,7 +19,16 @@
                     <label for="profile_general_firstname">First name</label>
                 </div>
                 <div>
-                    <input type="text" id="profile_general_firstname" required="required" value=@User.Identity.Name>
+                    <input name="Username" type="text" id="profile_general_username" required="required" value=@Html.DisplayFor(x => x.Username)>
+                </div>
+                <div>
+                    <input name="Firstname" type="text" id="profile_general_firstname" required="required" value=@Html.DisplayFor(x => x.Firstname)>
+                </div>
+                <div>
+                    <input name="Lastname" type="text" id="profile_general_lastname" required="required" value=@Html.DisplayFor(x => x.Lastname)>
+                </div>
+                <div class="field buttons">
+                    <button type="submit" class="submit btn green-color">Save</button>
                 </div>
             </div>
         </section>
