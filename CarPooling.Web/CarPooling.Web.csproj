@@ -28,6 +28,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
@@ -39,6 +41,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CarPooling.Context\CarPooling.Context.csproj" />
     <ProjectReference Include="..\CarPooling.DataAcces\CarPooling.DataAcces.csproj" />
+    <ProjectReference Include="..\CarPooling.Infrastructure\CarPooling.Infrastructure.csproj" />
     <ProjectReference Include="..\CarPooling.Repository\CarPooling.BussinesLogic.csproj" />
     <ProjectReference Include="..\Domain\CarPooling.Domain.csproj" />
   </ItemGroup>

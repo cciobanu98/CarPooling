@@ -5092,11 +5092,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Internship\\SQL\\CarPoolingEF\\Domain\\CarPooling.Domain.csproj",
+      "projectUniqueName": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj",
       "projectName": "CarPooling.Domain",
-      "projectPath": "D:\\Internship\\SQL\\CarPoolingEF\\Domain\\CarPooling.Domain.csproj",
+      "projectPath": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj",
       "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
-      "outputPath": "D:\\Internship\\SQL\\CarPoolingEF\\Domain\\obj\\",
+      "outputPath": "D:\\Internship\\CarPooling\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

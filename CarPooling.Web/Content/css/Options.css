@@ -1,3 +1,22 @@
-﻿.form-container{
-    background-color:brown
+﻿.form-container {
+    background: #EDEDED !important;
+    color: #054752;
+    border-radius: 3px;
+}
+.profile-form .control-group {
+    margin-bottom: 8px;
+}
+.profile-form .control-label {
+    width: 122px;
+}
+.form-horizontal .control-group:after, .form-horizontal .control-group:before {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+.form-horizontal .control-label {
+    float: left;
+    width: 160px;
+    padding-top: 5px;
+    text-align: right;
 }

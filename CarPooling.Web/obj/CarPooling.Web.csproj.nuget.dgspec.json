@@ -1,0 +1,495 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\CarPooling\\CarPooling.Web\\CarPooling.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj",
+        "projectName": "CarPooling.Context",
+        "projectPath": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\CarPooling.Context\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj"
+              },
+              "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+                "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj",
+        "projectName": "CarPooling.DataAcces",
+        "projectPath": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\CarPooling.DataAcces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj",
+        "projectName": "CarPooling.Domain.Mapping",
+        "projectPath": "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\CarPooling.Domain.Mapping\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+                "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj",
+        "projectName": "CarPooling.Infrastructure",
+        "projectPath": "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\CarPooling.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
+        "projectName": "CarPooling.BussinesLogic",
+        "projectPath": "D:\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\CarPooling.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\CarPooling\\CarPooling.Web\\CarPooling.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\CarPooling.Web\\CarPooling.Web.csproj",
+        "projectName": "CarPooling.Web",
+        "projectPath": "D:\\CarPooling\\CarPooling.Web\\CarPooling.Web.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\CarPooling.Web\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+              },
+              "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
+              },
+              "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj"
+              },
+              "D:\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj": {
+                "projectPath": "D:\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj"
+              },
+              "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+                "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "BuildBundlerMinifier": {
+              "target": "Package",
+              "version": "[2.9.406, )"
+            },
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.All": {
+              "target": "Package",
+              "version": "[2.2.3, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Core": {
+              "target": "Package",
+              "version": "[2.2.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            },
+            "bootstrap": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj",
+        "projectName": "CarPooling.Domain",
+        "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj",
+        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
+        "outputPath": "D:\\CarPooling\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

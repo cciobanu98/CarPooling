@@ -20,31 +20,17 @@
                         <div class="line"></div>
                     </div><!-- end .page-sub-title -->
                 </div><!-- end .col-lg-12 -->
-                <div class="col-sm-12 col-md-12 col-xs-12">
+                <div class="col-sm-6 col-md-6 col-xs-12">
                     <div class="page-content add-new-ride">
                         <form action="" novalidate autocomplete="off" class="idealforms add-ride">
                             <div class="field">
                                 <select id="destination" name="destination">
                                     <option value="default">From</option>
-                                    <option>Sofia</option>
-                                    <option>Plovdiv</option>
-                                    <option>Hamburg</option>
-                                    <option>Milano</option>
-                                    <option>Paris</option>
-                                    <option>Madrid</option>
-                                    <option>Berlin</option>
                                 </select>
                             </div>
                             <div class="field">
                                 <select id="destinationd" name="destinationd">
                                     <option value="default">To</option>
-                                    <option>Sofia</option>
-                                    <option>Plovdiv</option>
-                                    <option>Hamburg</option>
-                                    <option>Milano</option>
-                                    <option>Paris</option>
-                                    <option>Madrid</option>
-                                    <option>Berlin</option>
                                 </select>
                             </div>
                             <div class="field">
@@ -53,9 +39,6 @@
                             <div class="field">
                                 <select id="destination" name="destination">
                                     <option value="default">Number of seats</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
                                 </select>
                             </div>
                             <div class="field buttons">
@@ -64,7 +47,15 @@
                         </form>
                     </div><!-- end .page-content -->
                 </div><!-- end .col-sm-12 -->
+                <div class="col-sm-6 col-md-6 col-xs-6">
+                    <div id="map"></div>
+                </div>
             </div><!-- end .row -->
         </div><!-- end .container -->
     </section><!-- end .main-content -->
+    <script type="text/javascript" src="~/scripts/map.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPvgQALRCBHxvBMoMDOAGdZ52rXZInzL4&callback=initMap">
+
+    </script>
 </body>

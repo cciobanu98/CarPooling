@@ -5576,11 +5576,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
+      "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
       "projectName": "CarPooling.BussinesLogic",
-      "projectPath": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
+      "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
       "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
-      "outputPath": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.Repository\\obj\\",
+      "outputPath": "D:\\Internship\\CarPooling\\CarPooling.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -5599,8 +5599,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.Context\\CarPooling.Context.csproj": {
-              "projectPath": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.Context\\CarPooling.Context.csproj"
+            "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+              "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
             }
           }
         }

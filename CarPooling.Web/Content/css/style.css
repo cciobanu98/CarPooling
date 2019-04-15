@@ -1031,6 +1031,10 @@ ul.article-meta
     text-align: center;
     color: #63a599;
 }
+.margintop
+{
+    margin-top:20px;
+}
 /* === Login form === */
 .modal-header
 {
@@ -1067,7 +1071,6 @@ label
 }
 label i
 {
-    display: inline-block;
     font-size: 20px;
     margin-right: 18px;
     width: 10px;

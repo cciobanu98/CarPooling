@@ -6,31 +6,76 @@
     Layout = "_Settingslayout";
     ViewBag.Title = "Settings";
 }
-<form name="general_information" method="post" action="@Url.Action("GeneralInformation", "Settings")" novalidate="novalidate" class="form-container">
-    <fieldset class="span9">
-        <section>
+
+    <section class="main-content col-md-12 col-sm-12 col-xs-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-sub-title textcenter">
+                        <h2>General Information</h2>
+                        <div class="line"></div>
+                    </div><!-- end .page-sub-title -->
+                </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+            </div><!-- end .row -->
+        </div><!-- end .container -->
+        <div class="col-md-12 col-sm-12 col-xs-12">
             <div>
-                <div class="control-label">
-                    Gender
-                </div>
-            </div>
-            <div>
-                <div>
-                    <label for="profile_general_firstname">First name</label>
-                </div>
-                <div>
-                    <input name="Username" type="text" id="profile_general_username" required="required" value=@Html.DisplayFor(x => x.Username)>
-                </div>
-                <div>
-                    <input name="Firstname" type="text" id="profile_general_firstname" required="required" value=@Html.DisplayFor(x => x.Firstname)>
-                </div>
-                <div>
-                    <input name="Lastname" type="text" id="profile_general_lastname" required="required" value=@Html.DisplayFor(x => x.Lastname)>
-                </div>
-                <div class="field buttons">
-                    <button type="submit" class="submit btn green-color">Save</button>
-                </div>
-            </div>
-        </section>
-    </fieldset>
-</form>
+                <form action="@Url.Action("GeneralInformation", "Settings")" novalidate autocomplete="off" class="idealforms" method="post">
+                    <div class="row margintop" >
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>First Name</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <input asp-for="FirstName" type="text" name="FirstName" value=@Model.FirstName>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Last Name</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <input asp-for="LastName" type="text" name="LastName" value=@Model.LastName>
+                        </div>
+                    </div>
+                    <div class="row margintop">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Email</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input asp-for="Email" type="text" name="Email" value=@Model.Email>
+                        </div>
+                    </div>
+                    <div class="row margintop">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Year of birth</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            @Html.DropDownListFor(x => x.YearofBirth , Model.Years)
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Gender</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            @Html.DropDownListFor(x => x.Gender, Model.Genders)
+                        </div>
+                    </div>
+                    <div class="row margintop">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field buttons">
+                                <button type="submit" class="btn btn-lg green-color">Save</button>
+                            </div>
+                        </div>
+                     </div>
+
+                </form>
+            </div><!-- end .search-content -->
+        </div><!-- end .col-sm-12 -->
+    </section><!-- end .main-content -->

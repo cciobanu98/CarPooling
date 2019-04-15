@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.DataAcces.Dto\\CarPooling.DataAcces.Dto.csproj",
+      "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.DataAcces.Dto\\CarPooling.DataAcces.Dto.csproj",
       "projectName": "CarPooling.DataAcces.Dto",
-      "projectPath": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.DataAcces.Dto\\CarPooling.DataAcces.Dto.csproj",
+      "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces.Dto\\CarPooling.DataAcces.Dto.csproj",
       "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
-      "outputPath": "D:\\Internship\\SQL\\CarPoolingEF\\CarPooling.DataAcces.Dto\\obj\\",
+      "outputPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces.Dto\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

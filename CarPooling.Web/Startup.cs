@@ -4,14 +4,15 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using CarPooling.Domain;
 using CarPooling.Context;
+using AutoMapper;
+using CarPooling.Infrastructure.services;
+using CarPooling.Web.Profiles;
 namespace CarPooling.Web
 {
     public class Startup
@@ -34,6 +35,8 @@ namespace CarPooling.Web
                 opts.Password.RequireDigit = false;
             })
                 .AddEntityFrameworkStores<CarPoolingContext>();
+            services.AddAutoMapper();
+            services.AddRepositoryServices();
             services.AddMvc();
         }
 
@@ -50,6 +53,12 @@ namespace CarPooling.Web
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseAuthentication();
+            Mapper.Initialize(x =>
+            {
+                x.AddProfile<UserProfile>();
+            });
+
+            Mapper.Configuration.AssertConfigurationIsValid();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

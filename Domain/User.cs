@@ -15,7 +15,7 @@ namespace CarPooling.Domain
         public DateTime Date_created { get; set; }
         //public string Phone { get; set; } //From IdentityUser
         public char? Gender { get; set; }
-        public int? Age { get; set; }
+        public int? YearofBirth { get; set; }
         public List<MemberCar> Cars { get; set; } = new List<MemberCar>();
         public Preferences Preferences { get; set; }
         public List<Request> Requests { get; set; }
