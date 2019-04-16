@@ -1,36 +1,49 @@
-﻿var map, infoWindow
+﻿// This example displays a marker at the center of Australia.
+// When the user clicks the marker, an info window opens.
+
 function initMap() {
-    // The location of Uluru
-    var uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    map = new google.maps.Map(
-        document.getElementById('map'), { zoom: 4, center: uluru });
-    infoWindow = new google.maps.InfoWindow;
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var pos = {
-                lat: position.coords.latitude,
-                lng: position.coords.longitude
-            };
+    var uluru = {lat: -25.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: uluru
+    });
+  
+    var contentString = `<table style="width:100%">` +
+                        `<tr>` +
+                          `<th style="text-align:center"><b>Name</b></th>` +
+                        `</tr>` +
+                        `<tr>` +
+                          `<th><button class="fas fa-map-marker green iconsize  placestable"><div class="fontsize inline placestable">Source place</div></button></th>` +
+                        `</tr>` +
+                        `<tr>` +
+                          `<th><button class="fas fa-map-marker blue iconsize placestable"><div class="fontsize inline placestable">Destination place</div></button></th>` +
+                        `</tr>` +
+                        `</table>`
+  
+    var infowindow = new google.maps.InfoWindow({
+      content: contentString,
+      position:uluru
+    });
+    map.addListener('click', function(event) {
+      var latit = event.latLng.lat();
+      var long = event.latLng.lng();
+      var pos = {lat:latit, lng:long};
+      infowindow.setPosition(pos); 
+      infowindow.open(map);
+    });
+  }
+ // $(".placestable").click(function(event) {
+   // console.log(event.target);
+//});
+document.addEventListener('click', function (event) {
 
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            infoWindow.open(map);
-            map.setCenter(pos);
-            map.zoom = 20;
-        }, function () {
-            handleLocationError(true, infoWindow, map.getCenter());
-        });
-    } else {
-        // Browser doesn't support Geolocation
-        handleLocationError(false, infoWindow, map.getCenter());
-    }
-}
+	// If the clicked element doesn't have the right selector, bail
+	if (!event.target.matches('.placestable')) return;
 
-function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-    infoWindow.setPosition(pos);
-    infoWindow.setContent(browserHasGeolocation ?
-        'Error: The Geolocation service failed.' :
-        'Error: Your browser doesn\'t support geolocation.');
-    infoWindow.open(map);
-}
+	// Don't follow the link
+	event.preventDefault();
+
+	// Log the clicked element in the console
+	console.log(event.target);
+
+}, false);

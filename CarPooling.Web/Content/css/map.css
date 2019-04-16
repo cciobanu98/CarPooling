@@ -1,4 +1,27 @@
-﻿#map {
+﻿.fas{
+    font-family:fontawesome !important
+}
+.green{
+    color:green;
+}
+.blue{
+    color:blue;
+}
+.iconsize{
+    font-size:30px;
+}
+.inline{
+    display:inline;
+}
+.fontsize{
+    font-size:15px;
+}
+.placestable{
+    background:none;
+    border:2px;
+    width:100%;
+}
+#map {
     height: 400px; /* The height is 400 pixels */
     width: 100%; /* The width is the width of the web page */
 }
