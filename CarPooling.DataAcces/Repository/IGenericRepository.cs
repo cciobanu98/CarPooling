@@ -9,7 +9,7 @@ namespace CarPooling.DataAcces.Repository
         T GetById(object id);
         void Insert(T obj);
         void Update(T obj);
-        void Delete(T id);
+        void Delete(object id);
         void Save();
     }
 }

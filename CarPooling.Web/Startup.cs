@@ -56,6 +56,7 @@ namespace CarPooling.Web
             Mapper.Initialize(x =>
             {
                 x.AddProfile<UserProfile>();
+                x.AddProfile<CarProfile>();
             });
 
             Mapper.Configuration.AssertConfigurationIsValid();

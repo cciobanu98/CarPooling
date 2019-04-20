@@ -14,12 +14,11 @@ namespace CarPooling.DataAcces.Repository
             context = db;
             table = context.Set<T>();
         }
-        public void Delete(T id)
+        public void Delete(object id)
         {
             T elem = table.Find(id);
             table.Remove(elem);
         }
-
         public IEnumerable<T> GetAll()
         {
             return table.ToList();

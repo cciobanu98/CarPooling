@@ -11,7 +11,7 @@ namespace CarPooling.Domain.Mapping
                  .HasMaxLength(32);
             builder.Property(x => x.Model)
                 .HasMaxLength(32);
-            builder.Property(x => x.CarNumbers)
+            builder.Property(x => x.Number)
                 .HasMaxLength(32);
         }
     }

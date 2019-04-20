@@ -1,0 +1,126 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CarPooling.Web.ViewModels.Settings.CarInformationViewModel
+@{
+    Layout = "_Settingslayout";
+    ViewBag.Title = "Settings";
+    IEnumerable<CarPooling.Web.ViewModels.Settings.CarInformationViewModel> cars = ViewData["List"] as IEnumerable<CarPooling.Web.ViewModels.Settings.CarInformationViewModel>;
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+<section class="main-content col-md-12 col-sm-12 col-xs-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="page-sub-title textcenter">
+                    <h2>Car Information</h2>
+                    <div class="line"></div>
+                </div><!-- end .page-sub-title -->
+            </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+        </div><!-- end .row -->
+    </div><!-- end .container -->
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Number</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Seats</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            @if (cars != null)
+            {
+                @foreach (var c in cars)
+                {
+                    <tr>
+                        <th>@c.Number</th>
+                        <th>@c.Model</th>
+                        <th>@c.Color</th>
+                        <th>@c.Seats</th>
+                        <th id="@c.Id" data-toggle="modal" data-target="#EditCarModal" data-whatever="@c.Id<>@c.Number<>@c.Model<>@c.Color<>@c.Seats">
+                            Edit
+                        </th>
+                        <th><a href="@Url.Action("Delete", "Car", new { id = c.Id })">Delete</a></th>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="user-log">
+                <a data-toggle="modal" data-target="#CarModal">
+                    Add a Car
+                </a>
+            </div><!-- end .user-log -->
+        </div><!-- end .col-sm-4 -->
+    </div><!-- end .col-sm-12 -->
+    <div class="modal fade" id="CarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div><!-- end .modal-header -->
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("CarInformation", "Car")" novalidate autocomplete="off" class="idealforms login">
+                        <div class="log-header">
+                            <span class="log-in">Add Car</span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Number" name="Number" type="text" placeholder="Car Number">
+                        </div>
+                        <div class="field">
+                            <input asp-for="Model" type="text" name="Model" placeholder="Car Model">
+                        </div>
+                        <div class="field">
+                            <input asp-for="Color" type="text" name="Color" placeholder="Car Color">
+                        </div>
+                        <div class="field">
+                            <input asp-for="Seats" type="text" name="Seats" placeholder="Seats">
+                        </div>
+                        <div class="field buttons">
+                            <button type="submit" class="submit btn green-color">Add</button>
+                        </div>
+                    </form><!-- end .login -->
+                </div><!-- end .modal-body -->
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
+    <div class="modal fade" id="EditCarModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div><!-- end .modal-header -->
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("Edit", "Car")" novalidate autocomplete="off" class="idealforms login">
+                        <div class="log-header">
+                            <span class="log-in">Edit car</span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Id" type="hidden" id="IdInput" name="Id" />
+                        </div>
+                        <div class="field">
+                            <input asp-for="Number" name="Number" id="NumberInput" type="text" placeholder="Car Number">
+                        </div>
+                        <div class="field">
+                            <input asp-for="Model" type="text" id="ModelInput" name="Model" placeholder="Car Model">
+                        </div>
+                        <div class="field">
+                            <input asp-for="Color" type="text" id="ColorInput" name="Color" placeholder="Car Color">
+                        </div>
+                        <div class="field">
+                            <input asp-for="Seats" type="text" id="SeatsInput" name="Seats" placeholder="Seats">
+                        </div>
+                        <div class="field buttons">
+                            <button type="submit" class="submit btn green-color">Save Changes</button>
+                        </div>
+                    </form><!-- end .login -->
+                </div><!-- end .modal-body -->
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
+</section><!-- end .main-content -->

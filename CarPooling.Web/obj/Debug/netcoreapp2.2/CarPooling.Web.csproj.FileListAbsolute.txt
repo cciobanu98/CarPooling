@@ -137,3 +137,4 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.V
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.csproj.CopyComplete
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.dll
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.pdb
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Settings\Car.g.cshtml.cs

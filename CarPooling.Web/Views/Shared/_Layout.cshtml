@@ -31,6 +31,12 @@
     <link href="~/css/font-awesome.min.css" rel="stylesheet">
     <link href="~/css/map.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+    <link href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/leaflet/1/leaflet.css" />
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -38,13 +44,20 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+            integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+            crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+    <script src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.4"></script>
+    <script src="https://cdn.jsdelivr.net/algoliasearch/3.31/algoliasearchLite.min.js"></script>
 </head>
 <body>
-    @if (ViewData.ModelState.ErrorCount> 0)
+    @if (ViewData.ModelState.ErrorCount > 0)
     {
-    <div class="alert alert-danger" role="alert">
-        @Html.ValidationSummary(false)
-    </div>
+        <div class="alert alert-danger" role="alert">
+            @Html.ValidationSummary(false)
+        </div>
     }
     <div>
         <header class="header">
@@ -165,7 +178,7 @@
                                                         @Html.ActionLink("Rides", "rides", "Home")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Add Ride", "addride", "Home")
+                                                        @Html.ActionLink("Add Ride", "AddRide", "Ride")
                                                     </li>
                                                     <li>
                                                         <a href="#">Pages</a>
@@ -217,7 +230,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div><!-- end .modal-header -->
                     <div class="modal-body">
-                        <<form method="post" action="@Url.Action("Login", "Account")" novalidate autocomplete="off" class="idealforms login">
+                        <form method="post" action="@Url.Action("Login", "Account")" novalidate autocomplete="off" class="idealforms login">
                             <div class="log-header">
                                 <span class="log-in">Log in</span>
                             </div>
@@ -302,5 +315,5 @@
     <script type="text/javascript" src="~/scripts/bootstrap-rating-input.min.js"></script>
     <!-- Slicknav  -->
     <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
-</body>
+    </body>
 </html>

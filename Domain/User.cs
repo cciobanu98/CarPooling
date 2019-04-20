@@ -16,7 +16,7 @@ namespace CarPooling.Domain
         //public string Phone { get; set; } //From IdentityUser
         public char? Gender { get; set; }
         public int? YearofBirth { get; set; }
-        public List<MemberCar> Cars { get; set; } = new List<MemberCar>();
+        public List<Car> Cars { get; set; } = new List<Car>();
         public Preferences Preferences { get; set; }
         public List<Request> Requests { get; set; }
         public byte[] RowVersion { get; set; }

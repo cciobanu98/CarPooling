@@ -1,0 +1,7 @@
+{
+  "name": "myproject",
+  "version": "1.0.0",
+  "devDependencies": {
+    "leaflet-geosearch": "^2.7.0"
+  }
+}

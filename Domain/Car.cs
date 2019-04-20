@@ -7,7 +7,8 @@ namespace CarPooling.Domain
         public string Model { get; set; }
         public string Color { get; set; }
         public int? Seats { get; set; }
-        public string CarNumbers { get; set; }
-        public List<MemberCar> MemberCars { get; set; } = new List<MemberCar>();
+        public string Number { get; set; }
+        public string UserId { get; set; }
+        public User User { get; set; }
     }
 }

@@ -3,17 +3,14 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CarPooling.Domain.Mapping
 {
-    public class CityConfig : IEntityTypeConfiguration<City>
+    public class LocationConfig : IEntityTypeConfiguration<Location>
     {
-        public void Configure(EntityTypeBuilder<City> builder)
+        public void Configure(EntityTypeBuilder<Location> builder)
         {
-            builder.Property(x => x.CityName)
+            builder.Property(x => x.City)
                 .IsRequired()
                 .HasMaxLength(64);
             builder.Property(x => x.Country)
-                .IsRequired()
-                .HasMaxLength(64);
-            builder.Property(x => x.State)
                 .IsRequired()
                 .HasMaxLength(64);
         }

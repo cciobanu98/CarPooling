@@ -10,8 +10,8 @@ namespace CarPooling.Domain
         public bool? Status { get; set; }
         public int RideId { get; set; }
         public Ride Ride { get; set; }
-        public int EnrouteCityId { get; set; }
-        public City EnrouteCity { get; set; }
+        public int EnrouteLocationId { get; set; }
+        public Location EnrouteLocation { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }

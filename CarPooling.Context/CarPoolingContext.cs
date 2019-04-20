@@ -13,12 +13,12 @@ namespace CarPooling.Context
         public DbSet<Preferences> Preferences { get; set; }
         public DbSet<ChatPreferences> ChatPreferences { get; set; }
         public DbSet<MusicPreferences> MusicPreferences { get; set; }
-        public DbSet<City> Cities { get; set; }
+        public DbSet<Location> Locations { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Ride> Rides { get; set; }
-        public DbSet<MemberCar> MemberCars { get; set; }
+       // public DbSet<MemberCar> MemberCars { get; set; }
         public DbSet<GeneralPreferences> GeneralPreferences {get; set;}
-        public DbSet<EnrouteCity> EnrouteCities { get; set; }
+        public DbSet<EnrouteLocation> EnrouteLocations{ get; set; }
         public CarPoolingContext(DbContextOptions<CarPoolingContext> options)
             : base(options)
         {
@@ -31,12 +31,12 @@ namespace CarPooling.Context
             modelBuilder.ApplyConfiguration(new UserConfig());
             modelBuilder.ApplyConfiguration(new CarConfig());
             modelBuilder.ApplyConfiguration(new PreferencesConfig());
-            modelBuilder.ApplyConfiguration(new CityConfig());
-            modelBuilder.ApplyConfiguration(new MemberCarConfig());
+            modelBuilder.ApplyConfiguration(new LocationConfig());
+           // modelBuilder.ApplyConfiguration(new MemberCarConfig());
             modelBuilder.ApplyConfiguration(new PreferencesConfig());
             modelBuilder.ApplyConfiguration(new RequestConfig());
             modelBuilder.ApplyConfiguration(new RideConfig());
-            modelBuilder.ApplyConfiguration(new EnrouteCityConfig());
+            modelBuilder.ApplyConfiguration(new EnrouteLocationConfig());
             base.OnModelCreating(modelBuilder);
         }
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
