@@ -4,220 +4,98 @@
 @{
     Layout = "_Layout";
     ViewBag.Title = "Paputka";
+    IEnumerable<CarPooling.Web.ViewModels.SelectRideViewModel> rides = ViewData["List"] as IEnumerable<CarPooling.Web.ViewModels.SelectRideViewModel>;
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <body>
     <header class="header">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            <div class="search-content">
-                                <form action="" novalidate autocomplete="off" class="idealforms searchtours">
-                                    <div class="row">
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <div class="field">
-                                                <select id="destination" name="destination">
-                                                    <option value="default">From</option>
-                                                    <option>Sofia</option>
-                                                    <option>Plovdiv</option>
-                                                    <option>Hamburg</option>
-                                                    <option>Milano</option>
-                                                    <option>Paris</option>
-                                                    <option>Madrid</option>
-                                                    <option>Berlin</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <div class="field">
-                                                <select id="destination" name="destination">
-                                                    <option value="default">To</option>
-                                                    <option>Sofia</option>
-                                                    <option>Plovdiv</option>
-                                                    <option>Hamburg</option>
-                                                    <option>Milano</option>
-                                                    <option>Paris</option>
-                                                    <option>Madrid</option>
-                                                    <option>Berlin</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <div class="field">
-                                                <input name="event" type="text" placeholder="Date" class="datepicker">
-                                            </div>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="search-content">
+                <form action="" novalidate autocomplete="off" class="idealforms searchtours">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <select id="destination" name="destination">
+                                    <option value="default">From</option>
+                                    <option>Sofia</option>
+                                    <option>Plovdiv</option>
+                                    <option>Hamburg</option>
+                                    <option>Milano</option>
+                                    <option>Paris</option>
+                                    <option>Madrid</option>
+                                    <option>Berlin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <select id="destination" name="destination">
+                                    <option value="default">To</option>
+                                    <option>Sofia</option>
+                                    <option>Plovdiv</option>
+                                    <option>Hamburg</option>
+                                    <option>Milano</option>
+                                    <option>Paris</option>
+                                    <option>Madrid</option>
+                                    <option>Berlin</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <input name="event" type="text" placeholder="Date" class="datepicker">
+                            </div>
 
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <div class="field">
-                                                <select id="destination" name="destination">
-                                                    <option value="default">Number of seats</option>
-                                                    <option>1</option>
-                                                    <option>2</option>
-                                                    <option>3</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-3 col-sm-3 col-xs-12">
-                                            <div class="field buttons">
-                                                <button type="submit" class="btn btn-lg green-color">Search</button>
-                                            </div>
-                                        </div>
-                                    </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <select id="destination" name="destination">
+                                    <option value="default">Number of seats</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field buttons">
+                                <button type="submit" class="btn btn-lg green-color">Search</button>
+                            </div>
+                        </div>
+                    </div>
 
-                                </form>
-                            </div><!-- end .search-content -->
-                        </div><!-- end .col-sm-12 -->
+                </form>
+            </div><!-- end .search-content -->
+        </div><!-- end .col-sm-12 -->
     </header><!-- end .header -->
     <section class="main-content">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-sub-title textcenter">
-                        <h2>All rides</h2>
-                        <div class="line"></div>
-                    </div><!-- end .page-sub-title -->
-                </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="page-content">
-                        <div class="rides-list">
-                            <article class="ride-box clearfix">
-                                <div class="ride-content">
-                                    <h3><a href="#">From Plovdiv to Sofia</a></h3>ride by <a href="#">Stefan Valkov</a>
-                                </div>
-                                <ul class="ride-meta">
-                                    <li class="ride-date">
-                                        <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                            <i class="fa fa-calendar"></i>
-                                            July 20, 2014 at 19:00 PM
-                                        </a>
-                                    </li><!-- end .ride-date -->
-                                    <li class="ride-people">
-                                        <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                            <i class="fa fa-user"></i>
-                                            1
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-file"></i>
-                                            Read more
-                                        </a>
-                                    </li>
-                                </ul><!-- end .ride-meta -->
-                            </article><!-- end .ride-box -->
-                            <article class="ride-box clearfix">
-                                <div class="ride-content">
-                                    <h3><a href="#">From Milano to Rome</a></h3>ride by <a href="#">Carlo Corti</a>
-                                </div>
-                                <ul class="ride-meta">
-                                    <li class="ride-date">
-                                        <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                            <i class="fa fa-calendar"></i>
-                                            July 18, 2014 at 06:00 AM
-                                        </a>
-                                    </li><!-- end .ride-date -->
-                                    <li class="ride-people">
-                                        <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                            <i class="fa fa-user"></i>
-                                            4
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-file"></i>
-                                            Read more
-                                        </a>
-                                    </li>
-                                </ul><!-- end .ride-meta -->
-                            </article><!-- end .ride-box -->
-                            <article class="ride-box clearfix">
-                                <div class="ride-content">
-                                    <h3><a href="#">From Lyon to Paris</a></h3>ride by <a href="#">Antoine Bonnet</a>
-                                </div>
-                                <ul class="ride-meta">
-                                    <li class="ride-date">
-                                        <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                            <i class="fa fa-calendar"></i>
-                                            July 15, 2014 at 20:00 PM
-                                        </a>
-                                    </li><!-- end .ride-date -->
-                                    <li class="ride-people">
-                                        <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                            <i class="fa fa-user"></i>
-                                            3
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-file"></i>
-                                            Read more
-                                        </a>
-                                    </li>
-                                </ul><!-- end .ride-meta -->
-                            </article><!-- end .ride-box -->
-                            <article class="ride-box clearfix">
-                                <div class="ride-content">
-                                    <h3><a href="#">From Barcelona to Madrid</a></h3>ride by <a href="#">Adriana Bello</a>
-                                </div>
-                                <ul class="ride-meta">
-                                    <li class="ride-date">
-                                        <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                            <i class="fa fa-calendar"></i>
-                                            July 10, 2014 at 09:00 AM
-                                        </a>
-                                    </li><!-- end .ride-date -->
-                                    <li class="ride-people">
-                                        <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                            <i class="fa fa-user"></i>
-                                            2
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-file"></i>
-                                            Read more
-                                        </a>
-                                    </li>
-                                </ul><!-- end .ride-meta -->
-                            </article><!-- end .ride-box -->
-                            <article class="ride-box clearfix">
-                                <div class="ride-content">
-                                    <h3><a href="#">From Munich to Berlin</a></h3>ride by <a href="#">Albert Becker</a>
-                                </div>
-                                <ul class="ride-meta">
-                                    <li class="ride-date">
-                                        <a href="#" class="tooltip-link" data-original-title="Date" data-toggle="tooltip">
-                                            <i class="fa fa-calendar"></i>
-                                            July 08, 2014 at 22:00 PM
-                                        </a>
-                                    </li><!-- end .ride-date -->
-                                    <li class="ride-people">
-                                        <a href="#" class="tooltip-link" data-original-title="Number of seats" data-toggle="tooltip">
-                                            <i class="fa fa-user"></i>
-                                            1
-                                        </a>
-                                    </li><!-- end .ride-people -->
-                                    <li>
-                                        <a href="#">
-                                            <i class="fa fa-file"></i>
-                                            Read more
-                                        </a>
-                                    </li>
-                                </ul><!-- end .ride-meta -->
-                            </article><!-- end .ride-box -->
-                            <div class="clearfix"></div>
-                            <div class="post-pagination pagination-margin clearfix">
-                                <div class="next pull-right">
-                                    <a href="#">
-                                        Next
-                                        <i class="fa fa-chevron-right"></i>
-                                    </a>
-                                </div>
-                            </div><!-- end .post-pagination -->
-                        </div><!-- end .events-list -->
-                    </div><!-- end .page-content -->
-                </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
-            </div><!-- end .row -->
-        </div><!-- end .container -->
+       <table>
+           <tr>
+               <th>Source</th>
+               <th>Destination</th>
+               <th>Start</th>
+               <th>Price</th>
+               <th>Seats</th>
+               <th>UserName</th>
+           </tr>
+           @if(rides != null)
+           {
+               @foreach(var r in rides)
+               {
+                   <tr>
+                       <th>@r.Source</th>
+                       <th>@r.Destination</th>
+                       <th>@r.StartDatetime</th>
+                       <th>@r.Price</th>
+                       <th>@r.Seats</th>
+                       <th>@r.UserName</th>
+                   </tr>
+
+               }
+
+           }
+       </table>
     </section><!-- end .main-content -->
 
 </body>

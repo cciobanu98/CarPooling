@@ -118,16 +118,9 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.A
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.TagHelpers.input.cache
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.TagHelpers.output.cache
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.RazorCoreGenerate.cache
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\add-ride.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\blog.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\contact-page.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\events.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Index.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Login.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\page.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\rides.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\single-article.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\single-post.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Settings\General.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Layout.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_SettingsLayout.g.cshtml.cs
@@ -138,3 +131,8 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.c
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.dll
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\CarPooling.Web.pdb
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Settings\Car.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Footer.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\AddRide.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\Register.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\ExamenPage.g.cshtml.cs

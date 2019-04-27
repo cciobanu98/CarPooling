@@ -1,0 +1,49 @@
+﻿
+@model CarPooling.Web.ViewModels.RegisterViewModel
+@{
+}
+<html>
+<head>
+    <title>Login</title>
+</head>
+<body>
+    <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="@Url.Action("Register", "Account")" novalidate autocomplete="off" class="idealforms reg">
+                        <div class="log-header">
+                            <span class="log-in">Sign up</span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Username" name="username" type="text" placeholder="Username">
+                            <span asp-validation-for="Username"></span>
+                        </div>
+                        <div class="field">
+                            <input name="email" type="email" placeholder="E-Mail">
+                            <span class="error" asp-validation-for="Email"></span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Password" type="password" name="password" placeholder="Password">
+                            <span asp-validation-for="Password"></span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="PasswordConfirm" type="password" name="passwordconfirm" placeholder="PasswordConform">
+                            <span asp-validation-for="PasswordConfirm"></span>
+                        </div>
+                        <div class="field buttons">
+                            <button type="submit" class="submit btn green-color">Sign up</button>
+                        </div>
+                        <div class="clearfix"></div>
+                    </form><!-- end .reg -->
+                </div><!-- end .modal-body -->
+            </div><!-- end .modal-content -->
+        </div><!-- end .modal-dialog -->
+    </div><!-- end .modal -->
+    <!-- Javascript -->
+    <script src="~/scripts/myjquery.js"></script>
+</body>
+</html>

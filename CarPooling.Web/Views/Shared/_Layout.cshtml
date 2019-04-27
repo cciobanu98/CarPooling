@@ -1,6 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model CarPooling.Web.ViewModels.RegisterViewModel
 @{
 }
 <!DOCTYPE html>
@@ -126,10 +127,11 @@
                         {
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="user-log">
-                                    <a data-toggle="modal" data-target="#loginModal">
+                                    <button  data-toggle="modal" data-target="#loginModal" id="LoginButton">
                                         Log in
-                                    </a> / Sign-up
-                                    <a data-toggle="modal" data-target="#regModal">
+                                    </button> /
+                                    <a href="Register.cshtml" data-toggle="modal" data-target="#regModal">
+                                        Sign-up
                                     </a>
                                 </div><!-- end .user-log -->
                             </div><!-- end .col-sm-4 -->
@@ -175,27 +177,10 @@
                                                         @Html.ActionLink("Home", "Index", "Home")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Rides", "rides", "Home")
+                                                        @Html.ActionLink("Rides", "SelectRide", "SelectRide")
                                                     </li>
                                                     <li>
                                                         @Html.ActionLink("Add Ride", "AddRide", "Ride")
-                                                    </li>
-                                                    <li>
-                                                        <a href="#">Pages</a>
-                                                        <ul class="sub-menu">
-                                                            <li>
-                                                                @Html.ActionLink("Events", "events", "Home")
-                                                            </li>
-                                                            <li>
-                                                                @Html.ActionLink("Single post", "singlepost", "Home")
-                                                            </li>
-                                                            <li>
-                                                                @Html.ActionLink("Single article", "singlearticle", "Home")
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                    <li>
-                                                        @Html.ActionLink("Blog", "blog", "Home")
                                                     </li>
                                                     <li>
                                                         @Html.ActionLink("Contact", "contactpage", "Home")
@@ -212,88 +197,13 @@
             </div><!-- end .main-baner -->
         </header><!-- end .header -->
         @RenderBody()
-        <footer id="footer">
-            <div class="footer-copyright">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 col-sm-12 col-xs-12">
-                            Copyright by My ride
-                        </div>
-                    </div><!-- end .row -->
-                </div><!-- end .container -->
-            </div><!-- end .footer-copyright -->
-        </footer><!-- end #footer -->
-        <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div><!-- end .modal-header -->
-                    <div class="modal-body">
-                        <form method="post" action="@Url.Action("Login", "Account")" novalidate autocomplete="off" class="idealforms login">
-                            <div class="log-header">
-                                <span class="log-in">Log in</span>
-                            </div>
-                            <div class="user-log">
-                                <a data-toggle="modal" data-target="#regModal">
-                                    Sign up
-                                </a>
-                            </div>
-                            <div class="field">
-                                <input asp-for="UserName" name="username" type="text" placeholder="Username">
-                                <span class="error"></span>
-                            </div>
-                            <div class="field">
-                                <input asp-for="Password" type="password" name="password" placeholder="Password">
-                                <span class="error"></span>
-                            </div>
-                            <div class="field buttons">
-                                <button type="submit" class="submit btn green-color">Log in</button>
-                            </div>
-                            <a href="#" class="log-twitter twitter"><i class="fa fa-twitter"></i>Twitter</a>
-                            <a href="#" class="log-facebook facebook"><i class="fa fa-facebook"></i>Facebook</a>
-                            <div class="clearfix"></div>
-                        </form><!-- end .login -->
-                    </div><!-- end .modal-body -->
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
-        <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        <form method="post" action="@Url.Action("Register", "Account")" novalidate autocomplete="off" class="idealforms reg">
-                            <div class="log-header">
-                                <span class="log-in">Sign up</span>
-                            </div>
-                            <div class="field">
-                                <input asp-for="UserName" name="username" type="text" placeholder="Username">
-                                <span asp-validation-for="UserName"></span>
-                            </div>
-                            <div class="field">
-                                <input name="email" type="email" placeholder="E-Mail">
-                                <span class="error" asp-validation-for="Email"></span>
-                            </div>
-                            <div class="field">
-                                <input asp-for="Password" type="password" name="password" placeholder="Password">
-                                <span asp-validation-for="Password"></span>
-                            </div>
-                            <div class="field">
-                                <input asp-for="PasswordConfirm" type="password" name="passwordconfirm" placeholder="PasswordConform">
-                                <span asp-validation-for="PasswordConfirm"></span>
-                            </div>
-                            <div class="field buttons">
-                                <button type="submit" class="submit btn green-color">Sign up</button>
-                            </div>
-                            <div class="clearfix"></div>
-                        </form><!-- end .reg -->
-                    </div><!-- end .modal-body -->
-                </div><!-- end .modal-content -->
-            </div><!-- end .modal-dialog -->
-        </div><!-- end .modal -->
+        @{Html.RenderPartialAsync("~/Views/Shared/_Footer.cshtml");}
+    </div>
+    <div class="modal fade text-center" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            </div>
+        </div>
     </div>
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -315,5 +225,7 @@
     <script type="text/javascript" src="~/scripts/bootstrap-rating-input.min.js"></script>
     <!-- Slicknav  -->
     <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
-    </body>
+    <script src="~/scripts/myjquery.js"></script>
+
+</body>
 </html>

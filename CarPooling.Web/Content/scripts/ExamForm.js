@@ -1,0 +1,24 @@
+$(document).ready(function(){
+    $("#submitform").click(function(e){
+            e.preventDefault()
+            var obj = {
+            email:$("#emailInput").val(),
+            username:$("#usernameInput").val(),
+            password:$("#passwordInput").val(),
+            year:$("#yearInput").val()};
+           //console.log(obj);
+            $.ajax({
+                url:"Examen",
+                type:"POST",
+                data:obj,
+                //datatype:"json",
+                success:function(data){
+                    console.log(data);
+                    alert("Succes");
+                },
+                error:function(){
+                    alert("Failure");
+                }
+            });
+    })
+})

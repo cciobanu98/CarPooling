@@ -7,7 +7,6 @@
     ViewBag.Title = "AddRide";
     IEnumerable<CarPooling.Web.ViewModels.Settings.CarInformationViewModel> cars = ViewData["List"] as IEnumerable<CarPooling.Web.ViewModels.Settings.CarInformationViewModel>;
 }
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 <!DOCTYPE html>
 <!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
 <!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
@@ -33,7 +32,7 @@
                                 <input asp-for="DestinationLocation" type="search" id="destinationSearch" placeholder="Where?" />
                             </div>
                             <div class="field">
-                                <input asp-for="TravelStartDateTime" name="event" type="text" placeholder="Date" class="datepicker">
+                                <input asp-for="TravelStartDateTime" name="TravelStartDateTime" type="text" placeholder="Date" class="datepicker">
                             </div>
                             <div class="field">
                                 <select asp-for="Seats" id="seats" name="Seats">
@@ -55,7 +54,7 @@
                             <div>
                                 <input asp-for="SourceLocationLat" type="hidden" id="sourceLatitude" name="SourceLocationLat" />
                                 <input asp-for="SourceLocationLng" type="hidden" id="sourceLongitude" name="SourceLocationLng" />
-                                <input asp-for="DestinatinLocationLat" type="hidden" id="destinationLatitude" name="DestinationLocationLat"/>
+                                <input asp-for="DestinationLocationLat" type="hidden" id="destinationLatitude" name="DestinationLocationLat"/>
                                 <input asp-for="DestinationLocationLng" type="hidden" id="destinationLongitude" name="DestinationLocationLng" />
                             </div>
                             <div class="field buttons">

@@ -26,7 +26,7 @@ namespace CarPooling.Web.Controllers
         {
             if (ModelState.IsValid)
             {
-                User user = new User { Email = model.Email, UserName = model.UserName};
+                User user = new User { Email = model.Email, UserName = model.Username};
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -58,7 +58,7 @@ namespace CarPooling.Web.Controllers
             if (ModelState.IsValid)
             {
                 var result =
-                    await _signInManager.PasswordSignInAsync(model.UserName, model.Password,false,  false);
+                    await _signInManager.PasswordSignInAsync(model.Username, model.Password,false,  false);
                 if (result.Succeeded)
                 {
                     if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))

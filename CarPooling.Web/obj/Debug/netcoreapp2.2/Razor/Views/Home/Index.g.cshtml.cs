@@ -13,7 +13,13 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#line 1 "D:\Internship\CarPooling\CarPooling.Web\Views\_ViewImports.cshtml"
+using CarPooling;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6fcc647ddfb68e83c8fc3eb408139356fc09673c", @"/Views/Home/Index.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d7056b4eeb1cc58291750a6e88ffb174224f343", @"/Views/_ViewImports.cshtml")]
     public class Views_Home_Index : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #line hidden
@@ -52,7 +58,7 @@ namespace AspNetCore
             WriteLiteral("<!--[if IE 7]>                  <html class=\"ie7 no-js\" lang=\"en\">     <![endif]-->\r\n<!--[if lte IE 8]>              <html class=\"ie8 no-js\" lang=\"en\">     <![endif]-->\r\n<!--[if (gte IE 9)|!(IE)]><!-->\r\n\r\n");
             EndContext();
             BeginContext(392, 13613, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fcc647ddfb68e83c8fc3eb408139356fc09673c3201", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fcc647ddfb68e83c8fc3eb408139356fc09673c3492", async() => {
                 BeginContext(398, 13600, true);
                 WriteLiteral(@"
     <section class=""main-content"">

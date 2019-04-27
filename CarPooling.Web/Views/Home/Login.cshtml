@@ -1,46 +1,10 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+@model CarPooling.Web.ViewModels.LoginViewModel
 @{
 }
-<html>
-<head>
-    <title>Login</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Mobile Specific Metas -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Styles -->
-    <!-- Bootstrap -->
-    <link href="~/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Forms -->
-    <link href="~/css/jquery.idealforms.css" rel="stylesheet">
-    <!-- Select  -->
-    <link href="~/css/jquery.idealselect.css" rel="stylesheet">
-    <!-- Slicknav  -->
-    <link href="~/css/slicknav.css" rel="stylesheet">
-    <!-- Main style -->
-    <link href="~/css/style.css" rel="stylesheet">
-    <!-- Modernizr -->
-    <script src="~/scripts/modernizr.js"></script>
-    <!-- Fonts -->
-    <link href="~/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body>
-    <div class="fullscreen background parallax clearfix" style="background-image:url('/img/tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg');" data-img-width="1600" data-img-height="1064">
-    </div>
-    <div class="modal fade in" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block; padding-right: 17px;">
-        <div class="modal-backdrop fade in" style="height: 969px;"> </div>
-        <div class="modal-dialog">
-            <div class="modal-content">
+
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div><!-- end .modal-header -->
@@ -55,11 +19,11 @@
                             </a>
                         </div>
                         <div class="field">
-                            <input asp-for="UserName" name="username" type="text" placeholder="Username">
+                            <input asp-for="Username" name="username" type="text" placeholder="Username">
                             <span class="error"></span>
                         </div>
                         <div class="field">
-                            <input asp-for="Password"type="password" name="password" placeholder="Password">
+                            <input asp-for="Password" type="password" name="password" placeholder="Password">
                             <span class="error"></span>
                         </div>
                         <div class="field buttons">
@@ -70,64 +34,3 @@
                         <div class="clearfix"></div>
                     </form><!-- end .login -->
                 </div><!-- end .modal-body -->
-            </div><!-- end .modal-content -->
-        </div><!-- end .modal-dialog -->
-    </div><!-- end .modal -->
-    <div class="modal fade" id="regModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                    <form method="post" action="@Url.Action("Register", "Account")" novalidate autocomplete="off" class="idealforms reg">
-                        <div class="log-header">
-                            <span class="log-in">Sign up</span>
-                        </div>
-                        <div class="field">
-                            <input asp-for="UserName" name="username" type="text" placeholder="Username">
-                            <span asp-validation-for="UserName"></span>
-                        </div>
-                        <div class="field">
-                            <input name="email" type="email" placeholder="E-Mail">
-                            <span class="error" asp-validation-for="Email"></span>
-                        </div>
-                        <div class="field">
-                            <input asp-for="Password"type="password" name="password" placeholder="Password">
-                            <span asp-validation-for="Password"></span>
-                        </div>
-                        <div class="field">
-                            <input asp-for="PasswordConfirm" type="password" name="passwordconfirm" placeholder="PasswordConform">
-                            <span asp-validation-for="PasswordConfirm"></span>
-                        </div>
-                        <div class="field buttons">
-                            <button type="submit" class="submit btn green-color">Sign up</button>
-                        </div>
-                        <div class="clearfix"></div>
-                    </form><!-- end .reg -->
-                </div><!-- end .modal-body -->
-            </div><!-- end .modal-content -->
-        </div><!-- end .modal-dialog -->
-    </div><!-- end .modal -->
-    <!-- Javascript -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <!-- Bootstrap -->
-    <script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
-    <!-- Main jQuery -->
-    <script type="text/javascript" src="~/scripts/jquery.main.js"></script>
-    <!-- Form -->
-    <script type="text/javascript" src="~/scripts/jquery.idealforms.min.js"></script>
-    <script type="text/javascript" src="~/scripts/jquery.idealselect.min.js"></script>
-    <script type="text/javascript" src="~/scripts/jquery-ui-1.10.4.custom.min.js"></script>
-    <!-- Menu -->
-    <script type="text/javascript" src="~/scripts/hoverIntent.js"></script>
-    <script type="text/javascript" src="~/scripts/superfish.js"></script>
-    <!-- Counter-Up  -->
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-    <script type="text/javascript" src="~/scripts/jquery.counterup.min.js"></script>
-    <!-- Rating  -->
-    <script type="text/javascript" src="~/scripts/bootstrap-rating-input.min.js"></script>
-    <!-- Slicknav  -->
-    <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
-</body>
-</html>

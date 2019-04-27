@@ -13,9 +13,43 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Mvc.Rendering;
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
+#line 1 "D:\Internship\CarPooling\CarPooling.Web\Views\_ViewImports.cshtml"
+using CarPooling;
+
+#line default
+#line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b0f02c2a0bd82df3b0f8ddffd1dd810a99263097", @"/Views/Settings/General.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"6d7056b4eeb1cc58291750a6e88ffb174224f343", @"/Views/_ViewImports.cshtml")]
     public class Views_Settings_General : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<CarPooling.Web.ViewModels.Settings.GeneralInformationViewModel>
     {
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("type", "text", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_1 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "FirstName", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_2 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "LastName", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_3 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("name", "Email", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_4 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("autocomplete", new global::Microsoft.AspNetCore.Html.HtmlString("off"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_5 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("idealforms"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_6 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("method", "post", global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+        #line hidden
+        #pragma warning disable 0169
+        private string __tagHelperStringValueBuffer;
+        #pragma warning restore 0169
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperExecutionContext __tagHelperExecutionContext;
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner __tagHelperRunner = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperRunner();
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __backed__tagHelperScopeManager = null;
+        private global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager __tagHelperScopeManager
+        {
+            get
+            {
+                if (__backed__tagHelperScopeManager == null)
+                {
+                    __backed__tagHelperScopeManager = new global::Microsoft.AspNetCore.Razor.Runtime.TagHelpers.TagHelperScopeManager(StartTagHelperWritingScope, EndTagHelperWritingScope);
+                }
+                return __backed__tagHelperScopeManager;
+            }
+        }
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper;
+        private global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper;
         #pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
@@ -29,7 +63,7 @@ namespace AspNetCore
 
 #line default
 #line hidden
-            BeginContext(267, 650, true);
+            BeginContext(267, 645, true);
             WriteLiteral(@"
     <section class=""main-content col-md-12 col-sm-12 col-xs-12"">
         <div class=""container"">
@@ -44,17 +78,12 @@ namespace AspNetCore
         </div><!-- end .container -->
         <div class=""col-md-12 col-sm-12 col-xs-12"">
             <div>
-                <form");
+                ");
             EndContext();
-            BeginWriteAttribute("action", " action=\"", 917, "\"", 971, 1);
-#line 23 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
-WriteAttributeValue("", 926, Url.Action("GeneralInformation", "Settings"), 926, 45, false);
-
-#line default
-#line hidden
-            EndWriteAttribute();
-            BeginContext(972, 516, true);
-            WriteLiteral(@" novalidate autocomplete=""off"" class=""idealforms"" method=""post"">
+            BeginContext(912, 2969, false);
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b0f02c2a0bd82df3b0f8ddffd1dd810a992630976491", async() => {
+                BeginContext(1036, 397, true);
+                WriteLiteral(@"
                     <div class=""row margintop"" >
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
                             <div class=""field"">
@@ -62,17 +91,43 @@ WriteAttributeValue("", 926, Url.Action("GeneralInformation", "Settings"), 926, 
                             </div>
                         </div>
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
-                            <input asp-for=""FirstName"" type=""text"" name=""FirstName""");
-            EndContext();
-            BeginWriteAttribute("value", " value=", 1488, "", 1511, 1);
+                            ");
+                EndContext();
+                BeginContext(1433, 79, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b0f02c2a0bd82df3b0f8ddffd1dd810a992630977278", async() => {
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #line 31 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
-WriteAttributeValue("", 1495, Model.FirstName, 1495, 16, false);
+__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.FirstName);
 
 #line default
 #line hidden
-            EndWriteAttribute();
-            BeginContext(1511, 432, true);
-            WriteLiteral(@">
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_1.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_1);
+                BeginWriteTagHelperAttribute();
+#line 31 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
+                                                                              WriteLiteral(Model.FirstName);
+
+#line default
+#line hidden
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
+                __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                EndContext();
+                BeginContext(1512, 378, true);
+                WriteLiteral(@"
                         </div>
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
                             <div class=""field"">
@@ -80,17 +135,43 @@ WriteAttributeValue("", 1495, Model.FirstName, 1495, 16, false);
                             </div>
                         </div>
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
-                            <input asp-for=""LastName"" type=""text"" name=""LastName""");
-            EndContext();
-            BeginWriteAttribute("value", " value=", 1943, "", 1965, 1);
+                            ");
+                EndContext();
+                BeginContext(1890, 76, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b0f02c2a0bd82df3b0f8ddffd1dd810a9926309710360", async() => {
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #line 39 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
-WriteAttributeValue("", 1950, Model.LastName, 1950, 15, false);
+__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.LastName);
 
 #line default
 #line hidden
-            EndWriteAttribute();
-            BeginContext(1965, 499, true);
-            WriteLiteral(@">
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_2.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_2);
+                BeginWriteTagHelperAttribute();
+#line 39 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
+                                                                            WriteLiteral(Model.LastName);
+
+#line default
+#line hidden
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
+                __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                EndContext();
+                BeginContext(1966, 451, true);
+                WriteLiteral(@"
                         </div>
                     </div>
                     <div class=""row margintop"">
@@ -100,17 +181,43 @@ WriteAttributeValue("", 1950, Model.LastName, 1950, 15, false);
                             </div>
                         </div>
                         <div class=""col-md-9 col-sm-9 col-xs-12"">
-                            <input asp-for=""Email"" type=""text"" name=""Email""");
-            EndContext();
-            BeginWriteAttribute("value", " value=", 2464, "", 2483, 1);
+                            ");
+                EndContext();
+                BeginContext(2417, 67, false);
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b0f02c2a0bd82df3b0f8ddffd1dd810a9926309713514", async() => {
+                }
+                );
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
+                __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper);
 #line 49 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
-WriteAttributeValue("", 2471, Model.Email, 2471, 12, false);
+__Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvider.CreateModelExpression(ViewData, __model => __model.Email);
 
 #line default
 #line hidden
-            EndWriteAttribute();
-            BeginContext(2483, 460, true);
-            WriteLiteral(@">
+                __tagHelperExecutionContext.AddTagHelperAttribute("asp-for", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.InputTypeName = (string)__tagHelperAttribute_0.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_0);
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Name = (string)__tagHelperAttribute_3.Value;
+                __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_3);
+                BeginWriteTagHelperAttribute();
+#line 49 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
+                                                                      WriteLiteral(Model.Email);
+
+#line default
+#line hidden
+                __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+                __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value = __tagHelperStringValueBuffer;
+                __tagHelperExecutionContext.AddTagHelperAttribute("value", __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.Value, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+                await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+                if (!__tagHelperExecutionContext.Output.IsContentModified)
+                {
+                    await __tagHelperExecutionContext.SetOutputContentAsync();
+                }
+                Write(__tagHelperExecutionContext.Output);
+                __tagHelperExecutionContext = __tagHelperScopeManager.End();
+                EndContext();
+                BeginContext(2484, 459, true);
+                WriteLiteral(@"
                         </div>
                     </div>
                     <div class=""row margintop"">
@@ -121,16 +228,16 @@ WriteAttributeValue("", 2471, Model.Email, 2471, 12, false);
                         </div>
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
                             ");
-            EndContext();
-            BeginContext(2944, 54, false);
+                EndContext();
+                BeginContext(2944, 54, false);
 #line 59 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
                        Write(Html.DropDownListFor(x => x.YearofBirth , Model.Years));
 
 #line default
 #line hidden
-            EndContext();
-            BeginContext(2998, 375, true);
-            WriteLiteral(@"
+                EndContext();
+                BeginContext(2998, 375, true);
+                WriteLiteral(@"
                         </div>
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
                             <div class=""field"">
@@ -139,16 +246,16 @@ WriteAttributeValue("", 2471, Model.Email, 2471, 12, false);
                         </div>
                         <div class=""col-md-3 col-sm-3 col-xs-12"">
                             ");
-            EndContext();
-            BeginContext(3374, 50, false);
+                EndContext();
+                BeginContext(3374, 50, false);
 #line 67 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
                        Write(Html.DropDownListFor(x => x.Gender, Model.Genders));
 
 #line default
 #line hidden
-            EndContext();
-            BeginContext(3424, 586, true);
-            WriteLiteral(@"
+                EndContext();
+                BeginContext(3424, 450, true);
+                WriteLiteral(@"
                         </div>
                     </div>
                     <div class=""row margintop"">
@@ -159,10 +266,38 @@ WriteAttributeValue("", 2471, Model.Email, 2471, 12, false);
                         </div>
                      </div>
 
-                </form>
-            </div><!-- end .search-content -->
-        </div><!-- end .col-sm-12 -->
-    </section><!-- end .main-content -->");
+                ");
+                EndContext();
+            }
+            );
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.RenderAtEndOfFormTagHelper>();
+            __tagHelperExecutionContext.Add(__Microsoft_AspNetCore_Mvc_TagHelpers_RenderAtEndOfFormTagHelper);
+            BeginAddHtmlAttributeValues(__tagHelperExecutionContext, "action", 1, global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
+#line 23 "D:\Internship\CarPooling\CarPooling.Web\Views\Settings\General.cshtml"
+AddHtmlAttributeValue("", 926, Url.Action("GeneralInformation", "Settings"), 926, 45, false);
+
+#line default
+#line hidden
+            EndAddHtmlAttributeValues(__tagHelperExecutionContext);
+            BeginWriteTagHelperAttribute();
+            __tagHelperStringValueBuffer = EndWriteTagHelperAttribute();
+            __tagHelperExecutionContext.AddHtmlAttribute("novalidate", Html.Raw(__tagHelperStringValueBuffer), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.Minimized);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_4);
+            __tagHelperExecutionContext.AddHtmlAttribute(__tagHelperAttribute_5);
+            __Microsoft_AspNetCore_Mvc_TagHelpers_FormTagHelper.Method = (string)__tagHelperAttribute_6.Value;
+            __tagHelperExecutionContext.AddTagHelperAttribute(__tagHelperAttribute_6);
+            await __tagHelperRunner.RunAsync(__tagHelperExecutionContext);
+            if (!__tagHelperExecutionContext.Output.IsContentModified)
+            {
+                await __tagHelperExecutionContext.SetOutputContentAsync();
+            }
+            Write(__tagHelperExecutionContext.Output);
+            __tagHelperExecutionContext = __tagHelperScopeManager.End();
+            EndContext();
+            BeginContext(3881, 129, true);
+            WriteLiteral("\r\n            </div><!-- end .search-content -->\r\n        </div><!-- end .col-sm-12 -->\r\n    </section><!-- end .main-content -->");
             EndContext();
         }
         #pragma warning restore 1998
