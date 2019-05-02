@@ -1,0 +1,36 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Paputka";
+    int? number = ViewData["Count"] as int?;
+    int tpages = (int)number / 10;
+    Layout = "_Layout";
+}
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="page-content">
+                <div class="clearfix"></div>
+                <div class="last-rides">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-sub-title textcenter">
+                            <h2>RIDES</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="rides-list">
+                        <div id="AllRideTable"></div>
+                        <div class="clearfix"></div>
+                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                </div><!-- end .last-rides -->
+                <ul class="pagination">
+                    @for(int i=1;i<=tpages+1;i++)
+                    {
+                        <li><a class="paginationAll">@i</a></li>
+                    }
+                </ul>
+                </div>
+            </div>
+        </div>
+    </section>

@@ -12,3 +12,10 @@
     modal.find('.modal-body #ColorInput').val(res[3]);
     modal.find('.modal-body #SeatsInput').val(res[4]);
 })
+$(".DeleteButtonCar").click(function(){
+    var val = $(this).val();
+    $.get("/Car/Delete" + "/" + val, null, function()
+    {
+        location.reload();
+    });
+})

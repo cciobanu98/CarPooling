@@ -1,0 +1,150 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Paputka";
+}
+<!DOCTYPE html>
+<body>
+    <section class="main-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-sub-title textcenter">
+                        <h2>Contact</h2>
+                        <div class="line"></div>
+                    </div><!-- end .page-sub-title -->
+                </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                <div class="col-md-9 col-sm-12 col-xs-12">
+                    <div class="page-content">
+                        <form id="cantact-form" action="" novalidate autocomplete="off" class="idealforms">
+                            <div class="field">
+                                <input name="username" type="text" placeholder="Name">
+                                <span class="error"></span>
+                            </div>
+                            <div class="field">
+                                <input name="email" type="email" placeholder="Email address">
+                                <span class="error"></span>
+                            </div>
+                            <div class="field">
+                                <input name="website" type="text" placeholder="Website">
+                                <span class="error"></span>
+                            </div>
+                            <div class="full-fild">
+                                <textarea name="message" id="message" cols="5" placeholder="Message" rows="4"></textarea>
+                            </div>
+                            <div class="field buttons">
+                                <button type="submit" class="btn btn-lg blue-color">Submit</button>
+                            </div>
+                            <span id="invalid"></span>
+                        </form>
+                    </div><!-- end .page-content -->
+                </div><!-- end .col-md-9 -->
+                <div class="col-md-3 col-sm-12 col-xs-12">
+                    <aside id="sidebar" class="main-sidebar">
+                        <div class="search-widget sidebar-widget">
+                            <h4 class="widget-title">Search</h4>
+                            <div class="widget-content">
+                                <form class="idealforms search-form adaptive" autocomplete="off" novalidate="" action="">
+                                    <div class="field idealforms-field idealforms-field-email">
+                                        <input type="text" placeholder="Text" name="search">
+                                    </div>
+                                    <div class="field buttons">
+                                        <button class="btn btn-lg blue-color" type="submit">Search</button>
+                                    </div>
+                                </form>
+                            </div><!-- end .widget-content -->
+                        </div><!-- end .archives-widget -->
+                        <div class="archives-widget sidebar-widget">
+                            <h4 class="widget-title">Archives</h4>
+                            <div class="widget-content">
+                                <ul>
+                                    <li><a href="#">November 2013</a> <span>(2)</span></li>
+                                    <li><a href="#">October 2013</a> <span>(5)</span></li>
+                                    <li><a href="#">September 2013</a> <span>(10)</span></li>
+                                    <li><a href="#">August 2013</a> <span>(9)</span></li>
+                                    <li><a href="#">July 2013</a> <span>(10)</span></li>
+                                    <li><a href="#">June 2013</a> <span>(11)</span></li>
+                                </ul>
+                            </div><!-- end .widget-content -->
+                        </div><!-- end .archives-widget -->
+                        <div class="calendar sidebar-widget">
+                            <h4 class="widget-title">Calendar</h4>
+                            <div class="widget-content">
+                                <div id="calendar_wrap">
+                                    <div class="calendar-nav">
+                                        <div class="calendar-prev">
+                                            <a href="#"></a>
+                                        </div>
+                                        <div class="calendar-next">
+                                            <a href="#"></a>
+                                        </div>
+                                    </div>
+                                    <table id="wp-calendar">
+                                        <caption>April 2014</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" title="Monday">Mo</th>
+                                                <th scope="col" title="Tuesday">Tu</th>
+                                                <th scope="col" title="Wednesday">We</th>
+                                                <th scope="col" title="Thursday">Th</th>
+                                                <th scope="col" title="Friday">Fr</th>
+                                                <th scope="col" title="Saturday">Sa</th>
+                                                <th scope="col" title="Sunday">Su</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td colspan="1" class="pad">&nbsp;</td>
+                                                <td>1</td>
+                                                <td>2</td>
+                                                <td>3</td>
+                                                <td>4</td>
+                                                <td>5</td>
+                                                <td>6</td>
+                                            </tr>
+                                            <tr>
+                                                <td>7</td>
+                                                <td>8</td>
+                                                <td>9</td>
+                                                <td>10</td>
+                                                <td>11</td>
+                                                <td>12</td>
+                                                <td>13</td>
+                                            </tr>
+                                            <tr>
+                                                <td>14</td>
+                                                <td>15</td>
+                                                <td>16</td>
+                                                <td>17</td>
+                                                <td>18</td>
+                                                <td>19</td>
+                                                <td>20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>21</td>
+                                                <td>22</td>
+                                                <td>23</td>
+                                                <td>24</td>
+                                                <td>25</td>
+                                                <td id="today"><a href="">26</a></td>
+                                                <td>27</td>
+                                            </tr>
+                                            <tr>
+                                                <td>28</td>
+                                                <td>29</td>
+                                                <td>30</td>
+                                                <td class="pad" colspan="4">&nbsp;</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div><!-- end .calendar_wrap -->
+                            </div><!-- end .widget-content -->
+                        </div><!-- end .sidebar-widget -->
+                    </aside><!-- end .main-sidebar -->
+                </div><!-- end .col-md-3 -->
+            </div><!-- end .row -->
+        </div><!-- end .container -->
+    </section><!-- end .main-content -->
+</body>

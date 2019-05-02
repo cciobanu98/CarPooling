@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using CarPooling.Domain;
 using CarPooling.Web.ViewModels.Settings;
+using CarPooling.Web.ViewModels;
 namespace CarPooling.Web.Profiles
 {
     public class RideProfile : Profile
@@ -12,6 +13,7 @@ namespace CarPooling.Web.Profiles
         public RideProfile()
         {
             CreateMap<Ride, RideViewModel>();
+            CreateMap<Ride, LastRideViewModel>();
         }
     }
 }

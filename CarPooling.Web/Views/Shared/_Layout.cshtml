@@ -1,7 +1,6 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model CarPooling.Web.ViewModels.RegisterViewModel
 @{
 }
 <!DOCTYPE html>
@@ -110,10 +109,8 @@
                                                 <li class="dropdown-footer">
                                                     <form method="post" action="@Url.Action("LogOff", "Account")">
                                                         <button type="submit">
-                                                            <a>
-                                                                <i class="mdi mdi-logout"> </i>
-                                                                Log Out
-                                                            </a>
+                                                            <i class="mdi mdi-logout"> </i>
+                                                            Log Out
                                                         </button>
                                                     </form>
                                                 </li>
@@ -127,10 +124,10 @@
                         {
                             <div class="col-md-4 col-sm-4 col-xs-12">
                                 <div class="user-log">
-                                    <button  data-toggle="modal" data-target="#loginModal" id="LoginButton">
+                                    <a data-toggle="modal" data-target="#loginModal" id="LoginButton">
                                         Log in
-                                    </button> /
-                                    <a href="Register.cshtml" data-toggle="modal" data-target="#regModal">
+                                    </a> /
+                                    <a data-toggle="modal" data-target="#regModal" id="RegisterButton">
                                         Sign-up
                                     </a>
                                 </div><!-- end .user-log -->
@@ -197,14 +194,10 @@
             </div><!-- end .main-baner -->
         </header><!-- end .header -->
         @RenderBody()
-        @{Html.RenderPartialAsync("~/Views/Shared/_Footer.cshtml");}
+        @{await Html.RenderPartialAsync("~/Views/Shared/_Footer.cshtml");}
     </div>
-    <div class="modal fade text-center" id="loginModal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-            </div>
-        </div>
-    </div>
+    @{await Html.RenderPartialAsync("~/Views/Home/_Login.cshtml");}
+    @{await Html.RenderPartialAsync("~/Views/Home/_Register.cshtml");}
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -225,7 +218,8 @@
     <script type="text/javascript" src="~/scripts/bootstrap-rating-input.min.js"></script>
     <!-- Slicknav  -->
     <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
-    <script src="~/scripts/myjquery.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="~/scripts/Account.js"></script>
 
 </body>
 </html>

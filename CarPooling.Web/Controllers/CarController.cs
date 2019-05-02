@@ -30,6 +30,7 @@ namespace CarPooling.Web.Controllers
         }
         [HttpGet]
         [Route("CarInformation")]
+        //Pagination
         public IActionResult CarInformation()
         {
             var id = _userManager.GetUserId(HttpContext.User);
@@ -51,15 +52,20 @@ namespace CarPooling.Web.Controllers
         [Route("CarInformation")]
         public IActionResult CarInformation(CarInformationViewModel carModel)
         {
-            var id = _userManager.GetUserId(HttpContext.User);
-            Car car = _mapper.Map<Car>(carModel);
-            car.User = _userManager.GetUserAsync(HttpContext.User).Result;
-            _repoCar.Insert(car);
-            _repoCar.Save();
+            if (ModelState.IsValid)
+            {
+                var id = _userManager.GetUserId(HttpContext.User);
+                Car car = _mapper.Map<Car>(carModel);
+                car.User = _userManager.GetUserAsync(HttpContext.User).Result;
+                _repoCar.Insert(car);
+                _repoCar.Save();
+                return RedirectToAction("CarInformation");
+            }
+            ModelState.AddModelError("", "Car Add error");
             return RedirectToAction("CarInformation");
-            //return View("~/Views/Settings/Car.cshtml");
         }
-        [Route("Delete")]
+        [Route("Delete/{id?}")]
+        [HttpGet]
         public IActionResult Delete(int? id)
         {
             if (id == null)
@@ -77,7 +83,7 @@ namespace CarPooling.Web.Controllers
             Mapper.Map(carModel, car);
             _repoCar.Update(car);
             _repoCar.Save();
-            return RedirectToAction("CarINformation");
+            return RedirectToAction("CarInformation");
         }
     }
 }

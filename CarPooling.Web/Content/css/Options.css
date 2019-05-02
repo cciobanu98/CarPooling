@@ -20,3 +20,11 @@
     padding-top: 5px;
     text-align: right;
 }
+th.myButton {
+    display: table-cell;
+    height: 100%;
+}
+th.myButton button {
+            width: 100%;
+            height: 100%; /* scale the height with respect to the table cell */
+        }

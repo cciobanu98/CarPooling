@@ -7,11 +7,12 @@ namespace CarPooling.Web.ViewModels
 {
     public class SelectRideViewModel
     {
-        public string Source { get; set; }
-        public string Destination { get; set; }
-        public string StartDatetime { get; set; }
-        public int Price { get; set; }
-        public int Seats { get; set; }
-        public string UserName { get; set; }
+        public string SourceLocation { get; set; }
+        public string DestinationLocation { get; set; }
+        public string TravelStartDateTime { get; set; }
+        public float SourceLocationLat { get; set; }
+        public float SourceLocationLng { get; set; }
+        public float DestinationLocationLat { get; set; }
+        public float DestinationLocationLng { get; set; }
     }
 }

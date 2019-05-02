@@ -48,7 +48,7 @@ namespace CarPooling.Web.Controllers
                             Id = c.Id
                         };
             ViewData["List"] = query;
-            return View("~/Views/Home/add-ride.cshtml");
+            return View("~/Views/Home/AddRide.cshtml");
         }
 
         [HttpPost]
@@ -63,12 +63,14 @@ namespace CarPooling.Web.Controllers
             source.Longitude = rideModel.SourceLocationLng;
             source.Street = sourceInfo[0];
             source.City = sourceInfo[1];
-            source.Country = sourceInfo[2];
+            if (sourceInfo.Length != 2)
+                source.Country = sourceInfo[2];
             destination.Latitude = rideModel.DestinationLocationLat;
             destination.Longitude = rideModel.DestinationLocationLng;
             destination.Street = destinationInfo[0];
             destination.City = destinationInfo[1];
-            destination.Country = destinationInfo[2];
+            if (destinationInfo.Length != 2)
+                destination.Country = destinationInfo[2];
             ride.CreatedDateTime = DateTime.Now;
             ride.SourceLocation = source;
             ride.DestinationLocation = destination;
