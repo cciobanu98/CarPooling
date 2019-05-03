@@ -38,6 +38,7 @@ namespace CarPooling.Web
             services.AddAutoMapper();
             services.AddRepositoryServices();
             services.AddMvc();
+            services.AddSession();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -60,6 +61,7 @@ namespace CarPooling.Web
             });
 
             Mapper.Configuration.AssertConfigurationIsValid();
+            app.UseSession();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

@@ -141,5 +141,5 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Sett
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_LastRide.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\AllRides.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_Rides.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_SelectedRides.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_SelectRides.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\SelectedRides.g.cshtml.cs

@@ -13,6 +13,8 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace CarPooling.Web.Controllers
 {
@@ -24,7 +26,9 @@ namespace CarPooling.Web.Controllers
         private readonly IGenericRepository<Car> _repoCar;
         private readonly IGenericRepository<Location> _repoLocation;
         private readonly IGenericRepository<Ride> _repoRides;
-        public SelectRideController(CarPoolingContext context, UserManager<User> userManager, IMapper mapper, IGenericRepository<Car> repoCar, IGenericRepository<Location> repoLocation, IGenericRepository<Ride> repoRide)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+        public SelectRideController(CarPoolingContext context, UserManager<User> userManager, IMapper mapper, IGenericRepository<Car> repoCar, IGenericRepository<Location> repoLocation, IGenericRepository<Ride> repoRide, IHttpContextAccessor httpContextAccessor)
         {
             _context = context;
             _userManager = userManager;
@@ -32,6 +36,7 @@ namespace CarPooling.Web.Controllers
             _repoCar = repoCar;
             _repoLocation = repoLocation;
             _repoRides = repoRide;
+            _httpContextAccessor = httpContextAccessor;
         }
         private class MinMaxLocation
         {
@@ -82,15 +87,42 @@ namespace CarPooling.Web.Controllers
             var d = R * c;
             return (float)d;
         }
-        public IActionResult SelectRide()
+        private IQueryable<SelectedRidesViewModel> Sort(IQueryable<SelectedRidesViewModel> query, string sort)
         {
-           // ViewData["Count"] = 30;
+            switch (sort)
+            {
+                case "SortPriceascending":
+                    return query.OrderBy(x => x.Price);
+                case "SortSourceascending":
+                    return query.OrderBy(x => x.DistanceFromSource);
+                case "SortDestinationascending":
+                    return query.OrderBy(x => x.DistanceFromDestination);
+                case "SortDateascending":
+                    return query.OrderBy(x => x.TravelStartDateTime);
+                case "SortSeatsascending":
+                    return query.OrderBy(x => x.Seats);
+                case "SortPricedescending":
+                    return query.OrderByDescending(x => x.Price);
+                case "SortSourcedescending":
+                    return query.OrderByDescending(x => x.DistanceFromSource);
+                case "SortDestinationdescending":
+                    return query.OrderByDescending(x => x.DistanceFromDestination);
+                case "SortDatedescending":
+                    return query.OrderByDescending(x => x.TravelStartDateTime);
+                case "SortSeatsdescending":
+                    return query.OrderByDescending(x => x.Seats);
+                default:
+                    return query.OrderByDescending(x => x.Price);
+            }
+        }
+        public IActionResult SelectRides()
+        {
+            //ViewData["Count"] = 30;
             return View("~/Views/Home/SelectRide.cshtml");
         }
-        public PartialViewResult OnGetSelectRidePartial(SelectRideViewModel model, int pageId = 1, int pageSize = 10)
+        public IActionResult SelectedRides(SelectRideViewModel model)
         {
-            int skip = (pageId - 1) * pageSize;
-            Coordinates source = new Coordinates(); 
+            Coordinates source = new Coordinates();
             Coordinates destination = new Coordinates();
             source.Lat = model.SourceLocationLat;
             source.Long = model.SourceLocationLng;
@@ -98,10 +130,9 @@ namespace CarPooling.Web.Controllers
             destination.Long = model.DestinationLocationLng;
             MinMaxLocation sourceRadius = GetMinMax(source);
             MinMaxLocation destinationRadius = GetMinMax(destination);
-            var n = _context.Rides.Count();
             var query = (from r in _context.Rides.Include(x => x.Car.User)
-                        .Include(x => x.DestinationLocation)
-                        .Include(x => x.SourceLocation)
+                       .Include(x => x.DestinationLocation)
+                       .Include(x => x.SourceLocation)
                          where (r.SourceLocation.Latitude >= sourceRadius.minLat &&
                          r.SourceLocation.Latitude <= sourceRadius.maxLat &&
                          r.SourceLocation.Longitude >= sourceRadius.minLong &&
@@ -111,7 +142,6 @@ namespace CarPooling.Web.Controllers
                          r.DestinationLocation.Longitude >= destinationRadius.minLong &&
                          r.DestinationLocation.Longitude <= destinationRadius.maxLong &&
                          r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime))
-                         orderby r.Price descending
                          select new SelectedRidesViewModel
                          {
                              Source = r.SourceLocation.City,
@@ -123,10 +153,25 @@ namespace CarPooling.Web.Controllers
                              DistanceFromDestination = GetDistanceInKm(destination, new Coordinates(r.DestinationLocation.Latitude, r.DestinationLocation.Longitude)),
                              TravelStartDateTime = r.TravelStartDateTime
                          });
+            ViewData["Count"] = query.Count();
+            ViewData["query"] = query;
+            _session.SetString("query", JsonConvert.SerializeObject(query.ToArray()));
+            return View("~/Views/Home/SelectedRides.cshtml");
+        }
+        public PartialViewResult OnGetSelectRidePartial(int pageId = 1, int pageSize = 10, string sort = "default", string search = null)
+        {
+            var value = _session.GetString("query");
+            var query = JsonConvert.DeserializeObject<SelectedRidesViewModel[]>(value).AsQueryable();
+            int skip = (pageId - 1) * pageSize;
+            query = Sort(query, sort);
+            if (search != null && search != "" && search != "null")
+            {
+                query = query.Where(x => x.Username.Contains(search) || x.Destination.Contains(search) || x.Source.Contains(search));
+            }
             ViewData["Count"] = query.Count() ;
             return new PartialViewResult
             {
-                ViewName = "~/Views/Home/_SelectedRides.cshtml",
+                ViewName = "~/Views/Home/_SelectRides.cshtml",
                 ViewData = new ViewDataDictionary<List<SelectedRidesViewModel>>(ViewData, query.ToList())
             };
         }

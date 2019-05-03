@@ -17,9 +17,10 @@
                         <div class="line"></div>
                     </div><!-- end .page-sub-title -->
                 </div><!-- end .col-lg-12 -->
-                <div class="col-sm-6 col-md-6 col-xs-12">>
+                <div class="col-sm-6 col-md-6 col-xs-12">
+                    >
                     <div class="page-content add-new-ride">
-                        <form novalidate autocomplete="off" class="idealforms add-ride" id="selectRideForm">
+                        <form novalidate autocomplete="off" class="idealforms add-ride" id="selectRideForm" method="post" action="@Url.Action("SelectedRides", "SelectRide")">
                             <div class="field">
                                 <input asp-for="SourceLocation" type="search" id="sourceSearch" placeholder="From?" />
                             </div>
@@ -48,4 +49,5 @@
         </div><!-- end .container -->
     </section><!-- end .main-content -->
     <script type="text/javascript" src="~/scripts/map.js"></script>
+    <script src="~/scripts/Account.js"></script>
 </body>

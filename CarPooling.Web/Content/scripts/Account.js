@@ -22,21 +22,21 @@ $(function() {
         loadTable(page);
     });
 });
-$(function(){
-    var pageId = 1;
-    var mod;
-     var loadTable = function(pageId) {
-         console.log('/SelectRide/OnGetSelectRidePartial?model'+ mod + '&pageId=' + pageId + '&pageSize=5');
-         $('#SelectedRidesTable').load('/SelectRide/OnGetSelectRidePartial?'+mod + '&pageId=' + pageId + '&pageSize=5');
-     }
-    $("#SearchButton").click(function(e){
+var mod;
+var prev;
+var tog;
+$( document ).ready(function(){
+    $("#SearchButton").click(function(){
         e.preventDefault();
-        mod = $('#selectRideForm').serialize()
-        console.log(pageId);
-        loadTable(pageId);
+        console.log($("#selectRideForm").serialize())
+        $.ajax({
+            url:'SelectedRides',
+            data: $("#selectRideForm").serialize(),
+
+        }).done(function(res){
+            console.log("Succes");
+            window.location.href = res.newUrl;
+        })
+        //location.replace("SelectedRides");
     })
-     $('.paginationSelect').on('click', function() {
-         var page = $(this).html();
-         loadTable(page);
-     });
 });
