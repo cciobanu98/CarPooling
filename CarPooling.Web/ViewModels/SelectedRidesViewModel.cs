@@ -7,6 +7,7 @@ namespace CarPooling.Web.ViewModels
 {
     public class SelectedRidesViewModel
     {
+        public int Id { get; set; }
         public float DistanceFromSource { get; set; }
         public float DistanceFromDestination { get; set; }
         public int Price { get; set; }

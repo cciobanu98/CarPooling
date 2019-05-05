@@ -3,6 +3,8 @@
 *@
 @model List<CarPooling.Web.ViewModels.LastRideViewModel>
 @{
+    int? number = ViewData["Count"] as int?;
+    int tpages = (int)number / 10;
 }
 @foreach (var m in Model)
 {
@@ -24,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="#">
+                <a id="read-more @m.Id">
                     <i class="fa fa-file"></i>
                     Read more
                 </a>
@@ -32,3 +34,11 @@
         </ul>
     </article>
 }
+<ul class="pagination">
+    @for (int i = 1; i <= tpages + 1; i++)
+    {
+        <li><a class="paginationAll">@i</a></li>
+    }
+</ul>
+<script src="~/scripts/AllRides.js"></script>
+<script type="text/javascript" src="~/scripts/MoreInformation.js"></script>

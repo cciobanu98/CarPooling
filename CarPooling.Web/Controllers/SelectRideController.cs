@@ -151,7 +151,8 @@ namespace CarPooling.Web.Controllers
                              Username = r.Car.User.UserName,
                              DistanceFromSource = GetDistanceInKm(source, new Coordinates(r.SourceLocation.Latitude, r.SourceLocation.Longitude)),
                              DistanceFromDestination = GetDistanceInKm(destination, new Coordinates(r.DestinationLocation.Latitude, r.DestinationLocation.Longitude)),
-                             TravelStartDateTime = r.TravelStartDateTime
+                             TravelStartDateTime = r.TravelStartDateTime,
+                             Id = r.Id
                          });
             ViewData["Count"] = query.Count();
             ViewData["query"] = query;
@@ -169,6 +170,7 @@ namespace CarPooling.Web.Controllers
                 query = query.Where(x => x.Username.Contains(search) || x.Destination.Contains(search) || x.Source.Contains(search));
             }
             ViewData["Count"] = query.Count() ;
+            query = query.Skip(skip).Take(pageSize);
             return new PartialViewResult
             {
                 ViewName = "~/Views/Home/_SelectRides.cshtml",

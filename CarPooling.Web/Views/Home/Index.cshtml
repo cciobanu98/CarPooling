@@ -83,7 +83,7 @@
                             </div><!-- end .page-sub-title -->
                         </div>
                         <div class="col-md-12 col-sm-12 col-xs-12">
-                          @{ await Html.RenderPartialAsync("~/Views/Home/_LastRide.cshtml", r);}
+                            @{ await Html.RenderPartialAsync("~/Views/Home/_LastRide.cshtml", r);}
 
                             <div class="clearfix"></div>
                             <div class="read-all pagination-margin">
@@ -93,10 +93,10 @@
                             </div>
                         </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
                     </div><!-- end .last-rides -->
-                   
+                    <div id="ModalMoreRead"></div>
                 </div><!-- end .page-content -->
             </div><!-- end .row -->
         </div><!-- end .container -->
     </section><!-- end .main-content -->
-    
+    <script src="~/scripts/Account.js"></script>
 </body>
