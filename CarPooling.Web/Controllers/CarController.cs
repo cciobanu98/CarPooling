@@ -1,64 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using CarPooling.Context;
-using CarPooling.Domain;
-using Microsoft.AspNetCore.Identity;
-using CarPooling.Web.ViewModels.Settings;
-using CarPooling.DataAcces.Repository;
-using AutoMapper;
-using Microsoft.AspNetCore.Mvc.Rendering;
+using CarPooling.BussinesLogic.Interfaces;
+using CarPooling.DTO;
+using System.Collections.Generic;
+
 namespace CarPooling.Web.Controllers
 {
-    [Route("Car")]
+    [Route("Settings/Car")]
     [Authorize(Roles = "admin, user")]
     public class CarController : Controller
     {
-        private readonly CarPoolingContext _context;
-        private readonly UserManager<User> _userManager;
-        private readonly IMapper _mapper;
-        private readonly IGenericRepository<Car> _repoCar;
-        public CarController(CarPoolingContext context, UserManager<User> userManager, IMapper mapper, IGenericRepository<Car> repoCar)
+        private readonly IUserService _userService;
+        private readonly ICarService _carService;
+        public CarController(IUserService userService, ICarService carService)
         {
-            _context = context;
-            _userManager = userManager;
-            _mapper = mapper;
-            _repoCar = repoCar;
+            _userService = userService;
+            _carService = carService;
         }
         [HttpGet]
-        [Route("CarInformation")]
-        //Pagination
         public IActionResult CarInformation()
         {
-            var id = _userManager.GetUserId(HttpContext.User);
-            var Cars = _repoCar.GetAll();
-            var query = from c in Cars
-                        where c.UserId == id
-                        select new CarInformationViewModel
-                        {
-                            Color = c.Color,
-                            Model = c.Model,
-                            Seats = c.Seats,
-                            Number = c.Number,
-                            Id = c.Id
-                        };
-            ViewData["List"] = query;
-            return View("~/Views/Settings/Car.cshtml");
+            //Try to change to model
+            //To do pagination or to restrict to 5 cars
+            List<CarInformationDTO> cars = _userService.GetAllCarOfUser(HttpContext.User);
+            ViewData["List"] = cars;
+            return View("~/Views/Settings/Car/Car.cshtml");
         }
         [HttpPost]
-        [Route("CarInformation")]
-        public IActionResult CarInformation(CarInformationViewModel carModel)
+        public IActionResult CarInformation(CarInformationDTO carModel)
         {
             if (ModelState.IsValid)
             {
-                var id = _userManager.GetUserId(HttpContext.User);
-                Car car = _mapper.Map<Car>(carModel);
-                car.User = _userManager.GetUserAsync(HttpContext.User).Result;
-                _repoCar.Insert(car);
-                _repoCar.Save();
+                string userId = _userService.GetUserIdByClaims(HttpContext.User);
+                _carService.AddCar(userId, carModel);
                 return RedirectToAction("CarInformation");
             }
             ModelState.AddModelError("", "Car Add error");
@@ -72,17 +46,20 @@ namespace CarPooling.Web.Controllers
             {
                 return NotFound();
             }
-            _repoCar.Delete(id);
-            _repoCar.Save();
+            _carService.DeleteCarById(id ?? default(int));
             return RedirectToAction("CarInformation");
         }
+        [Route("Edit")]
         [HttpPost]
-        public IActionResult Edit(CarInformationViewModel carModel)
+        public IActionResult Edit(CarInformationDTO carModel)
         {
-            Car car = _repoCar.GetById(carModel.Id);
-            Mapper.Map(carModel, car);
-            _repoCar.Update(car);
-            _repoCar.Save();
+            if (ModelState.IsValid)
+            {
+                _carService.EditCar(carModel);
+                return RedirectToAction("CarInformation");
+            }
+
+            ModelState.AddModelError("", "Car Edit error");
             return RedirectToAction("CarInformation");
         }
     }

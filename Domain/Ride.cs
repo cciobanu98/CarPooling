@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarPooling.Domain
 {
-    public class Ride
+    public class Ride : IEntity<int>
     {
         public int Id { get; set; }
         public int CarId { get; set; }
@@ -18,6 +18,7 @@ namespace CarPooling.Domain
         public List<EnrouteLocation> EnrouteLocations { get; set; } = new List<EnrouteLocation>();
         public int Price { get; set; }
         public int Seats { get; set; }
-        public List<Request> Requests { get; set; } = new List<Request>();
+       // public List<Request> Requests { get; set; } = new List<Request>();
+        public List<User> Passengers { get; set; } = new List<User>();
     }
 }

@@ -1,0 +1,83 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CarPooling.DTO.GeneralInformationDTO
+@{
+    Layout = "_Settingslayout";
+    ViewBag.Title = "Settings";
+    IEnumerable<SelectListItem> years = ViewData["years"] as IEnumerable<SelectListItem>;
+    IEnumerable<SelectListItem> genders = ViewData["genders"] as IEnumerable<SelectListItem>;
+}
+
+    <section class="main-content col-md-12 col-sm-12 col-xs-12">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="page-sub-title textcenter">
+                        <h2>General Information</h2>
+                        <div class="line"></div>
+                    </div><!-- end .page-sub-title -->
+                </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+            </div><!-- end .row -->
+        </div><!-- end .container -->
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <div>
+                <form action="@Url.Action("Index", "Settings")" novalidate autocomplete="off" class="idealforms" method="post">
+                    <div class="row margintop" >
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>First Name</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <input asp-for="FirstName" type="text" name="FirstName" value=@Model.FirstName>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Last Name</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <input asp-for="LastName" type="text" name="LastName" value=@Model.LastName>
+                        </div>
+                    </div>
+                    <div class="row margintop">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Email</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-xs-12">
+                            <input asp-for="Email" type="text" name="Email" value=@Model.Email>
+                        </div>
+                    </div>
+                    <div class="row margintop">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Year of birth</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            @Html.DropDownListFor(x => x.YearofBirth , years)
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field">
+                                <label><i>Gender</i></label>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            @Html.DropDownListFor(x => x.Gender, genders)
+                        </div>
+                    </div>
+                    <div class="row margintop">
+                        <div class="col-md-3 col-sm-3 col-xs-12">
+                            <div class="field buttons">
+                                <button type="submit" class="btn btn-lg green-color">Save</button>
+                            </div>
+                        </div>
+                     </div>
+
+                </form>
+            </div><!-- end .search-content -->
+        </div><!-- end .col-sm-12 -->
+    </section><!-- end .main-content -->

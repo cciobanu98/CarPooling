@@ -1,0 +1,52 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<CarPooling.DTO.SelectedRidesDTO>
+@{
+}
+@foreach (var m in Model)
+{
+    <article class="ride-box clearfix row">
+        <div class="ride-content">
+            <h3><a href="#">From @m.Source to @m.Destination</a></h3> ride by <a href="#">@m.Username</a>
+        </div>                                  <ul class="ride-meta">
+            <li class="ride-date">
+                <a href="#" class="tooltip-link" dara-original0title="Date" data-toggle="tooltip">
+                    <i class="fa fa-calendar"></i>
+                    @m.TravelStartDateTime
+                </a>
+            </li>
+            <li class="ride-people">
+                <a href="#" class="tooltip-link" dara-original-title="Date" data-toggle="tooltip">
+                    <i class="fa fa-user"></i>
+                    @m.Seats
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-money" aria-hidden="true"></i>
+                    @m.Price
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-road" aria-hidden="true"></i>
+                    @String.Format("{0:0.0}", m.DistanceFromSource) km
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-road" aria-hidden="true"></i>
+                    @String.Format("{0:0.0}", m.DistanceFromDestination) km
+                </a>
+            </li>
+            <li>
+                <a id="read-more @m.Id">
+                    <i class="fa fa-file"></i>
+                    Read more
+                </a>
+            </li>
+        </ul>
+    </article>
+}
+    <script type="text/javascript" src="~/scripts/MoreInformation.js"></script>

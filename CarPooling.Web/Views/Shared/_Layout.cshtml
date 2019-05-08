@@ -98,7 +98,7 @@
                                                     <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
                                                 </li>
                                                 <li>
-                                                    <a href="@Url.Action("GeneralInformation", "Settings")"> <i class="mdi mdi-settings"></i> Account Settings </a>
+                                                    @Html.ActionLink("Account Settings", "Index", "Settings")
                                                 </li>
                                                 @if (User.IsInRole("admin"))
                                                 {
@@ -135,18 +135,32 @@
                         }
                         <div class="navbar-right">
                             <ul class="social-icons">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <li>
+                                        <a href="#" class="textchange">
+                                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                                        </a>
+                                    </li>
                                 <li>
-                                    <a class="facebook" href="#">
+                                    <a data-toggle="popover" data-placement="bottom" title="Notifications" class="textchange">
+                                        <i class="fa fa-bell" aria-hidden="true"></i>
+                                        <span class="badge notification-count" id="notificationCount"></span>
+                                    </a>
+                                </li>
+                                }
+                                <li>
+                                    <a class="facebook textchange" href="#">
                                         <i class="fa fa-facebook"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="twitter" href="#">
+                                    <a class="twitter textchange" href="#">
                                         <i class="fa fa-twitter"></i>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="google" href="#">
+                                    <a class="google textchange" href="#">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </li>
@@ -174,13 +188,13 @@
                                                         @Html.ActionLink("Home", "Index", "Home")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Rides", "SelectRides", "SelectRide")
+                                                        @Html.ActionLink("Rides", "Index", "SelectRide")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Add Ride", "AddRide", "Ride")
+                                                        @Html.ActionLink("Add Ride", "Index", "AddRide")
                                                     </li>
                                                     <li>
-                                                        @Html.ActionLink("Contact", "Contact", "Home")
+                                                        @Html.ActionLink("Contact", "Index", "Contact")
                                                     </li>
                                                 </ul>
                                             </nav><!-- end .main-navigation -->
@@ -196,8 +210,8 @@
         @RenderBody()
         @{await Html.RenderPartialAsync("~/Views/Shared/_Footer.cshtml");}
     </div>
-    @{await Html.RenderPartialAsync("~/Views/Home/_Login.cshtml");}
-    @{await Html.RenderPartialAsync("~/Views/Home/_Register.cshtml");}
+    @{await Html.RenderPartialAsync("~/Views/Shared/_Login.cshtml");}
+    @{await Html.RenderPartialAsync("~/Views/Shared/_Register.cshtml");}
     <!-- Javascript -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- Bootstrap -->
@@ -219,7 +233,8 @@
     <!-- Slicknav  -->
     <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="~/scripts/signalr.min.js"></script>
     <script type="text/javascript" src="~/scripts/MoreInformation.js"></script>
-
+    <script type="text/javascript" src="~/scripts/Notification.js"></script>
 </body>
 </html>

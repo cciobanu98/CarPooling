@@ -25,3 +25,6 @@ D:\Internship\CarPooling\Domain\obj\Debug\netcoreapp2.2\CarPooling.Domain.Assemb
 D:\Internship\CarPooling\Domain\obj\Debug\netcoreapp2.2\CarPooling.Domain.AssemblyInfo.cs
 D:\Internship\CarPooling\Domain\obj\Debug\netcoreapp2.2\CarPooling.Domain.dll
 D:\Internship\CarPooling\Domain\obj\Debug\netcoreapp2.2\CarPooling.Domain.pdb
+D:\Internship\CarPooling\Domain\bin\Debug\netcoreapp2.2\CarPooling.Helpers.dll
+D:\Internship\CarPooling\Domain\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb
+D:\Internship\CarPooling\Domain\obj\Debug\netcoreapp2.2\CarPooling.Domain.csproj.CopyComplete

@@ -6,7 +6,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 using CarPooling.Domain;
-using CarPooling.Web.Helpers;
 namespace CarPooling.Web
 {
     public class Program
@@ -38,7 +37,6 @@ namespace CarPooling.Web
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>()
-                .UseWebRoot("Content")
                 .ConfigureLogging(logging =>
                 {
                     logging.ClearProviders();

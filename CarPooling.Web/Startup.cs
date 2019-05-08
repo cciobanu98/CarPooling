@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -11,8 +7,10 @@ using Microsoft.Extensions.DependencyInjection;
 using CarPooling.Domain;
 using CarPooling.Context;
 using AutoMapper;
-using CarPooling.Infrastructure.services;
-using CarPooling.Web.Profiles;
+using CarPooling.Infrastructure;
+using CarPooling.BussinesLogic.Hubs;
+
+
 namespace CarPooling.Web
 {
     public class Startup
@@ -36,9 +34,10 @@ namespace CarPooling.Web
             })
                 .AddEntityFrameworkStores<CarPoolingContext>();
             services.AddAutoMapper();
-            services.AddRepositoryServices();
-            services.AddMvc();
+            services.RegisterServices();
+            services.AddMvc().AddJsonOptions(x => x.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore); ;
             services.AddSession();
+            services.AddSignalR();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -53,14 +52,18 @@ namespace CarPooling.Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+           
             app.UseAuthentication();
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<NotificationHub>("/notification");
+            });
             Mapper.Initialize(x =>
             {
-                x.AddProfile<UserProfile>();
-                x.AddProfile<CarProfile>();
+                x.AddProfile<Profiles>();
             });
 
-            Mapper.Configuration.AssertConfigurationIsValid();
+            //Mapper.Configuration.AssertConfigurationIsValid();
             app.UseSession();
             app.UseMvc(routes =>
             {

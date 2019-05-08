@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarPooling.DataAcces\CarPooling.DataAcces.csproj" />
+    <ProjectReference Include="..\CarPooling.Repository\CarPooling.BussinesLogic.csproj" />
   </ItemGroup>
 
 </Project>

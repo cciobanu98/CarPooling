@@ -1,0 +1,12 @@
+D:\Internship\CarPooling\CarPooling.Helpers\bin\Debug\netcoreapp2.2\CarPooling.Helpers.deps.json
+D:\Internship\CarPooling\CarPooling.Helpers\bin\Debug\netcoreapp2.2\CarPooling.Helpers.dll
+D:\Internship\CarPooling\CarPooling.Helpers\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.csproj.CoreCompileInputs.cache
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.AssemblyInfoInputs.cache
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.AssemblyInfo.cs
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.dll
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.pdb
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.csprojAssemblyReference.cache
+D:\Internship\CarPooling\CarPooling.Helpers\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Core.dll
+D:\Internship\CarPooling\CarPooling.Helpers\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Identity.Core.xml
+D:\Internship\CarPooling\CarPooling.Helpers\obj\Debug\netcoreapp2.2\CarPooling.Helpers.csproj.CopyComplete

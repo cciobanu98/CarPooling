@@ -3,12 +3,9 @@
 *@
 @{
     ViewBag.Title = "Paputka";
-    List<CarPooling.Web.ViewModels.LastRideViewModel> r = ViewData["List"] as List<CarPooling.Web.ViewModels.LastRideViewModel>;
+    List<CarPooling.DTO.SelectedRidesDTO> r = ViewData["List"] as  List<CarPooling.DTO.SelectedRidesDTO>;
     Layout = "_Layout";
 }
-<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
-<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
 
 <body>
     <section class="main-content">

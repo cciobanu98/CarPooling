@@ -2,47 +2,85 @@
 using CarPooling.Context;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using CarPooling.DataAcces.Interfaces;
+using System;
+using System.Linq.Expressions;
 
-namespace CarPooling.DataAcces.Repository
+namespace CarPooling.DataAcces.Interfaces
 {
-    public class GenericRepository<T> : IGenericRepository<T> where T : class
-    {
-        private CarPoolingContext context;
-        private DbSet<T> table;
-        public GenericRepository(CarPoolingContext db)
+        public class GenericRepository<TEntity> : IGenericRepository<TEntity> where TEntity : class
         {
-            context = db;
-            table = context.Set<T>();
-        }
-        public void Delete(object id)
-        {
-            T elem = table.Find(id);
-            table.Remove(elem);
-        }
-        public IEnumerable<T> GetAll()
-        {
-            return table.ToList();
-        }
+            internal CarPoolingContext context;
+            internal DbSet<TEntity> dbSet;
 
-        public T GetById(object id)
-        {
-            return table.Find(id);
-        }
+            public GenericRepository(CarPoolingContext context)
+            {
+                this.context = context;
+                this.dbSet = context.Set<TEntity>();
+            }
 
-        public void Insert(T obj)
-        {
-            table.Add(obj);
-        }
+            public virtual IEnumerable<TEntity> Get(
+                Expression<Func<TEntity, bool>> filter = null,
+                Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>> orderBy = null,
+                string includeProperties = "")
+            {
+                IQueryable<TEntity> query = dbSet;
 
-        public void Save()
-        {
-            context.SaveChanges();
-        }
+                if (filter != null)
+                {
+                    query = query.Where(filter);
+                }
 
-        public void Update(T obj)
-        {
-            table.Attach(obj);
-            context.Entry(obj).State = EntityState.Modified;
+                foreach (var includeProperty in includeProperties.Split
+                    (new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProperty);
+                }
+
+                if (orderBy != null)
+                {
+                    return orderBy(query).ToList();
+                }
+                else
+                {
+                    return query.ToList();
+                }
+            }
+
+            public virtual TEntity GetById(object id)
+            {
+                return dbSet.Find(id);
+            }
+
+            public virtual void Insert(TEntity entity)
+            {
+                dbSet.Add(entity);
+            }
+
+            public virtual void Delete(object id)
+            {
+                TEntity entityToDelete = dbSet.Find(id);
+                Delete(entityToDelete);
+            }
+
+            public virtual void Delete(TEntity entityToDelete)
+            {
+                if (context.Entry(entityToDelete).State == EntityState.Detached)
+                {
+                    dbSet.Attach(entityToDelete);
+                }
+                dbSet.Remove(entityToDelete);
+            }
+
+            public virtual void Update(TEntity entityToUpdate)
+            {
+                dbSet.Attach(entityToUpdate);
+                context.Entry(entityToUpdate).State = EntityState.Modified;
+            }
+
+            public IEnumerable<TEntity> GetAll()
+            {
+             return dbSet.ToList();
+            }
         }
-    }
-}
+  }

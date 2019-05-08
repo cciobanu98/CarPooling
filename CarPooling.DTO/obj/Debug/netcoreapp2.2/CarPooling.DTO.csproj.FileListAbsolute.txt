@@ -1,0 +1,14 @@
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.DTO.deps.json
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.DTO.dll
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.DTO.pdb
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.Domain.dll
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.Domain.pdb
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.csprojAssemblyReference.cache
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.csproj.CoreCompileInputs.cache
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.AssemblyInfoInputs.cache
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.AssemblyInfo.cs
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.csproj.CopyComplete
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.dll
+D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.pdb
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.Helpers.dll
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb

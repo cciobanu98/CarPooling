@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarPooling.Domain
 {
-    public class Location
+    public class Location : IEntity<int>
     {
         public int Id { get; set; }
         public float Latitude { get; set; }

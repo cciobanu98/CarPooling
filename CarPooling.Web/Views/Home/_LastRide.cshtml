@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
-@model List<CarPooling.Web.ViewModels.LastRideViewModel>
+@model List<CarPooling.DTO.SelectedRidesDTO>
 @{
 }
 @foreach (var m in Model)
@@ -9,13 +9,13 @@
     <article class="ride-box clearfix">
 
         <div class="ride-content">
-            <h3><a href="#">From @m.Source to @m.Destination</a></h3> ride by <a href="#">@m.User</a>
+            <h3><a href="#">From @m.Source to @m.Destination</a></h3> ride by <a href="#">@m.Username</a>
         </div>
         <ul class="ride-meta">
             <li class="ride-date">
                 <a href="#" class="tooltip-link" dara-original0title="Date" data-toggle="tooltip">
                     <i class="fa fa-calendar"></i>
-                    @m.StartDateTime
+                    @m.TravelStartDateTime
                 </a>
             </li>
             <li class="ride-people">

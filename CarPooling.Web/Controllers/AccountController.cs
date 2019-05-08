@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CarPooling.Domain;
-using CarPooling.Web.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using CarPooling.DTO;
 
 namespace CarPooling.Web.Controllers
 {
@@ -10,7 +10,6 @@ namespace CarPooling.Web.Controllers
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-
         public AccountController(UserManager<User> userManager, SignInManager<User> signInManager)
         {
             _userManager = userManager;
@@ -22,7 +21,7 @@ namespace CarPooling.Web.Controllers
             return RedirectToAction("Index", "Home");
         }
         [HttpPost]
-        public async Task<IActionResult> Register(RegisterViewModel model)
+        public async Task<IActionResult> Register(RegisterDTO model)
         {
             if (ModelState.IsValid)
             {
@@ -48,11 +47,11 @@ namespace CarPooling.Web.Controllers
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
         {
-            return View(new LoginViewModel { ReturnUrl = returnUrl });
+            return View(new LoginDTO { ReturnUrl = returnUrl });
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginDTO model)
         {
 
             if (ModelState.IsValid)

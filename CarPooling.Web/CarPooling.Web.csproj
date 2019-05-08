@@ -5,14 +5,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="App_Data\**" />
+    <Compile Remove="App_Start\**" />
     <Compile Remove="Areas\Identity\**" />
     <Compile Remove="Areas\NewFolder\**" />
+    <Compile Remove="Shared\**" />
+    <Content Remove="App_Data\**" />
+    <Content Remove="App_Start\**" />
     <Content Remove="Areas\Identity\**" />
     <Content Remove="Areas\NewFolder\**" />
+    <Content Remove="Shared\**" />
+    <EmbeddedResource Remove="App_Data\**" />
+    <EmbeddedResource Remove="App_Start\**" />
     <EmbeddedResource Remove="Areas\Identity\**" />
     <EmbeddedResource Remove="Areas\NewFolder\**" />
+    <EmbeddedResource Remove="Shared\**" />
+    <None Remove="App_Data\**" />
+    <None Remove="App_Start\**" />
     <None Remove="Areas\Identity\**" />
     <None Remove="Areas\NewFolder\**" />
+    <None Remove="Shared\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,16 +32,75 @@
     <Folder Include="Areas\Administration\Views\Home\" />
     <Folder Include="Areas\Administration\Views\ViewModels\" />
     <Folder Include="Areas\Administration\Views\Shared\" />
-    <Folder Include="App_Data\" />
-    <Folder Include="App_Start\" />
-    <Folder Include="Models\" />
-    <Folder Include="Shared\" />
-    <Folder Include="wwwroot\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="8.0.0" />
-    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
+    <None Include="wwwroot\css\bootstrap-theme.css" />
+    <None Include="wwwroot\css\bootstrap-theme.css.map" />
+    <None Include="wwwroot\css\bootstrap-theme.min.css" />
+    <None Include="wwwroot\css\bootstrap.css" />
+    <None Include="wwwroot\css\bootstrap.css.map" />
+    <None Include="wwwroot\css\bootstrap.min.css" />
+    <None Include="wwwroot\css\font-awesome.min.css" />
+    <None Include="wwwroot\css\jquery.idealforms.css" />
+    <None Include="wwwroot\css\jquery.idealselect.css" />
+    <None Include="wwwroot\css\map.css" />
+    <None Include="wwwroot\css\Options.css" />
+    <None Include="wwwroot\css\SideBar.css" />
+    <None Include="wwwroot\css\slicknav.css" />
+    <None Include="wwwroot\css\style.css" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.eot" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.svg" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.ttf" />
+    <None Include="wwwroot\fonts\fontawesome-webfont.woff" />
+    <None Include="wwwroot\fonts\FontAwesome.otf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="wwwroot\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="wwwroot\img\1gjmrvh.jpg" />
+    <None Include="wwwroot\img\1uFq94O.jpg" />
+    <None Include="wwwroot\img\avatar-1.jpg" />
+    <None Include="wwwroot\img\avatar-2.jpg" />
+    <None Include="wwwroot\img\avatar.jpg" />
+    <None Include="wwwroot\img\datepicker.png" />
+    <None Include="wwwroot\img\events\event-1.jpg" />
+    <None Include="wwwroot\img\events\event-2.jpg" />
+    <None Include="wwwroot\img\events\event-3.jpg" />
+    <None Include="wwwroot\img\events\event-4.jpg" />
+    <None Include="wwwroot\img\events\event-5.jpg" />
+    <None Include="wwwroot\img\loading.gif" />
+    <None Include="wwwroot\img\no-avatar.jpg" />
+    <None Include="wwwroot\img\radiocheck.png" />
+    <None Include="wwwroot\img\tumblr_n7yhhvUQtx1st5lhmo1_1280.jpg" />
+    <None Include="wwwroot\img\validation.png" />
+    <None Include="wwwroot\img\XWBIL5.jpg" />
+    <None Include="wwwroot\img\Yor53K.jpg" />
+    <None Include="wwwroot\scripts\Account.js" />
+    <None Include="wwwroot\scripts\AllRides.js" />
+    <None Include="wwwroot\scripts\bootstrap.js" />
+    <None Include="wwwroot\scripts\bootstrap.min.js" />
+    <None Include="wwwroot\scripts\car.js" />
+    <None Include="wwwroot\scripts\hoverIntent.js" />
+    <None Include="wwwroot\scripts\jquery-ui-1.10.4.custom.min.js" />
+    <None Include="wwwroot\scripts\jquery.counterup.min.js" />
+    <None Include="wwwroot\scripts\jquery.idealforms.min.js" />
+    <None Include="wwwroot\scripts\jquery.idealselect.min.js" />
+    <None Include="wwwroot\scripts\jquery.main.js" />
+    <None Include="wwwroot\scripts\jquery.slicknav.min.js" />
+    <None Include="wwwroot\scripts\map.js" />
+    <None Include="wwwroot\scripts\modernizr.js" />
+    <None Include="wwwroot\scripts\MoreInformation.js" />
+    <None Include="wwwroot\scripts\Notification.js" />
+    <None Include="wwwroot\scripts\SearchRides.js" />
+    <None Include="wwwroot\scripts\signalr.min.js" />
+    <None Include="wwwroot\scripts\Subscribe.js" />
+    <None Include="wwwroot\scripts\superfish.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.1.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.1.0" />
     <PackageReference Include="bootstrap" Version="4.3.1" />
     <PackageReference Include="BuildBundlerMinifier" Version="2.9.406" />
     <PackageReference Include="Microsoft.AspNetCore" Version="2.2.0" />
@@ -44,7 +115,6 @@
     <ProjectReference Include="..\CarPooling.DataAcces\CarPooling.DataAcces.csproj" />
     <ProjectReference Include="..\CarPooling.Infrastructure\CarPooling.Infrastructure.csproj" />
     <ProjectReference Include="..\CarPooling.Repository\CarPooling.BussinesLogic.csproj" />
-    <ProjectReference Include="..\Domain\CarPooling.Domain.csproj" />
   </ItemGroup>
 
 </Project>

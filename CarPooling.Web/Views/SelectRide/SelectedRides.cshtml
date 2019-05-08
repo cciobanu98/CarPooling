@@ -1,0 +1,86 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewBag.Title = "Paputka";
+    int? number = ViewData["Count"] as int?;
+    IQueryable<CarPooling.DTO.SelectedRidesDTO> query = ViewData["query"] as IQueryable<CarPooling.DTO.SelectedRidesDTO>;
+    int tpages = (int)number / 5;
+    Layout = "_Layout";
+}
+<section class="main-content">
+    <div class="container">
+        <div class="row">
+            <div class="page-content">
+                <div class="clearfix"></div>
+                <div class="last-rides">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-sub-title textcenter">
+                            <h2>RIDES</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+                    </div>
+                    <div class="col-md-12 col-sm-12 col-xs-12" id="rides-list">
+                        <div>
+                            <article>
+                                <div class="ride-content">
+                                    <h3><input id="SearchRides" type="text" placeholder="Search" /></h3>
+                                </div>
+                                <div class="container" style="margin-left:-90px">
+                                    <ul class="ride-meta">
+                                        <li class="ride-date">
+                                            <a id="SortDate" class="tooltip-link" dara-original0title="Date" data-toggle="tooltip" >
+                                                <i class="fa fa-calendar"></i>
+                                                Date
+                                                <i class="fa fa-sort" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li class="ride-people" name="ascending">
+                                            <a id="SortSeats" class="tooltip-link" dara-original-title="Date" data-toggle="tooltip">
+                                                <i class="fa fa-user"></i>
+                                                Seats
+                                                <i class="fa fa-sort" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="SortPrice" name="ascending">
+                                                <i class="fa fa-money" aria-hidden="true"></i>
+                                                Price
+                                                <i class="fa fa-sort" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="SortSource" name="ascending">
+                                                <i class="fa fa-road" aria-hidden="true"></i>
+                                                Source
+                                                <i class="fa fa-sort" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a id="SortDestination" name="ascending">
+                                                <i class="fa fa-road" aria-hidden="true"></i>
+                                                Destination
+                                                <i class="fa fa-sort" aria-hidden="true"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </article>
+                          <div id="tableRides"></div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                </div><!-- end .last-rides -->
+                <ul class="pagination">
+                    @for (int i = 1; i <= tpages + 1; i++)
+                    {
+                        <li><a class="paginationRides">@i</a></li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="ModalMoreRead"></div>
+<script src="~/scripts/SearchRides.js"></script>
+<script type="text/javascript" src="~/scripts/MoreInformation.js"></script>

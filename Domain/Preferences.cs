@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CarPooling.Domain
 {
-    public class Preferences
+    public class Preferences : IEntity<int>
     {
         public int Id { get; set; }
         public string UserId { get; set; }

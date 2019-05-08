@@ -1,0 +1,70 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CarPooling.DTO.CarInformationDTO
+@{
+    Layout = "_Settingslayout";
+    ViewBag.Title = "Settings";
+    IEnumerable<CarPooling.DTO.CarInformationDTO> cars = ViewData["List"] as IEnumerable<CarPooling.DTO.CarInformationDTO>;
+}
+<section class="main-content col-md-12 col-sm-12 col-xs-12">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="page-sub-title textcenter">
+                    <h2>Car Information</h2>
+                    <div class="line"></div>
+                </div><!-- end .page-sub-title -->
+            </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+        </div><!-- end .row -->
+    </div><!-- end .container -->
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <table class="table table-bordered table-responsive table-hover">
+            <tr>
+                <th>Number</th>
+                <th>Model</th>
+                <th>Color</th>
+                <th>Seats</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            @if (cars != null)
+            {
+                @foreach (var c in cars)
+                {
+                    <tr>
+                        <th>@c.Number</th>
+                        <th>@c.Model</th>
+                        <th>@c.Color</th>
+                        <th>@c.Seats</th>
+                       
+                        <th  id="@c.Id" data-toggle="modal" data-target="#EditCarModal" data-whatever="@c.Id<>@c.Number<>@c.Model<>@c.Color<>@c.Seats"  class="green-color myButton">
+                            <button class="text-info text-center green-color">
+                             Edit
+                            </button>
+                        </th>
+  
+                        <th class="red-color myButton">
+                                <button class="red-color text-info text-center DeleteButtonCar" value=@c.Id>
+                                    Delete
+                                </button>
+                        </th>
+                    </tr>
+                }
+            }
+
+        </table>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="user-log">
+                <a data-toggle="modal" data-target="#AddNewCarModal">
+                    Add a Car
+                </a>
+            </div><!-- end .user-log -->
+        </div><!-- end .col-sm-4 -->
+    </div><!-- end .col-sm-12 -->
+   @{ await Html.RenderPartialAsync("_AddCar.cshtml");}
+    @{ await Html.RenderPartialAsync("_EditCar.cshtml");}
+</section><!-- end .main-content -->

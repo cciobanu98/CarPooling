@@ -46,3 +46,5 @@ D:\Internship\CarPooling\CarPooling.DataAcces\obj\Debug\netcoreapp2.2\CarPooling
 D:\Internship\CarPooling\CarPooling.DataAcces\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.csproj.CopyComplete
 D:\Internship\CarPooling\CarPooling.DataAcces\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.dll
 D:\Internship\CarPooling\CarPooling.DataAcces\obj\Debug\netcoreapp2.2\CarPooling.DataAcces.pdb
+D:\Internship\CarPooling\CarPooling.DataAcces\bin\Debug\netcoreapp2.2\CarPooling.Helpers.dll
+D:\Internship\CarPooling\CarPooling.DataAcces\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb

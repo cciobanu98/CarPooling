@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj": {}
+    "D:\\Internship\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj": {}
   },
   "projects": {
-    "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+    "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj",
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj",
         "projectName": "CarPooling.Context",
-        "projectPath": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj",
-        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
-        "outputPath": "D:\\CarPooling\\CarPooling.Context\\obj\\",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj": {
-                "projectPath": "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj"
+              "D:\\Internship\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj"
               },
-              "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
-                "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj"
+              "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj"
               }
             }
           }
@@ -91,20 +91,20 @@
         }
       }
     },
-    "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
+    "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj",
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj",
         "projectName": "CarPooling.DataAcces",
-        "projectPath": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj",
-        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
-        "outputPath": "D:\\CarPooling\\CarPooling.DataAcces\\obj\\",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -117,8 +117,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
-                "projectPath": "D:\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+              "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
               }
             }
           }
@@ -147,20 +147,20 @@
         }
       }
     },
-    "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj": {
+    "D:\\Internship\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj",
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj",
         "projectName": "CarPooling.Domain.Mapping",
-        "projectPath": "D:\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj",
-        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
-        "outputPath": "D:\\CarPooling\\CarPooling.Domain.Mapping\\obj\\",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Domain.Mapping\\CarPooling.Domain.Mapping.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.Domain.Mapping\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -173,8 +173,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
-                "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj"
+              "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj"
               }
             }
           }
@@ -211,20 +211,20 @@
         }
       }
     },
-    "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj": {
+    "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj",
-        "projectName": "CarPooling.Infrastructure",
-        "projectPath": "D:\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
-        "outputPath": "D:\\CarPooling\\CarPooling.Infrastructure\\obj\\",
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj",
+        "projectName": "CarPooling.DTO",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.DTO\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -237,8 +237,119 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
-                "projectPath": "D:\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
+              "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Internship\\CarPooling\\CarPooling.Helpers\\CarPooling.Helpers.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.Helpers\\CarPooling.Helpers.csproj",
+        "projectName": "CarPooling.Helpers",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Helpers\\CarPooling.Helpers.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.Helpers\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Internship\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj",
+        "projectName": "CarPooling.Infrastructure",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Infrastructure\\CarPooling.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.Infrastructure\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
+              },
+              "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj"
               }
             }
           }
@@ -271,20 +382,20 @@
         }
       }
     },
-    "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+    "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj",
-        "projectName": "CarPooling.Domain",
-        "projectPath": "D:\\CarPooling\\Domain\\CarPooling.Domain.csproj",
-        "packagesPath": "C:\\Users\\ceban.DESKTOP-05MJPEM\\.nuget\\packages\\",
-        "outputPath": "D:\\CarPooling\\Domain\\obj\\",
+        "projectUniqueName": "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
+        "projectName": "CarPooling.BussinesLogic",
+        "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Repository\\CarPooling.BussinesLogic.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\CarPooling.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ceban.DESKTOP-05MJPEM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -296,7 +407,85 @@
         },
         "frameworks": {
           "netcoreapp2.2": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+              },
+              "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
+              },
+              "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.1.0, )"
+            },
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj",
+        "projectName": "CarPooling.Domain",
+        "projectPath": "D:\\Internship\\CarPooling\\Domain\\CarPooling.Domain.csproj",
+        "packagesPath": "C:\\Users\\cristian.ciobanu\\.nuget\\packages\\",
+        "outputPath": "D:\\Internship\\CarPooling\\Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\cristian.ciobanu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\Internship\\CarPooling\\CarPooling.Helpers\\CarPooling.Helpers.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Helpers\\CarPooling.Helpers.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

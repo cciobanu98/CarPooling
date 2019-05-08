@@ -1,0 +1,94 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CarPooling.DTO.RideInformationDTO
+@{
+}
+<div class="modal fade" id="moreinformation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h3>Ride Information</h3>
+            </div><!-- end .modal-header -->
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <img src="~/img/avatar-1.jpg" />
+                    </div>
+                    <div class="col-xs-10">
+                        <h3>
+                            <b>First name:</b> @Model.FirstName
+                            <b>Last name:</b> @Model.LastName
+                            <b>Phone:</b> @Model.Phone
+                        </h3>
+                        <h3><b>Email:</b>@Model.Email</h3>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3>
+                            <b>Description: </b><br />
+                           @Model.Description
+                        </h3>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3><b>Source:</b></h3>
+                        <h3><b>Adress:</b> @Model.SourceAddress</h3>
+                        <h3><b>City: </b>@Model.SourceCity <b>State:</b> @Model.SourceState</h3>
+                        <h3><b>Distance: </b>10 km</h3>
+                    </div>
+                    <div class="col-xs-6">
+                        <h3><b>Destination:</b></h3>
+                        <h3><b>Adress:</b> @Model.DestinationAddress</h3>
+                        <h3><b>City: </b>@Model.DestinationCity <b>State:</b> @Model.DestinationState</h3>
+                        <h3><b>Distance: </b>10 km</h3>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-6">
+                        <h3><b>Preferences:</b></h3>
+                        <h3><b>Talaktive: </b>@Model.Talkative </h3>
+                        <h3><b>Pets: </b>@Model.Pets</h3>
+                    </div>
+                    <div class="col-xs-6">
+                        <h3><b>Music: </b>@Model.Music</h3>
+                        <h3><b>Smoking: </b>@Model.Smoking</h3>
+                    </div>
+                </div>
+                <hr />
+                 <div class="row">
+                        <div class="col-xs-12">
+                            <h3><b>Car: </b></h3>
+                            <h3><b>Number: </b> @Model.CarNumber <b>Model: </b> @Model.CarModel <b>Color: </b>@Model.CarColor</h3>
+                        </div>
+                 </div>
+                <hr />
+                <div class="row">
+                    <div class="col-xs-12">
+                        <h3><b>Passagers:</b></h3>
+                        <ul>
+                            @foreach(var p in Model.Passengers)
+                            {
+                                <li><a>@p.UserName</a></li>
+
+                            }
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div class="row">
+                    <h3><b>Price</b> @Model.Price</h3>
+                </div>
+                <input type="hidden" value="@Model.RideId" id="Information @Model.RideId"/>
+                <button class="btn btn-success center-block" id="SubscribeToRide">Subscribe</button>
+              </div>
+            </div>
+        </div>
+    </div>
+<script src="~/scripts/Subscribe.js"></script>

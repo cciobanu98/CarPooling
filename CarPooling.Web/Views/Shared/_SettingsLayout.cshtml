@@ -75,7 +75,7 @@
                                         <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
                                     </li>
                                     <li>
-                                        <a href="@Url.Action("GeneralInformation", "Home")"> <i class="mdi mdi-settings"></i> Account Settings </a>
+                                        @Html.ActionLink("Account Settings", "Index", "Settings")
                                     </li>
                                     @if (User.IsInRole("admin"))
                                     {

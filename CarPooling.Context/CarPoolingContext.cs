@@ -8,6 +8,10 @@ namespace CarPooling.Context
 {
     public class CarPoolingContext : IdentityDbContext
     {
+        public CarPoolingContext() : base()
+        {
+            Database.EnsureCreated();
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Preferences> Preferences { get; set; }
@@ -16,7 +20,6 @@ namespace CarPooling.Context
         public DbSet<Location> Locations { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Ride> Rides { get; set; }
-       // public DbSet<MemberCar> MemberCars { get; set; }
         public DbSet<GeneralPreferences> GeneralPreferences {get; set;}
         public DbSet<EnrouteLocation> EnrouteLocations{ get; set; }
         public CarPoolingContext(DbContextOptions<CarPoolingContext> options)
@@ -28,22 +31,21 @@ namespace CarPooling.Context
         {
           //  modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
-            modelBuilder.ApplyConfiguration(new UserConfig());
-            modelBuilder.ApplyConfiguration(new CarConfig());
-            modelBuilder.ApplyConfiguration(new PreferencesConfig());
-            modelBuilder.ApplyConfiguration(new LocationConfig());
-           // modelBuilder.ApplyConfiguration(new MemberCarConfig());
-            modelBuilder.ApplyConfiguration(new PreferencesConfig());
-            modelBuilder.ApplyConfiguration(new RequestConfig());
-            modelBuilder.ApplyConfiguration(new RideConfig());
-            modelBuilder.ApplyConfiguration(new EnrouteLocationConfig());
+            modelBuilder.ApplyConfiguration(new UserMapping());
+            modelBuilder.ApplyConfiguration(new CarMapping());
+            modelBuilder.ApplyConfiguration(new PreferencesMapping());
+            modelBuilder.ApplyConfiguration(new LocationMapping());
+            modelBuilder.ApplyConfiguration(new PreferencesMapping());
+            modelBuilder.ApplyConfiguration(new RequestMapping());
+            modelBuilder.ApplyConfiguration(new RideMapping());
+            modelBuilder.ApplyConfiguration(new EnrouteLocationMapping());
             base.OnModelCreating(modelBuilder);
         }
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    //var connectionString = CarPoolingAppSettings.ConfigurationRoot.GetConnectionString("CarPoolingConnection");
-        //    var connectionString = "Data Source=.;Initial Catalog=CarPoolingEF;Integrated Security=True;";
-        //    optionsBuilder.UseSqlServer(connectionString);
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            //var connectionString = CarPoolingAppSettings.ConfigurationRoot.GetConnectionString("CarPoolingConnection");
+            var connectionString = "Data Source=.;Initial Catalog=CarPoolingEF;Integrated Security=True;";
+            optionsBuilder.UseSqlServer(connectionString);
+        }
     }
 }
