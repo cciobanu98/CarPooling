@@ -1,0 +1,233 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Styles -->
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Forms -->
+    <link href="~/css/jquery.idealforms.css" rel="stylesheet">
+    <!-- Select  -->
+    <link href="~/css/jquery.idealselect.css" rel="stylesheet">
+    <!-- Slicknav  -->
+    <link href="~/css/slicknav.css" rel="stylesheet">
+    <!-- Main style -->
+    <link href="~/css/style.css" rel="stylesheet">
+    <link href="~/css/SideBar.css" rel="stylesheet">
+    <link href="~/css/Options.css" rel="stylesheet">
+    <!-- Modernizr -->
+    <script src="~/scripts/modernizr.js"></script>
+    <!-- Fonts -->
+    <link href="~/css/font-awesome.min.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <header class="header">
+        <div class="top-menu">
+            <section class="container">
+                <div class="row">
+
+                    <div class="navbar-left ">
+                        <ul class="nav navbar-nav">
+
+                            <!-- User Account -->
+                            <li class="dropdown user-menu">
+                                <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                                    <img src="~/img/avatar-2.jpg" class="user-image" alt="User Image" />
+
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-left">
+                                    <!-- User image -->
+                                    <li class="dropdown-header">
+                                        <img src="~/img/avatar-2.jpg" class="img-circle" alt="User Image" />
+                                        <div class="d-inline-block">
+                                            @User.Identity.Name<small class="pt-1"></small>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="mdi mdi-account"></i> My Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="mdi mdi-email"></i> Message
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
+                                    </li>
+                                    <li>
+                                        <a asp-action="Index" asp-controller="Home">Account Settings</a>
+                                    </li>
+                                    @if (User.IsInRole("admin"))
+                                    {
+                                        <li>
+                                            <a href="#"> <i class="mdi mdi-settings"></i>Administration</a>
+                                        </li>
+                                    }
+                                    <li class="dropdown-footer">
+                                        <form method="post" asp-action="LogOff" asp-controller="Account">
+                                            <button type="submit">
+                                                <i class="mdi mdi-logout"> </i>
+                                                Log Out
+                                            </button>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="navbar-right">
+                        <ul class="social-icons">
+                            <li>
+                                <a class="facebook" href="#">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="twitter" href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a class="google" href="#">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div><!-- end .col-sm-8 -->
+                </div><!-- end .row -->
+            </section><!-- end .container -->
+        </div><!-- end .top-menu -->
+    </header><!-- end .header -->
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h2>Account Settings</h2>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="#generalSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">General</a>
+                    <ul class="collapse list-unstyled" id="generalSubmenu">
+                        <li>
+                            <a asp-action="Index" asp-controller="General">General Information</a>
+                        </li>
+                        <li>
+                            <a href="#">Photo</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="Verification">Verification</a>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="Preferences">Preferences</a>
+                </li>
+                <li>
+                    <a href="#ridesSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Rides</a>
+                    <ul class="collapse list-unstyled" id="ridesSubmenu">
+                        <li>
+                            <a asp-action="Offered" asp-controller="Rides">Rides Offered</a>
+                        </li>
+                        <li>
+                            <a asp-action="Enroled" asp-controller="Rides">Rides Enroled</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="Car">Car</a>
+                </li>
+                <li>
+                    <a asp-action="Index" asp-controller="Security">Security</a>
+                </li>
+                <li>
+                    <a href="#ratingsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Ratings</a>
+                    <ul class="collapse list-unstyled" id="ratingsSubmenu">
+                        <li>
+                            <a asp-action="Received" asp-controller="Ratings">Ratings you've received</a>
+                        </li>
+                        <li>
+                            <a asp-action="Left" asp-controller="Ratings">Ratings you've left</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="main-navigation">
+                <li>
+                    <a asp-action="Index" asp-controller="Home">Home</a>
+                </li>
+            </ul>
+        </nav>
+
+        <section class="main-content col-md-12 col-sm-12 col-xs-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="page-sub-title textcenter">
+                            <h2 style="color:forestgreen">@ViewBag.Title</h2>
+                            <div class="line"></div>
+                        </div><!-- end .page-sub-title -->
+                    </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+
+            @RenderBody()
+        </section>
+</div>
+    <footer id="footer">
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        Copyright by My ride
+                    </div>
+                </div><!-- end .row -->
+            </div><!-- end .container -->
+        </div><!-- end .footer-copyright -->
+    </footer><!-- end #footer -->
+    <!-- Javascript -->
+    <!-- Bootstrap -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="~/scripts/bootstrap.min.js"></script>
+    <!-- Main jQuery -->
+    <script type="text/javascript" src="~/scripts/jquery.main.js"></script>
+    <!-- Form -->
+    <script type="text/javascript" src="~/scripts/jquery.idealforms.min.js"></script>
+    <script type="text/javascript" src="~/scripts/jquery.idealselect.min.js"></script>
+    <script type="text/javascript" src="~/scripts/jquery-ui-1.10.4.custom.min.js"></script>
+    <!-- Menu -->
+    <script type="text/javascript" src="~/scripts/hoverIntent.js"></script>
+    <script type="text/javascript" src="~/scripts/superfish.js"></script>
+    <!-- Counter-Up  -->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+    <script type="text/javascript" src="~/scripts/jquery.counterup.min.js"></script>
+    <!-- Rating  -->
+    <script type="text/javascript" src="~/scripts/bootstrap-rating-input.min.js"></script>
+    <!-- Slicknav  -->
+    <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
+    <script type="text/javascript" src="~/scripts/car.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+</body>
+</html>

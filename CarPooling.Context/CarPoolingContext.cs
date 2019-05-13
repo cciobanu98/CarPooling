@@ -21,7 +21,7 @@ namespace CarPooling.Context
         public DbSet<Request> Requests { get; set; }
         public DbSet<Ride> Rides { get; set; }
         public DbSet<GeneralPreferences> GeneralPreferences {get; set;}
-        public DbSet<EnrouteLocation> EnrouteLocations{ get; set; }
+        public DbSet<Rating> Ratings { get; set; }
         public CarPoolingContext(DbContextOptions<CarPoolingContext> options)
             : base(options)
         {
@@ -38,7 +38,7 @@ namespace CarPooling.Context
             modelBuilder.ApplyConfiguration(new PreferencesMapping());
             modelBuilder.ApplyConfiguration(new RequestMapping());
             modelBuilder.ApplyConfiguration(new RideMapping());
-            modelBuilder.ApplyConfiguration(new EnrouteLocationMapping());
+            modelBuilder.ApplyConfiguration(new PassengerMapping());
             base.OnModelCreating(modelBuilder);
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

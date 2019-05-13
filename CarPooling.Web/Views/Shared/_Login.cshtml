@@ -11,7 +11,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div><!-- end .modal-header -->
             <div class="modal-body">
-                <form method="post" action="@Url.Action("Login", "Account")" novalidate autocomplete="off" class="idealforms login">
+                <form method="post" asp-action="Login" asp-controller="Account" novalidate autocomplete="off" class="idealforms login">
                     <div class="log-header">
                         <span class="log-in">Log in</span>
                     </div>

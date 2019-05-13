@@ -14,7 +14,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CarPooling.Context\CarPooling.Context.csproj" />
     <ProjectReference Include="..\CarPooling.DataAcces\CarPooling.DataAcces.csproj" />
     <ProjectReference Include="..\CarPooling.DTO\CarPooling.DTO.csproj" />
   </ItemGroup>

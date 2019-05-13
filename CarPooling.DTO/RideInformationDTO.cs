@@ -27,6 +27,12 @@ namespace CarPooling.DTO
         public string CarModel { get; set; }
         public string CarColor { get; set; }
         public float Price { get; set; }
-        public List<User> Passengers { get; set; }
+        public float DistanceFromSource { get; set; }
+        public float DistanceFromDestination { get; set; }
+        public float SourceLat { get; set; }
+        public float SourgeLng { get; set; }
+        public float DestinationLat { get; set; }
+        public float DestinationLng { get; set; }
+        public List<Passenger> Passengers { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using CarPooling.BussinesLogic.Services;
 using CarPooling.DataAcces.Interfaces;
 using CarPooling.DataAcces.Repository;
+using CarPooling.DTO;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CarPooling.Infrastructure
@@ -18,6 +19,8 @@ namespace CarPooling.Infrastructure
             services.AddScoped(typeof(ICarService), typeof(CarService));
             services.AddScoped(typeof(IListGenerator), typeof(ListGenerator));
             services.AddScoped(typeof(ISelectRideService), typeof(SelectRideService));
+            services.AddScoped(typeof(IRideHistoryService), typeof(RideHistoryService));
+            services.AddScoped(typeof(IRatingService), typeof(RatingService));
         }
     }
 }

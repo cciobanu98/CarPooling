@@ -4,7 +4,7 @@
 @{
     ViewBag.Title = "Paputka";
     int? number = ViewData["Count"] as int?;
-    int tpages = (int)number / 10;
+    int tpages = (int)(number - 1) / 10;
     Layout = "_Layout";
 }
 <section class="main-content">

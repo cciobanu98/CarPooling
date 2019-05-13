@@ -12,3 +12,5 @@ D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.d
 D:\Internship\CarPooling\CarPooling.DTO\obj\Debug\netcoreapp2.2\CarPooling.DTO.pdb
 D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.Helpers.dll
 D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Internship\CarPooling\CarPooling.DTO\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.DataAnnotations.xml

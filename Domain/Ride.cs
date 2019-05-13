@@ -15,10 +15,10 @@ namespace CarPooling.Domain
         public Location SourceLocation { get; set; }
         public int? DestinationLocationId { get; set; }
         public Location DestinationLocation { get; set; }
-        public List<EnrouteLocation> EnrouteLocations { get; set; } = new List<EnrouteLocation>();
         public int Price { get; set; }
         public int Seats { get; set; }
-       // public List<Request> Requests { get; set; } = new List<Request>();
-        public List<User> Passengers { get; set; } = new List<User>();
+        public List<Passenger> Passengers { get; set; } = new List<Passenger>();
+        public string Description { get; set; }
+        public List<Rating> Ratings { get; set; } = new List<Rating>();
     }
 }

@@ -26,22 +26,44 @@
                     <div class="page-content add-new-ride">
                         <form action="@Url.Action("Index", "AddRide")" novalidate autocomplete="off" class="idealforms add-ride" method="post">
                             <div class="field">
-                                <input  type="search" id="sourceSearch" placeholder="From?" />
+                                <input type="search" id="sourceSearch" placeholder="From?" name="SourceLocation" />
+                                <input asp-for="SourceLocationLat" />
+                                <span asp-validation-for="SourceLocationLat" class="text-danger"></span>
+                                <input asp-for="SourceLocationLng" />
+                                <span asp-validation-for="SourceLocationLng" class="text-danger"></span>
+                                <input asp-for="SourceCity" />
+                                <span asp-validation-for="SourceCity" class="text-danger"></span>
+                                <input asp-for="SourceStreet" />
+                                <span asp-validation-for="SourceStreet" class="text-danger"></span>
+                                <input asp-for="SourceState" />
+                                <span asp-validation-for="SourceState" class="text-danger"></span>
                             </div>
                             <div class="field">
-                                <input  type="search" id="destinationSearch" placeholder="Where?" />
+                                <input type="search" id="destinationSearch" placeholder="Where?" name="DestinationLocation" />
+                                <input asp-for="DestinationLocationLat" />
+                                <span asp-validation-for="DestinationLocationLat" class="text-danger"></span>
+                                <input asp-for="DestinationLocationLng" />
+                                <span asp-validation-for="DestinationLocationLng" class="text-danger"></span>
+                                <input asp-for="DestinationCity" />
+                                <span asp-validation-for="DestinationCity" class="text-danger"></span>
+                                <input asp-for="DestinationStreet" />
+                                <span asp-validation-for="DestinationStreet" class="text-danger"></span>
+                                <input asp-for="DestinationState" />
+                                <span asp-validation-for="DestinationState" class="text-danger"></span>
                             </div>
                             <div class="field">
-                                <input asp-for="TravelStartDateTime" name="TravelStartDateTime" type="text" placeholder="Date" class="datepicker">
+                                <input asp-for="TravelStartDate">
+                                <span asp-validation-for="TravelStartDate" class="text-danger"></span>
                             </div>
                             <div class="field">
                                 <select asp-for="Seats" id="seats" name="Seats">
-                                    <option value="default">Number of seats</option>
+                                    <option value="" disabled selected hidden>Number of seats</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="4">4</option>
                                 </select>
+                                <span asp-validation-for="Seats" class="text-danger"></span>
                             </div>
                             <div class="field">
                                 <select asp-for="CarId" id="carSelect" name="CarId">
@@ -50,18 +72,14 @@
                                         <option value="@c.Id">@c.Number, @c.Model, @c.Color</option>
                                     }
                                 </select>
+                                <span asp-validation-for="CarId" class="text-danger"></span>
                             </div>
-                            <div>
-                                <input asp-for="SourceLocationLat" type="hidden" id="sourceLatitude" name="SourceLocationLat" />
-                                <input asp-for="SourceLocationLng" type="hidden" id="sourceLongitude" name="SourceLocationLng" />
-                                <input asp-for="DestinationLocationLat" type="hidden" id="destinationLatitude" name="DestinationLocationLat" />
-                                <input asp-for="DestinationLocationLng" type="hidden" id="destinationLongitude" name="DestinationLocationLng" />
-                                <input asp-for="SourceCity" type="hidden" id="sourceCity" name="SourceCity" />
-                                <input asp-for="SourceStreet" type="hidden" id="sourceStreet" name="SourceStreet" />
-                                <input asp-for="SourceState" type="hidden" id="sourceState" name="SourceState" />
-                                <input asp-for="DestinationCity" type="hidden" id="destinationCity" name="DestinationCity" />
-                                <input asp-for="DestinationStreet" type="hidden" id="destinationStreet" name="DestinationStreet" />
-                                <input asp-for="DestinationState" type="hidden" id="destinationState" name="DestinationState" />
+                            <div class="field">
+                                <input asp-for="Price" placeholder="Price" />
+                                <span asp-validation-for="Price" class="text-danger"></span>
+                            </div>
+                            <div class="full-fild">
+                                <textarea asp-for="Description" cols="5" placeholder="Description" rows="4"></textarea>
                             </div>
                             <div class="field buttons">
                                 <button type="submit" class="btn btn-lg green-color">Submit</button>

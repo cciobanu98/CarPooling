@@ -10,7 +10,8 @@ namespace CarPooling.DataAcces.Interfaces
         GenericRepository<User> UsersRepository { get; }
         GenericRepository<Car> CarsRepository { get; }
         GenericRepository<Ride> RidesRepository { get; }
-       GenericRepository<Request> RequestsRepository { get; }
-       void Save();
+        GenericRepository<Request> RequestsRepository { get; }
+        GenericRepository<Rating> RatingsRepository { get; }
+        void Save();
     }
 }

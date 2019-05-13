@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Rides Enroled";
+}
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="ride-content">
+        <h3><input id="Search" type="text" placeholder="Search" /></h3>
+    </div>
+    <table class="table table-bordered table-responsive table-hover">
+        <thead>
+            <tr>
+                <th class="changeToClick" id="SortFrom">From <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th class="changeToClick" id="SortWhere">Where <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th class="changeToClick" id="SortDate">Date <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th>Passengers</th>
+                <th class="changeToClick">Price <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th class="changeToClick">Rider <i class="fa fa-sort" aria-hidden="true"></i></th>
+                <th>Rate IT</th>
+            </tr>
+        </thead>
+        <tbody id="Table"></tbody>
+    </table>
+</div>
+<div id="RatePartial"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="~/scripts/PaginateAndSort.js"></script>
+<script>
+    $('.changeToClick').css('cursor', 'pointer');
+    $('.changeToDefault').css('cursor', 'default');
+</script>

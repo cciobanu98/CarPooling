@@ -2021,7 +2021,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "CarPooling.Context": "1.0.0"
+          "CarPooling.Context": "1.0.0",
+          "CarPooling.DTO": "1.0.0"
         },
         "compile": {
           "bin/placeholder/CarPooling.DataAcces.dll": {}
@@ -6011,7 +6012,6 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "AutoMapper >= 8.1.0",
-      "CarPooling.Context >= 1.0.0",
       "CarPooling.DTO >= 1.0.0",
       "CarPooling.DataAcces >= 1.0.0",
       "Microsoft.AspNetCore >= 2.2.0",
@@ -6049,9 +6049,6 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
-              "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
-            },
             "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
               "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
             },

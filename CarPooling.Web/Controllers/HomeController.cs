@@ -5,17 +5,24 @@ using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using CarPooling.DTO;
 using CarPooling.BussinesLogic.Interfaces;
 using CarPooling.Domain;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
+
 namespace CarPooling.Web.Controllers
 {
     public class HomeController : Controller
     {
-        
+        private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ISelectRideService _selectRideService;
         private readonly IRideService _rideService;
-        public HomeController(ISelectRideService selectRideService, IRideService rideService)
+        private ISession _session => _httpContextAccessor.HttpContext.Session;
+        public HomeController(ISelectRideService selectRideService,
+            IRideService rideService,
+            IHttpContextAccessor httpContextAccessor)
         {
             _selectRideService = selectRideService;
             _rideService = rideService;
+            _httpContextAccessor = httpContextAccessor;
         }
         public IActionResult Index()
         {
@@ -27,25 +34,30 @@ namespace CarPooling.Web.Controllers
         [HttpGet]
         public IActionResult AllRides()
         {
-            ViewData["Count"] = _selectRideService.GetAllRides().Count;
             return View();
         }
-        public PartialViewResult OnGetRidesPartial(int pageId = 1, int size = 10, string sortmode = null, string search = null)
+        public PartialViewResult OnGetRidesPartial(int pageIndex = 1, int size = 10, string sort = null, string search = null)
         {
-            int skip = (pageId - 1) * size;
-            var rides = _selectRideService.GetAllRides().AsQueryable();
-            rides = _selectRideService.SortAndFilterRides(rides.AsQueryable(), search, sortmode);
-            ViewData["Count"] = rides.Count();
-            var model = _selectRideService.PaginateRides(rides, skip, size);
+            var rides = _selectRideService.GetAllRides(sort, search, pageIndex, size);
+            ViewData["Count"] = _selectRideService.GetNumberOfRides(search);
             return new PartialViewResult
             {
                 ViewName = "_Rides",
-                ViewData = new ViewDataDictionary<List<SelectedRidesDTO>>(ViewData, model)
+                ViewData = new ViewDataDictionary<List<SelectedRidesDTO>>(ViewData, rides)
             };
         }
         public PartialViewResult OnGetMoreInformation(int id)
         {
             var model = _rideService.GetRideInformation(id);
+            var temp = _session.GetString("select");
+            if (temp != null)
+            {
+                SelectRideDTO select = JsonConvert.DeserializeObject<SelectRideDTO>(temp);
+                _rideService.AddInformationAboutSelect(model, select);
+                ViewData["select"] = select;
+            }
+            else
+                ViewData["select"] = null;
             return new PartialViewResult
             {
                 ViewName = "_MoreInformation",

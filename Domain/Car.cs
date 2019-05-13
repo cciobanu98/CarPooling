@@ -10,6 +10,5 @@ namespace CarPooling.Domain
         public string Number { get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
-       // public List<Ride> Rides { get; set; } = new List<Ride>();
     }
 }

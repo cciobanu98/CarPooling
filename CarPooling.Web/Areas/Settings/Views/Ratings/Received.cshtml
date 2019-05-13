@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "Ratings Received";
+}
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="ride-content">
+            <h3><input id="Search" type="text" placeholder="Search" /></h3>
+        </div>
+        <table class="table table-bordered table-responsive table-hover">
+            <thead>
+                <tr>
+                    <th class="changeToClick" id="SortGeneral">General <i class="fa fa-sort" aria-hidden="true"></i></th>
+                    <th class="changeToClick" id="SortAccuracy">Accuracy <i class="fa fa-sort" aria-hidden="true"></i></th>
+                    <th class="changeToClick" id="SortTalkative">Talkative <i class="fa fa-sort" aria-hidden="true"></i></th>
+                    <th class="changeToClick" id="SortBy">By <i class="fa fa-sort" aria-hidden="true"></i></th>
+                </tr>
+            </thead>
+            <tbody id="Table"></tbody>
+        </table>
+    </div>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="~/scripts/PaginateAndSort.js"></script>
+    <script>
+    $('.changeToClick').css('cursor', 'pointer');
+    $('.changeToDefault').css('cursor', 'default');
+    </script>

@@ -6,6 +6,8 @@ using CarPooling.Helpers;
 using System.Collections.Generic;
 using CarPooling.Domain;
 using CarPooling.DataAcces.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace CarPooling.BussinesLogic.Services
 {
@@ -21,9 +23,16 @@ namespace CarPooling.BussinesLogic.Services
 
         public NotificationDTO GetNotificationsOfUser(string userId)
         {
-            var notification = _uow.RequestsRepository.Get((x => x.IsRead == false), includeProperties: "User,Ride.SourceLocation,Ride.DestinationLocation,Ride.Car.User");
+           var notifications = _uow.RequestsRepository.Get(
+                include: source => source.Include(x => x.User)
+                .Include(x => x.Ride.SourceLocation)
+                .Include(x => x.Ride.DestinationLocation)
+                .Include(x => x.Ride.Car.User)
+                .Include(x => x.Source)
+                .Include(x => x.Destination),
+                predicate: x => x.IsRead == false);
             var list = new List<Request>();
-            foreach (var n in notification)
+            foreach (var n in notifications)
             {
                 if (n.Status == RequestStatus.Waiting && n.Ride.Car.User.Id == userId)
                     list.Add(n);

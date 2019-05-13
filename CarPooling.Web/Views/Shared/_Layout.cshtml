@@ -98,7 +98,8 @@
                                                     <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
                                                 </li>
                                                 <li>
-                                                    @Html.ActionLink("Account Settings", "Index", "Settings")
+                                                    <a asp-action="Index" asp-controller="Home" asp-area="Settings">Account Settings</a>
+                  
                                                 </li>
                                                 @if (User.IsInRole("admin"))
                                                 {
@@ -142,12 +143,12 @@
                                             <i class="fa fa-envelope" aria-hidden="true"></i>
                                         </a>
                                     </li>
-                                <li>
-                                    <a data-toggle="popover" data-placement="bottom" title="Notifications" class="textchange">
-                                        <i class="fa fa-bell" aria-hidden="true"></i>
-                                        <span class="badge notification-count" id="notificationCount"></span>
-                                    </a>
-                                </li>
+                                    <li>
+                                        <a data-toggle="popover" data-placement="bottom" title="Notifications" class="textchange">
+                                            <i class="fa fa-bell" aria-hidden="true"></i>
+                                            <span class="badge notification-count" id="notificationCount"></span>
+                                        </a>
+                                    </li>
                                 }
                                 <li>
                                     <a class="facebook textchange" href="#">
@@ -236,5 +237,12 @@
     <script type="text/javascript" src="~/scripts/signalr.min.js"></script>
     <script type="text/javascript" src="~/scripts/MoreInformation.js"></script>
     <script type="text/javascript" src="~/scripts/Notification.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script>
+        $.validator.setDefaults({ ignore: '' });
+        $('.changeToClick').css('cursor', 'pointer');
+        $('.changeToDefault').css('cursor', 'default');
+    </script>
 </body>
 </html>

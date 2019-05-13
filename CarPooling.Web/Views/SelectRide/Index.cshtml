@@ -22,18 +22,28 @@
                         <form novalidate autocomplete="off" class="idealforms add-ride" id="selectRideForm" method="post" action="@Url.Action("SelectedRides", "SelectRide")">
                             <div class="field">
                                 <input type="search" id="sourceSearch" placeholder="From?" />
+                                <input asp-for="SourceLocationLat" />
+                                <span asp-validation-for="SourceLocationLat" class="text-danger"></span>
+                                <input asp-for="SourceCity" />
+                                <input asp-for="SourceStreet" />
+                                <input asp-for="SourceState" />
+                                <input asp-for="SourceLocationLng" />
                             </div>
                             <div class="field">
                                 <input type="search" id="destinationSearch" placeholder="Where?" />
+                                <input asp-for="DestinationLocationLat" />
+                                <span asp-validation-for="DestinationLocationLat" class="text-danger"></span>
+                                <input asp-for="DestinationCity" />
+                                <input asp-for="DestinationStreet" />
+                                <input asp-for="DestinationState" />
+                                <input asp-for="DestinationLocationLng" />
                             </div>
                             <div class="field">
-                                <input asp-for="TravelStartDateTime" name="TravelStartDateTime" type="text" placeholder="Date" class="datepicker">
+                                <input asp-for="TravelStartDateTime">
+                                <span asp-validation-for="TravelStartDateTime" class="text-danger"></span>
+
                             </div>
                             <div>
-                                <input asp-for="SourceLocationLat" type="hidden" id="sourceLatitude" name="SourceLocationLat" />
-                                <input asp-for="SourceLocationLng" type="hidden" id="sourceLongitude" name="SourceLocationLng" />
-                                <input asp-for="DestinationLocationLat" type="hidden" id="destinationLatitude" name="DestinationLocationLat" />
-                                <input asp-for="DestinationLocationLng" type="hidden" id="destinationLongitude" name="DestinationLocationLng" />
                             </div>
                             <div class="field buttons">
                                 <button type="submit" class="btn btn-lg green-color" id="SearchButton">Search</button>

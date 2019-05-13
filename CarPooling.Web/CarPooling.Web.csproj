@@ -7,31 +7,28 @@
   <ItemGroup>
     <Compile Remove="App_Data\**" />
     <Compile Remove="App_Start\**" />
+    <Compile Remove="Areas\Administration\**" />
     <Compile Remove="Areas\Identity\**" />
     <Compile Remove="Areas\NewFolder\**" />
     <Compile Remove="Shared\**" />
     <Content Remove="App_Data\**" />
     <Content Remove="App_Start\**" />
+    <Content Remove="Areas\Administration\**" />
     <Content Remove="Areas\Identity\**" />
     <Content Remove="Areas\NewFolder\**" />
     <Content Remove="Shared\**" />
     <EmbeddedResource Remove="App_Data\**" />
     <EmbeddedResource Remove="App_Start\**" />
+    <EmbeddedResource Remove="Areas\Administration\**" />
     <EmbeddedResource Remove="Areas\Identity\**" />
     <EmbeddedResource Remove="Areas\NewFolder\**" />
     <EmbeddedResource Remove="Shared\**" />
     <None Remove="App_Data\**" />
     <None Remove="App_Start\**" />
+    <None Remove="Areas\Administration\**" />
     <None Remove="Areas\Identity\**" />
     <None Remove="Areas\NewFolder\**" />
     <None Remove="Shared\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Areas\Administration\Controllers\" />
-    <Folder Include="Areas\Administration\Views\Home\" />
-    <Folder Include="Areas\Administration\Views\ViewModels\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -108,6 +105,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
   </ItemGroup>
 
   <ItemGroup>

@@ -4,7 +4,7 @@
     $.ajax({
         //data:id,
         method: "POST",
-        url:"AddRide/SubscribeToRide?rideId=" + id,
+        url:"/AddRide/SubscribeToRide?rideId=" + id,
         success:function(){
             $('#moreinformation').modal('hide')
         },
@@ -13,3 +13,6 @@
         }
     })
 });
+$("#AddEnrouteRide").click(function(e){
+    $("#EnrouteModal").modal('show');
+})

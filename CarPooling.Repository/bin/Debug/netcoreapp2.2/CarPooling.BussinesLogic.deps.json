@@ -9,7 +9,6 @@
       "CarPooling.BussinesLogic/1.0.0": {
         "dependencies": {
           "AutoMapper": "8.1.0",
-          "CarPooling.Context": "1.0.0",
           "CarPooling.DTO": "1.0.0",
           "CarPooling.DataAcces": "1.0.0",
           "Microsoft.AspNetCore": "2.2.0",
@@ -1479,7 +1478,8 @@
       },
       "CarPooling.DataAcces/1.0.0": {
         "dependencies": {
-          "CarPooling.Context": "1.0.0"
+          "CarPooling.Context": "1.0.0",
+          "CarPooling.DTO": "1.0.0"
         },
         "runtime": {
           "CarPooling.DataAcces.dll": {}
@@ -1508,7 +1508,8 @@
       },
       "CarPooling.DTO/1.0.0": {
         "dependencies": {
-          "CarPooling.Domain": "1.0.0"
+          "CarPooling.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Mvc.DataAnnotations": "2.2.0.0"
         },
         "runtime": {
           "CarPooling.DTO.dll": {}
@@ -1522,6 +1523,14 @@
       "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0.0": {
         "runtime": {
           "Microsoft.AspNetCore.Mvc.ViewFeatures.dll": {
+            "assemblyVersion": "2.2.0.0",
+            "fileVersion": "2.2.0.0"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Mvc.DataAnnotations.Reference/2.2.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Mvc.DataAnnotations.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.0"
           }
@@ -2483,6 +2492,11 @@
       "sha512": ""
     },
     "Microsoft.AspNetCore.Mvc.ViewFeatures/2.2.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Mvc.DataAnnotations.Reference/2.2.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

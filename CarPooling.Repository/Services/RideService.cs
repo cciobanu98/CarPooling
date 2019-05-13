@@ -8,80 +8,67 @@ using CarPooling.DTO;
 using CarPooling.Domain;
 using CarPooling.Context;
 using Microsoft.EntityFrameworkCore;
+using CarPooling.Helpers;
+using AutoMapper;
 
 namespace CarPooling.BussinesLogic.Services
 {
     public class RideService : IRideService
     {
         private readonly IUnitOfWork _uow;
-        private readonly CarPoolingContext _context;
-        public RideService(IUnitOfWork uow, CarPoolingContext context)
+        private readonly IMapper _mapper;
+        public RideService(IUnitOfWork uow, IMapper mapper)
         {
             _uow = uow;
-            _context = context;
+            _mapper = mapper;
         }
-        public void AddPassengerToRide(int rideId, string passengerId)
+        public void AddPassengerToRide(int rideId, string passengerId, int requestId)
         {
-            var User = _uow.UsersRepository.Get((x => x.Id == passengerId)).SingleOrDefault();
-            var Ride = _uow.RidesRepository.Get((x => x.Id == rideId), includeProperties: "Passengers").SingleOrDefault();
-            Ride.Passengers.Add(User);
+            var Ride = _uow.RidesRepository.GetFirstorDefault(
+                predicate: x => x.Id == rideId,
+                include: s => s.Include(x => x.Passengers));
+            Passenger passenger = new Passenger();
+            passenger.UserId = passengerId;
+            passenger.RideId = rideId;
+            passenger.RequestId = requestId;
+            Ride.Passengers.Add(passenger);
             Ride.Seats--;
             //Add Error of Seats
             _uow.RidesRepository.Update(Ride);
             _uow.Save();
         }
+
         public void AddRide(RideDTO RideToAdd)
         {
-            //use automapper
-            Ride ride = new Ride();
-            Location source = new Location();
-            Location destination = new Location();
-            source.Latitude = RideToAdd.SourceLocationLat;
-            source.Longitude = RideToAdd.SourceLocationLng;
-            source.Street = RideToAdd.SourceStreet;
-            source.City = RideToAdd.SourceCity;
-            source.Country = RideToAdd.SourceState;
-            destination.Street = RideToAdd.DestinationStreet;
-            destination.City = RideToAdd.DestinationCity;
-            destination.Country = RideToAdd.DestinationState;
+            Ride ride = _mapper.Map<RideDTO, Ride>(RideToAdd);
             ride.CreatedDateTime = DateTime.Now;
-            ride.SourceLocation = source;
-            ride.DestinationLocation = destination;
-            ride.TravelStartDateTime = Convert.ToDateTime(RideToAdd.TravelStartDateTime);
-            ride.Price = 20;
-            ride.Car = _uow.CarsRepository.GetById(RideToAdd.CarId);
             _uow.RidesRepository.Insert(ride);
             _uow.Save();
         }
-
         public RideInformationDTO GetRideInformation(int rideId)
         {
-            var model = new RideInformationDTO();
-            var ride = _context.Rides.Include(x => x.SourceLocation)
+            var ride = _uow.RidesRepository.GetFirstorDefault(
+                predicate: x => x.Id == rideId,
+                include: s => s.Include(x => x.SourceLocation)
                 .Include(x => x.DestinationLocation)
                 .Include(x => x.Car)
                 .Include(x => x.Car.User)
                 .Include(x => x.Car.User.Preferences)
                 .Include(x => x.Passengers)
-                .SingleOrDefault(x => x.Id == rideId);
-            model.RideId = rideId;
-            model.FirstName = ride.Car.User.FirstName;
-            model.LastName = ride.Car.User.LastName;
-            model.Phone = ride.Car.User.PhoneNumber;
-            model.Email = ride.Car.User.Email;
-            //model.Description = ride.Car.User.Preferences.Description;
-            model.CarColor = ride.Car.Color;
-            model.CarNumber = ride.Car.Number;
-            model.CarModel = ride.Car.Model;
-            model.SourceAddress = ride.SourceLocation.Street;
-            model.SourceCity = ride.SourceLocation.City;
-            model.SourceState = ride.SourceLocation.Country;
-            model.DestinationAddress = ride.DestinationLocation.Street;
-            model.DestinationCity = ride.DestinationLocation.City;
-            model.DestinationState = ride.DestinationLocation.Country;
-            model.Price = ride.Price;
-            model.Passengers = ride.Passengers;
-            return model;
+                .ThenInclude(x => x.Request.Source)
+                .Include(x => x.Passengers)
+                .ThenInclude(x => x.Request.Destination)
+                .Include(x => x.Passengers)
+                .ThenInclude(x => x.Request.User));
+            return _mapper.Map<Ride, RideInformationDTO>(ride);
+        }
+
+        public void AddInformationAboutSelect(RideInformationDTO rideInformation, SelectRideDTO select)
+        {
+            rideInformation.DistanceFromSource = Algo.GetDistanceInKm(new Coordinates(rideInformation.SourceLat, rideInformation.SourgeLng),
+                new Coordinates(select.SourceLocationLat, select.SourceLocationLng));
+            rideInformation.DistanceFromDestination = Algo.GetDistanceInKm(new Coordinates(rideInformation.DestinationLat, rideInformation.DestinationLng),
+                new Coordinates(select.DestinationLocationLat, select.DestinationLocationLng));
         }
     }
 }

@@ -1,0 +1,74 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model CarPooling.DTO.GeneralInformationDTO
+@{
+    Layout = "_Layout";
+    ViewBag.Title = "General Information";
+    IEnumerable<SelectListItem> years = ViewData["years"] as IEnumerable<SelectListItem>;
+    IEnumerable<SelectListItem> genders = ViewData["genders"] as IEnumerable<SelectListItem>;
+}
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div>
+            <form asp-action="Index" asp-controller="Home"  novalidate autocomplete="off" class="idealforms" method="post">
+                <div class="row margintop">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="field">
+                            <label><i>First Name</i></label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <input asp-for="FirstName" value=@Model.FirstName>
+                        <span asp-validation-for="FirstName" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="field">
+                            <label><i>Last Name</i></label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <input asp-for="LastName" value=@Model.LastName>
+                        <span asp-validation-for="LastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row margintop">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="field">
+                            <label><i>Email</i></label>
+                        </div>
+                    </div>
+                    <div class="col-md-9 col-sm-9 col-xs-12">
+                        <input asp-for="Email" value=@Model.Email>
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row margintop">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="field">
+                            <label><i>Year of birth</i></label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        @Html.DropDownListFor(x => x.YearofBirth, years)
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="field">
+                            <label><i>Gender</i></label>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        @Html.DropDownListFor(x => x.Gender, genders)
+                    </div>
+                </div>
+                <div class="row margintop">
+                    <div class="col-md-3 col-sm-3 col-xs-12">
+                        <div class="field buttons">
+                            <button type="submit" class="btn btn-lg green-color">Save</button>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+        </div><!-- end .search-content -->
+    </div><!-- end .col-sm-12 -->

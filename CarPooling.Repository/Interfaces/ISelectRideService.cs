@@ -9,9 +9,9 @@ namespace CarPooling.BussinesLogic.Interfaces
 {
     public interface ISelectRideService
     {
-        List<SelectedRidesDTO> GetSelectedRides(SelectRideDTO model);
-        List<SelectedRidesDTO> GetAllRides();
-        List <SelectedRidesDTO> PaginateRides(IQueryable<SelectedRidesDTO> query, int skip, int size);
-        IQueryable<SelectedRidesDTO> SortAndFilterRides(IQueryable<SelectedRidesDTO> query, string search, string sort);
+        List<SelectedRidesWithDistanceDTO> GetSelectedRides(SelectRideDTO model, string sort = null, string search = null, int? pageIndex =null, int? pageSize = null);
+        List<SelectedRidesDTO> GetAllRides(string sort =null, string search = null, int? pageIndex =null, int? pageSize = null);
+        int GetNumberOfSelectedRides(SelectRideDTO model, string search);
+        int GetNumberOfRides(string search);
     }
 }

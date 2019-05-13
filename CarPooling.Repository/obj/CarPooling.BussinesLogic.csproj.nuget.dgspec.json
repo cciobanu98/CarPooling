@@ -119,6 +119,9 @@
             "projectReferences": {
               "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
                 "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+              },
+              "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj": {
+                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj"
               }
             }
           }
@@ -345,9 +348,6 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
-                "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
-              },
               "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj": {
                 "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DataAcces\\CarPooling.DataAcces.csproj"
               },

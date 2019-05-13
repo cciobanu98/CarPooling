@@ -31,8 +31,8 @@ namespace CarPooling.BussinesLogic.Services
             var Cars = _uow.CarsRepository.GetAll();
             var query = (from c in Cars
                         where c.UserId == id
-                        select Mapper.Map<Car, CarInformationDTO>(c)).ToList();
-            return query;
+                        select Mapper.Map<Car, CarInformationDTO>(c));
+            return query.ToList();
         }
 
         public GeneralInformationDTO GetInformationAboutUser(ClaimsPrincipal claims)

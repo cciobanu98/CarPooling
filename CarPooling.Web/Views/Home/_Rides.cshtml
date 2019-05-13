@@ -4,29 +4,29 @@
 @model List<CarPooling.DTO.SelectedRidesDTO>
 @{
     int? number = ViewData["Count"] as int?;
-    int tpages = (int)number / 10;
+    int tpages = (int)(number - 1) / 10;
 }
 @foreach (var m in Model)
 {
     <article class="ride-box clearfix">
         <div class="ride-content">
-            <h3><a href="#">From @m.Source to @m.Destination</a></h3> ride by <a href="#">@m.Username</a>
+            <h3><a class="changeToDefault">From @m.Source to @m.Destination</a></h3> ride by <a href="#" class="changeToClick">@m.Username</a>
         </div>
         <ul class="ride-meta">
             <li class="ride-date">
-                <a href="#" class="tooltip-link" dara-original0title="Date" data-toggle="tooltip">
+                <a class="changeToDefault">
                     <i class="fa fa-calendar"></i>
                     @m.TravelStartDateTime
                 </a>
             </li>
             <li class="ride-people">
-                <a href="#" class="tooltip-link" dara-original-title="Date" data-toggle="tooltip">
+                <a class="changeToDefault".>
                     <i class="fa fa-user"></i>
                     @m.Seats
                 </a>
             </li>
             <li>
-                <a id="read-more @m.Id">
+                <a id="read-more @m.Id" class="changeToClick">
                     <i class="fa fa-file"></i>
                     Read more
                 </a>
@@ -37,8 +37,12 @@
 <ul class="pagination">
     @for (int i = 1; i <= tpages + 1; i++)
     {
-        <li><a class="paginationAll">@i</a></li>
+        <li><a class="paginationAll changeToClick">@i</a></li>
     }
 </ul>
 <script src="~/scripts/AllRides.js"></script>
 <script type="text/javascript" src="~/scripts/MoreInformation.js"></script>
+<script>
+    $('.changeToClick').css('cursor', 'pointer');
+    $('.changeToDefault').css('cursor', 'default');
+</script>

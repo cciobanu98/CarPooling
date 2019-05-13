@@ -1,77 +1,57 @@
 ﻿using CarPooling.BussinesLogic.Interfaces;
-using CarPooling.Context;
 using CarPooling.DTO;
 using CarPooling.Helpers;
-using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using CarPooling.DataAcces.Interfaces;
 using System.Linq;
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using CarPooling.Domain;
+using System;
+using System.Linq.Expressions;
 
 namespace CarPooling.BussinesLogic.Services
 {
     public class SelectRideService : ISelectRideService
     {
-        private readonly CarPoolingContext _context;
-        public SelectRideService(CarPoolingContext context)
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _uow;
+        public SelectRideService(IUnitOfWork uow, IMapper mapper)
         {
-            _context = context;
+            _uow = uow;
+            _mapper = mapper;
         }
-        private MinMaxLocation GetMinMax(Coordinates c)
+        private Func<IQueryable<Ride>, IOrderedQueryable<Ride>> GetSortFuncSelected(string sort, SelectRideDTO select)
         {
-            MinMaxLocation temp = new MinMaxLocation();
-            temp.minLat = c.Lat - 1;
-            temp.maxLat = c.Lat + 1;
-            temp.minLong = c.Long - 1;
-            temp.maxLong = c.Long + 1;
-            return temp;
-        }
-        private double deg2rad(float deg)
-        {
-            return deg * (Math.PI / 180);
-        }
-        private float GetDistanceInKm(Coordinates c1, Coordinates c2)
-        {
-            int R = 6371; // Radius of earth in km
-            Coordinates dc = new Coordinates();
-            dc.Lat = (float)deg2rad(c1.Lat - c2.Lat);
-            dc.Long = (float)deg2rad(c1.Long - c2.Long);
-            var a = Math.Sin(dc.Lat / 2) * Math.Sin(dc.Lat / 2) +
-                    Math.Cos(deg2rad(c1.Lat)) * Math.Cos(deg2rad(c2.Lat)) *
-                    Math.Sin(dc.Long / 2) * Math.Sin(dc.Long / 2);
-            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
-            var d = R * c;
-            return (float)d;
-        }
-        private IQueryable<SelectedRidesDTO> Sort(IQueryable<SelectedRidesDTO> query, string sort)
-        {
+            Coordinates destination = new Coordinates(select.DestinationLocationLat, select.DestinationLocationLng);
+            Coordinates source = new Coordinates(select.SourceLocationLat, select.SourceLocationLng);
             switch (sort)
             {
                 case "SortPriceascending":
-                    return query.OrderBy(x => x.Price);
+                    return s => s.OrderBy(x => x.Price);
                 case "SortSourceascending":
-                    return query.OrderBy(x => x.DistanceFromSource);
+                    return s => s.OrderBy(x => Algo.GetDistanceInKm(source, new Coordinates(x.SourceLocation.Latitude, x.SourceLocation.Longitude)));
                 case "SortDestinationascending":
-                    return query.OrderBy(x => x.DistanceFromDestination);
+                    return s => s.OrderBy(x => Algo.GetDistanceInKm(destination, new Coordinates(x.DestinationLocation.Latitude, x.DestinationLocation.Longitude)));
                 case "SortDateascending":
-                    return query.OrderBy(x => x.TravelStartDateTime);
+                    return s => s.OrderBy(x => x.TravelStartDateTime);
                 case "SortSeatsascending":
-                    return query.OrderBy(x => x.Seats);
+                    return s => s.OrderBy(x => x.Seats);
                 case "SortPricedescending":
-                    return query.OrderByDescending(x => x.Price);
-                case "SortSourcedescending":
-                    return query.OrderByDescending(x => x.DistanceFromSource);
-                case "SortDestinationdescending":
-                    return query.OrderByDescending(x => x.DistanceFromDestination);
+                    return s => s.OrderByDescending(x => x.Price);
                 case "SortDatedescending":
-                    return query.OrderByDescending(x => x.TravelStartDateTime);
+                    return s => s.OrderByDescending(x => x.TravelStartDateTime);
                 case "SortSeatsdescending":
-                    return query.OrderByDescending(x => x.Seats);
+                    return s => s.OrderByDescending(x => x.Seats);
+                case "SortSourcedescending":
+                    return s => s.OrderByDescending(x => Algo.GetDistanceInKm(source, new Coordinates(x.SourceLocation.Latitude, x.SourceLocation.Longitude)));
+                case "SortDestinationdescending":
+                    return s => s.OrderByDescending(x => Algo.GetDistanceInKm(destination, new Coordinates(x.DestinationLocation.Latitude, x.DestinationLocation.Longitude)));
                 default:
-                    return query.OrderByDescending(x => x.Price);
+                    return s => s.OrderByDescending(x => x.Price);
             }
         }
-        public List<SelectedRidesDTO> GetSelectedRides(SelectRideDTO model)
+        private Expression<Func<Ride, bool>> GetPredicateSelected(SelectRideDTO model, string search)
         {
             Coordinates source = new Coordinates();
             Coordinates destination = new Coordinates();
@@ -79,66 +59,113 @@ namespace CarPooling.BussinesLogic.Services
             source.Long = model.SourceLocationLng;
             destination.Lat = model.DestinationLocationLat;
             destination.Long = model.DestinationLocationLng;
-            MinMaxLocation sourceRadius = GetMinMax(source);
-            MinMaxLocation destinationRadius = GetMinMax(destination);
-            var query = (from r in _context.Rides.Include(x => x.Car.User)
-                       .Include(x => x.DestinationLocation)
-                       .Include(x => x.SourceLocation)
-                         where (r.SourceLocation.Latitude >= sourceRadius.minLat &&
-                         r.SourceLocation.Latitude <= sourceRadius.maxLat &&
-                         r.SourceLocation.Longitude >= sourceRadius.minLong &&
-                         r.SourceLocation.Longitude <= sourceRadius.maxLong &&
-                         r.DestinationLocation.Latitude >= destinationRadius.minLat &&
-                         r.DestinationLocation.Latitude <= destinationRadius.maxLat &&
-                         r.DestinationLocation.Longitude >= destinationRadius.minLong &&
-                         r.DestinationLocation.Longitude <= destinationRadius.maxLong &&
-                         r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime))
-                         select new SelectedRidesDTO
-                         {
-                             Source = r.SourceLocation.City,
-                             Destination = r.DestinationLocation.City,
-                             Seats = r.Seats,
-                             Price = r.Price,
-                             Username = r.Car.User.UserName,
-                             DistanceFromSource = GetDistanceInKm(source, new Coordinates(r.SourceLocation.Latitude, r.SourceLocation.Longitude)),
-                             DistanceFromDestination = GetDistanceInKm(destination, new Coordinates(r.DestinationLocation.Latitude, r.DestinationLocation.Longitude)),
-                             TravelStartDateTime = r.TravelStartDateTime,
-                             Id = r.Id,
-                             CreatedDateTime = r.CreatedDateTime
-                         });
-            return query.ToList();
-        }
-        public List<SelectedRidesDTO> GetAllRides()
-        {
-            var query = (from r in _context.Rides.Include(x => x.Car.User)
-            .Include(x => x.DestinationLocation)
-            .Include(x => x.SourceLocation)
-                         select new SelectedRidesDTO
-                         {
-                             Id = r.Id,
-                             Destination = r.DestinationLocation.City,
-                             Source = r.SourceLocation.City,
-                             Seats = r.Seats,
-                             TravelStartDateTime = r.TravelStartDateTime,
-                             Username = r.Car.User.UserName,
-                             Price = r.Price,
-                             CreatedDateTime = r.CreatedDateTime,
-                         });
-            return query.ToList();
-        }
-        public IQueryable<SelectedRidesDTO> SortAndFilterRides(IQueryable<SelectedRidesDTO> query, string search, string sort)
-        {
-            query = Sort(query, sort);
+            MinMaxLocation sourceRadius = Algo.GetMinMax(source);
+            MinMaxLocation destinationRadius = Algo.GetMinMax(destination);
+
+            Expression<Func<Ride, bool>> predicate;
+
             if (search != null && search != "" && search != "null" && search != "undefined")
             {
-                query = query.Where(x => x.Username.Contains(search) || x.Destination.Contains(search) || x.Source.Contains(search));
+                predicate = r => (r.Car.User.UserName.Contains(search) || r.DestinationLocation.City.Contains(search) || r.SourceLocation.City.Contains(search)) &&
+                (r.SourceLocation.Latitude >= sourceRadius.minLat &&
+                     r.SourceLocation.Latitude <= sourceRadius.maxLat &&
+                     r.SourceLocation.Longitude >= sourceRadius.minLong &&
+                     r.SourceLocation.Longitude <= sourceRadius.maxLong &&
+                     r.DestinationLocation.Latitude >= destinationRadius.minLat &&
+                     r.DestinationLocation.Latitude <= destinationRadius.maxLat &&
+                     r.DestinationLocation.Longitude >= destinationRadius.minLong &&
+                     r.DestinationLocation.Longitude <= destinationRadius.maxLong &&
+                     r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime));
             }
-            return query;
+            else
+            {
+                predicate = r => (r.SourceLocation.Latitude >= sourceRadius.minLat &&
+                       r.SourceLocation.Latitude <= sourceRadius.maxLat &&
+                       r.SourceLocation.Longitude >= sourceRadius.minLong &&
+                       r.SourceLocation.Longitude <= sourceRadius.maxLong &&
+                       r.DestinationLocation.Latitude >= destinationRadius.minLat &&
+                       r.DestinationLocation.Latitude <= destinationRadius.maxLat &&
+                       r.DestinationLocation.Longitude >= destinationRadius.minLong &&
+                       r.DestinationLocation.Longitude <= destinationRadius.maxLong &&
+                       r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime));
+            }
+            return predicate;
         }
-        public List<SelectedRidesDTO> PaginateRides(IQueryable<SelectedRidesDTO> query, int skip, int size)
+        public List<SelectedRidesWithDistanceDTO> GetSelectedRides(SelectRideDTO model, string sort = null, string search = null ,int? pageIndex = null, int? pageSize = null)
         {
-            query = query.Skip(skip).Take(size);
-            return query.ToList();
+            
+            var rides = _uow.RidesRepository.GetPage(
+                include: s => s.Include(x => x.Car.User)
+                .Include(x => x.DestinationLocation)
+                .Include(x => x.SourceLocation),
+                predicate:GetPredicateSelected(model, search),
+                orderBy: GetSortFuncSelected(sort, model),
+                pageIndex:pageIndex,
+                pageSize: pageSize);
+            return _mapper.Map<List<Ride>, List<SelectedRidesWithDistanceDTO>>(rides, opt => opt.Items["SelectRide"] = model);
         }
+        public int GetNumberOfSelectedRides(SelectRideDTO model, string search)
+        {
+            return _uow.RidesRepository.Count(
+                 include: s => s.Include(x => x.Car.User)
+                .Include(x => x.DestinationLocation)
+                .Include(x => x.SourceLocation),
+                predicate: GetPredicateSelected(model, search));
+        }
+        public int GetNumberOfRides(string search)
+        {
+            return _uow.RidesRepository.Count(
+                include: s => s.Include(x => x.Car.User)
+                .Include(x => x.DestinationLocation)
+                .Include(x => x.SourceLocation),
+                predicate: GetPredicateAllSelected(search));
+        }
+        private Func<IQueryable<Ride>, IOrderedQueryable<Ride>> GetSortFuncAllSelected(string sort)
+        {
+            switch (sort)
+            {
+                case "SortPriceascending":
+                    return s => s.OrderBy(x => x.Price);
+                case "SortDateascending":
+                    return s => s.OrderBy(x => x.TravelStartDateTime);
+                case "SortSeatsascending":
+                    return s => s.OrderBy(x => x.Seats);
+                case "SortPricedescending":
+                    return s => s.OrderByDescending(x => x.Price);
+                case "SortDatedescending":
+                    return s => s.OrderByDescending(x => x.TravelStartDateTime);
+                case "SortSeatsdescending":
+                    return s => s.OrderByDescending(x => x.Seats);
+                default:
+                    return s => s.OrderByDescending(x => x.Price);
+            }
+        }
+        private Expression<Func<Ride, bool>> GetPredicateAllSelected(string search)
+        {
+            Expression<Func<Ride, bool>> predicate;
+
+            if (search != null && search != "" && search != "null" && search != "undefined")
+            {
+                predicate = x => (x.Car.User.UserName.Contains(search) || x.DestinationLocation.City.Contains(search) || x.SourceLocation.City.Contains(search));
+            }
+            else
+            {
+                predicate = x => true;
+            }
+            return predicate;
+        }
+        public List<SelectedRidesDTO> GetAllRides(string sort = null, string search = null, int? pageIndex = null, int? pageSize = null)
+        {
+            var rides = _uow.RidesRepository.GetPage(
+                predicate: GetPredicateAllSelected(search),
+                orderBy: GetSortFuncAllSelected(sort),
+                include: s => s.Include(x => x.Car.User)
+                .Include(x => x.DestinationLocation)
+                .Include(x => x.SourceLocation),
+                pageIndex: pageIndex,
+                pageSize: pageSize);
+            return _mapper.Map<List<Ride>, List<SelectedRidesDTO>>(rides);
+        }
+       
     }
 }

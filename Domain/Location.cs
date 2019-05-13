@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace CarPooling.Domain
@@ -12,7 +13,7 @@ namespace CarPooling.Domain
         public string City { get; set; }
         public string Street { get; set; }
         public string Country { get; set; }
-        public Request Request { get; set; }
-
+        public Request RequestSource { get; set; }
+        public Request RequestDestination { get; set; }
     }
 }

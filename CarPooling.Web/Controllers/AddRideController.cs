@@ -44,9 +44,8 @@ namespace CarPooling.Web.Controllers
             else
             {
                 ModelState.AddModelError("", "RideInformationError");
-                
             }
-            return View();
+            return RedirectToAction("Index", "Home");
         }
         [HttpPost]
         public IActionResult SubscribeToRide(int rideId)
@@ -60,7 +59,7 @@ namespace CarPooling.Web.Controllers
         public IActionResult AcceptPassengers(int requestId)
         {
             RequestDTO request = _requestService.SetStatusOfRequest(requestId, RequestStatus.Accepted);
-            _rideService.AddPassengerToRide(request.RideId, request.Requester);
+            _rideService.AddPassengerToRide(request.RideId, request.Requester, requestId);
             _notificationService.SendNotificationToUser(request.Requester);
             string userId = _userService.GetUserIdByClaims(HttpContext.User);
             _notificationService.SendNotificationToUser(userId);

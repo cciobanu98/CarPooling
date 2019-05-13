@@ -14,7 +14,7 @@ function getNotification()
     var options = {  year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute:'numeric'};
     var res = "<div>";
     $.ajax({
-        url:"Notification/GetNotification",
+        url:"/Notification/GetNotification",
         method:"GET",
         success:function(result)
         {
@@ -36,6 +36,9 @@ function getNotification()
                     " "+element.ride.sourceLocation.city + "" +
                     " to "+element.ride.destinationLocation.city+" "+
                     "on "+new Date(element.ride.travelStartDateTime).toLocaleDateString("en-US", options)+"<br/>"+
+                    "<div> <a href='#'>" +element.user.userName + " " +
+                    "</a>" + 
+                    " ride from "+element.source.city+" to "+element.source.city +"<br/>" +
                     "<button type='button' class='btn btn-success' id='AcceptButton "+element.id+"' name='"+element.id+"' onclick='Accept("+element.id+")'>Accept</button>"+
                     "<button type='button' class='btn btn-danger' id='RejectButton "+element.id+"' name='"+element.id+"' onclick='Reject("+element.id+")'>Reject</button>"+
                     "<hr style='width: 100%; color: black; height: 1px; background-color:black;'/>"+
@@ -86,7 +89,7 @@ const connection = new signalR.HubConnectionBuilder()
 function Accept(requestId)
 {
     $.ajax({
-        url:"AddRide/AcceptPassengers?requestId=" + requestId,
+        url:"/AddRide/AcceptPassengers?requestId=" + requestId,
         method:"POST",
         success:function(){
 
@@ -102,7 +105,7 @@ function Accept(requestId)
 function Reject(requestId)
 {
     $.ajax({
-        url:"AddRide/RejectPassengers?requestId=" + requestId,
+        url:"/AddRide/RejectPassengers?requestId=" + requestId,
         method:"POST",
         success:function(){
 
@@ -119,7 +122,7 @@ function Reject(requestId)
 function Read(requestId)
 {
     $.ajax({
-        url:"Notification/ReadNotification?requestId=" + requestId,
+        url:"/Notification/ReadNotification?requestId=" + requestId,
         method:"POST",
         success:function(){
 

@@ -14,7 +14,8 @@ namespace CarPooling.Web.Controllers
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly ISelectRideService _selectRidesService;
         private ISession _session => _httpContextAccessor.HttpContext.Session;
-        public SelectRideController(IHttpContextAccessor httpContextAccessor, ISelectRideService selectRideService)
+        public SelectRideController(IHttpContextAccessor httpContextAccessor,
+            ISelectRideService selectRideService)
         {
             _httpContextAccessor = httpContextAccessor;
             _selectRidesService = selectRideService;
@@ -26,24 +27,19 @@ namespace CarPooling.Web.Controllers
         }
         public IActionResult SelectedRides(SelectRideDTO model)
         {
-            List<SelectedRidesDTO> query = _selectRidesService.GetSelectedRides(model);
-            ViewData["Count"] = query.Count();
-            ViewData["query"] = query;
-            _session.SetString("query", JsonConvert.SerializeObject(query.ToArray()));
+            _session.SetString("select", JsonConvert.SerializeObject(model));
             return View();
         }
-        public PartialViewResult OnGetSelectRidePartial(int pageId = 1, int pageSize = 10, string sort = "default", string search = null)
+        public PartialViewResult OnGetSelectedRidesPartial(int pageIndex = 1, int pageSize = 10, string sort = "default", string search = null)
         {
-            string value = _session.GetString("query");
-            IQueryable<SelectedRidesDTO> query = JsonConvert.DeserializeObject<SelectedRidesDTO[]>(value).AsQueryable();
-            int skip = (pageId - 1) * pageSize;
-            query = _selectRidesService.SortAndFilterRides(query, search, sort);
-            ViewData["Count"] = query.Count();
-            var model = _selectRidesService.PaginateRides(query, skip, pageSize);
+            string value = _session.GetString("select");
+            var select = JsonConvert.DeserializeObject<SelectRideDTO>(value);
+            List<SelectedRidesWithDistanceDTO> query = _selectRidesService.GetSelectedRides(select, sort, search, pageIndex, pageSize);
+            ViewData["Count"] = _selectRidesService.GetNumberOfSelectedRides(select, search);
             return new PartialViewResult
             {
                 ViewName = "~/Views/SelectRide/_SelectRides.cshtml",
-                ViewData = new ViewDataDictionary<List<SelectedRidesDTO>>(ViewData, model)
+                ViewData = new ViewDataDictionary<List<SelectedRidesWithDistanceDTO>>(ViewData, query)
             };
         }
     }

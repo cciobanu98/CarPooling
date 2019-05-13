@@ -1,6 +1,5 @@
 ﻿//Setting map
 var map = L.map('map').setView([47.0, 28.9], 13);
-
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
   attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
   maxZoom: 18,
@@ -42,7 +41,6 @@ function mainPopupSpawn(e) {
   clickPos = e.latlng;
 }
 map.on('click', mainPopupSpawn);
-
 
 document.addEventListener('click', function (event) {
   if (!event.target.matches('.placestable')) return;
@@ -94,11 +92,13 @@ function updateInputDestination(res) {
   var suggestion = hits[0];
   var str = suggestion.locale_names.default[0] + ',' + suggestion.city.default[0] + ',' + suggestion.country.default || '';
   document.querySelector('#destinationSearch').value = str;
-  document.querySelector('#destinationLatitude').value = suggestion._geoloc.lat
-  document.querySelector('#destinationLongitude').value = suggestion._geoloc.lng
-  document.querySelector('#destinationStreet').value = suggestion.locale_names.default[0];
-  document.querySelector('#destinationCity').value = suggestion.city.default[0];
-  document.querySelector('#destinationState').value = suggestion.country.default;
+  document.querySelector('#DestinationLocationLat').value = parseFloat(suggestion._geoloc.lat)
+  console.log( parseFloat(suggestion._geoloc.lat))
+  document.querySelector('#DestinationLocationLng').value = parseFloat(suggestion._geoloc.lng)
+  console.log( parseFloat(suggestion._geoloc.lng))
+  document.querySelector('#DestinationStreet').value = suggestion.locale_names.default[0];
+  document.querySelector('#DestinationCity').value = suggestion.city.default[0];
+  document.querySelector('#DestinationState').value = suggestion.country.default;
 
 }
 function updateInputSource(res) {
@@ -106,11 +106,11 @@ function updateInputSource(res) {
   var suggestion = hits[0];
   var str = suggestion.locale_names.default[0] + ',' + suggestion.city.default[0] + ',' + suggestion.country.default || '';
   document.querySelector('#sourceSearch').value = str;
-  document.querySelector('#sourceLatitude').value = suggestion._geoloc.lat
-  document.querySelector('#sourceLongitude').value = suggestion._geoloc.lng
-  document.querySelector('#sourceStreet').value = suggestion.locale_names.default[0];
-  document.querySelector('#sourceCity').value = suggestion.city.default[0];
-  document.querySelector('#sourceState').value = suggestion.country.default;
+  document.querySelector('#SourceLocationLat').value = parseFloat(suggestion._geoloc.lat)
+  document.querySelector('#SourceLocationLng').value = parseFloat(suggestion._geoloc.lng)
+  document.querySelector('#SourceStreet').value = suggestion.locale_names.default[0];
+  document.querySelector('#SourceCity').value = suggestion.city.default[0];
+  document.querySelector('#SourceState').value = suggestion.country.default;
 }
 (function () {
   var placesAutocomplete = places({

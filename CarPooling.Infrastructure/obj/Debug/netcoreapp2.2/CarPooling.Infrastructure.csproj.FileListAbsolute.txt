@@ -51,3 +51,7 @@ D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\CarPo
 D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb
 D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
 D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Internship\CarPooling\CarPooling.Infrastructure\bin\Debug\netcoreapp2.2\Microsoft.AspNetCore.Mvc.Abstractions.xml

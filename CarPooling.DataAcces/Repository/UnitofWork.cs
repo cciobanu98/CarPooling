@@ -13,7 +13,20 @@ namespace CarPooling.DataAcces.Repository
         private GenericRepository<Car> carsRepository;
         private GenericRepository<Ride> ridesRepository;
         private GenericRepository<Request> requestsRepository;
+        private GenericRepository<Rating> ratingsRepository;
 
+        public GenericRepository<Rating> RatingsRepository
+        {
+            get
+            {
+
+                if (this.ratingsRepository == null)
+                {
+                    this.ratingsRepository = new GenericRepository<Rating>(context);
+                }
+                return ratingsRepository;
+            }
+        }
         public GenericRepository<User> UsersRepository
         {
             get

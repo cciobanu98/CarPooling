@@ -1883,6 +1883,19 @@
           "bin/placeholder/CarPooling.Domain.Mapping.dll": {}
         }
       },
+      "CarPooling.DTO/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v2.2",
+        "dependencies": {
+          "CarPooling.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/CarPooling.DTO.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CarPooling.DTO.dll": {}
+        }
+      },
       "CarPooling.Helpers/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
@@ -5606,6 +5619,11 @@
       "path": "../CarPooling.Domain.Mapping/CarPooling.Domain.Mapping.csproj",
       "msbuildProject": "../CarPooling.Domain.Mapping/CarPooling.Domain.Mapping.csproj"
     },
+    "CarPooling.DTO/1.0.0": {
+      "type": "project",
+      "path": "../CarPooling.DTO/CarPooling.DTO.csproj",
+      "msbuildProject": "../CarPooling.DTO/CarPooling.DTO.csproj"
+    },
     "CarPooling.Helpers/1.0.0": {
       "type": "project",
       "path": "../CarPooling.Helpers/CarPooling.Helpers.csproj",
@@ -5615,6 +5633,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "CarPooling.Context >= 1.0.0",
+      "CarPooling.DTO >= 1.0.0",
       "Microsoft.NETCore.App >= 2.2.0"
     ]
   },
@@ -5650,6 +5669,9 @@
           "projectReferences": {
             "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj": {
               "projectPath": "D:\\Internship\\CarPooling\\CarPooling.Context\\CarPooling.Context.csproj"
+            },
+            "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj": {
+              "projectPath": "D:\\Internship\\CarPooling\\CarPooling.DTO\\CarPooling.DTO.csproj"
             }
           }
         }

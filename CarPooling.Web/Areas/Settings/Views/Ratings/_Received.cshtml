@@ -1,0 +1,29 @@
+﻿@model List<CarPooling.DTO.RatingReceivedDTO>
+@{
+    int? number = ViewData["Count"] as int?;
+    int tpages = (int)number / 10;
+}
+@foreach (var rate in Model)
+{
+    <tr>
+        <td>@rate.General</td>
+        <td>@rate.Accuracy</td>
+        <td>@rate.Talkative</td>
+        <td><a href="#">@rate.ReceivedFrom</a></td>
+    </tr>
+}
+<tr>
+    <td colspan="5" style="border:hidden">
+        <ul class="pagination">
+            @for (int i = 1; i <= tpages + 1; i++)
+            {
+                <li><a class="myPage changeToClick">@i</a></li>
+            }
+        </ul>
+    </td>
+</tr>
+<script>
+    $('.changeToClick').css('cursor', 'pointer');
+    $('.changeToDefault').css('cursor', 'default');
+</script>
+<script src="~/scripts/Pagination.js"></script>
