@@ -14,7 +14,7 @@ namespace CarPooling.DataAcces.Repository
         private GenericRepository<Ride> ridesRepository;
         private GenericRepository<Request> requestsRepository;
         private GenericRepository<Rating> ratingsRepository;
-
+        private GenericRepository<Preferences> preferencesRepository;
         public GenericRepository<Rating> RatingsRepository
         {
             get
@@ -74,6 +74,18 @@ namespace CarPooling.DataAcces.Repository
                     this.requestsRepository = new GenericRepository<Request>(context);
                 }
                 return requestsRepository;
+            }
+        }
+        public GenericRepository<Preferences> PreferencesRepository
+        {
+            get
+            {
+
+                if (this.preferencesRepository == null)
+                {
+                    this.preferencesRepository = new GenericRepository<Preferences>(context);
+                }
+                return preferencesRepository;
             }
         }
 

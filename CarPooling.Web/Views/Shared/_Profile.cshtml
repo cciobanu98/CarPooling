@@ -1,0 +1,55 @@
+﻿@model CarPooling.DTO.ProfileDTO
+    <div class="modal fade" id="ProfileModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h3>Profile of @Model.UserName</h3>
+                </div><!-- end .modal-header -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <img src="~/img/avatar-1.jpg" />
+                        </div>
+                        <div class="col-xs-10">
+                            <h3>
+                                <b>First name: @Model.FirstName</b>
+                                <b>Last name: @Model.LastName</b>
+                                <b>Phone: @Model.Phone</b>
+                            </h3>
+                            <h3><b>Email: @Model.Email</b></h3>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h3>
+                                <b>Description: @Model.Description</b><br />
+                            </h3>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3><b>Preferences:</b></h3>
+                            <h3><b>Talaktive: @Model.Talkative / 10</b> </h3>
+                            <h3><b>Pets: @Model.Allow_pet</b></h3>
+                        </div>
+                        <div class="col-xs-6">
+                            <h3><b>Music Volume: @Model.Volume / 10</b></h3>
+                            <h3><b>Smoking: @Model.Allow_smoke</b></h3>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h3><b>Ratings:</b></h3>
+                            <h3><b>General: @Model.GeneralRating / 10</b> </h3>
+                            <h3><b>Accuracy: @Model.AccuracyRating / 10</b></h3>
+                            <h3><b>Talkative: @Model.TalkativeRating / 10</b></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

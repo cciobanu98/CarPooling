@@ -21,6 +21,7 @@ namespace CarPooling.Infrastructure
             services.AddScoped(typeof(ISelectRideService), typeof(SelectRideService));
             services.AddScoped(typeof(IRideHistoryService), typeof(RideHistoryService));
             services.AddScoped(typeof(IRatingService), typeof(RatingService));
+            services.AddScoped(typeof(IPreferencesService), typeof(PreferencesService));
         }
     }
 }

@@ -75,7 +75,8 @@ namespace CarPooling.BussinesLogic.Services
                      r.DestinationLocation.Latitude <= destinationRadius.maxLat &&
                      r.DestinationLocation.Longitude >= destinationRadius.minLong &&
                      r.DestinationLocation.Longitude <= destinationRadius.maxLong &&
-                     r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime));
+                     r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime) &&
+                     r.Seats > 0 );
             }
             else
             {
@@ -87,7 +88,8 @@ namespace CarPooling.BussinesLogic.Services
                        r.DestinationLocation.Latitude <= destinationRadius.maxLat &&
                        r.DestinationLocation.Longitude >= destinationRadius.minLong &&
                        r.DestinationLocation.Longitude <= destinationRadius.maxLong &&
-                       r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime));
+                       r.TravelStartDateTime >= Convert.ToDateTime(model.TravelStartDateTime) &&
+                       r.Seats > 0);
             }
             return predicate;
         }

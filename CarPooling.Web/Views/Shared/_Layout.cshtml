@@ -99,7 +99,7 @@
                                                 </li>
                                                 <li>
                                                     <a asp-action="Index" asp-controller="Home" asp-area="Settings">Account Settings</a>
-                  
+
                                                 </li>
                                                 @if (User.IsInRole("admin"))
                                                 {
@@ -239,10 +239,12 @@
     <script type="text/javascript" src="~/scripts/Notification.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/scripts/Profile.js"></script>
     <script>
         $.validator.setDefaults({ ignore: '' });
         $('.changeToClick').css('cursor', 'pointer');
         $('.changeToDefault').css('cursor', 'default');
     </script>
+    <div id="ProfileDiv"></div>
 </body>
 </html>

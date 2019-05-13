@@ -1,6 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model CarPooling.DTO.ProfileDTO
 @{
     Layout = "_Layout";
     ViewBag.Title = "My Account";
@@ -14,19 +12,18 @@
         </div>
         <div class="col-xs-10">
             <h3>
-                <b>First name:</b> 
-                <b>Last name:</b> 
-                <b>Phone:</b> 
+                <b>First name: @Model.FirstName</b>
+                <b>Last name: @Model.LastName</b>
+                <b>Phone: @Model.Phone</b>
             </h3>
-            <h3><b>Email:</b></h3>
+            <h3><b>Email: @Model.Email</b></h3>
         </div>
     </div>
     <hr />
     <div class="row">
         <div class="col-xs-12">
             <h3>
-                <b>Description: </b><br />
-                
+                <b>Description: @Model.Description</b><br />
             </h3>
         </div>
     </div>
@@ -34,13 +31,21 @@
     <div class="row">
         <div class="col-xs-6">
             <h3><b>Preferences:</b></h3>
-            <h3><b>Talaktive: </b> </h3>
-            <h3><b>Pets: </b></h3>
+            <h3><b>Talaktive: @Model.Talkative / 10</b> </h3>
+            <h3><b>Pets: @Model.Allow_pet</b></h3>
         </div>
         <div class="col-xs-6">
-            <h3><b>Music: </b></h3>
-            <h3><b>Smoking: </b></h3>
+            <h3><b>Music Volume: @Model.Volume / 10</b></h3>
+            <h3><b>Smoking: @Model.Allow_smoke</b></h3>
         </div>
     </div>
     <hr />
+    <div class="row">
+        <div class="col-xs-6">
+            <h3><b>Ratings:</b></h3>
+            <h3><b>General: @Model.GeneralRating / 10</b> </h3>
+            <h3><b>Accuracy: @Model.AccuracyRating / 10</b></h3>
+            <h3><b>Talkative: @Model.TalkativeRating / 10</b></h3>
+        </div>
+    </div>
 </div>

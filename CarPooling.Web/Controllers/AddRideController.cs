@@ -3,7 +3,8 @@ using CarPooling.BussinesLogic.Interfaces;
 using CarPooling.DTO;
 using CarPooling.Helpers;
 using System.Collections.Generic;
-
+using Microsoft.AspNetCore.Http;
+using System.Web;
 namespace CarPooling.Web.Controllers
 {
     public class AddRideController : Controller
@@ -59,7 +60,15 @@ namespace CarPooling.Web.Controllers
         public IActionResult AcceptPassengers(int requestId)
         {
             RequestDTO request = _requestService.SetStatusOfRequest(requestId, RequestStatus.Accepted);
-            _rideService.AddPassengerToRide(request.RideId, request.Requester, requestId);
+            try
+            {
+                _rideService.AddPassengerToRide(request.RideId, request.Requester, requestId);
+            }
+            catch
+            {
+                Response.WriteAsync("<script>alert('Hello');</script>");
+                return BadRequest();
+            }
             _notificationService.SendNotificationToUser(request.Requester);
             string userId = _userService.GetUserIdByClaims(HttpContext.User);
             _notificationService.SendNotificationToUser(userId);

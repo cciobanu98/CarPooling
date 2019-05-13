@@ -58,18 +58,6 @@
                 </div>
                 <hr />
                 <div class="row">
-                    <div class="col-xs-6">
-                        <h3><b>Preferences:</b></h3>
-                        <h3><b>Talaktive: </b>@Model.Talkative </h3>
-                        <h3><b>Pets: </b>@Model.Pets</h3>
-                    </div>
-                    <div class="col-xs-6">
-                        <h3><b>Music: </b>@Model.Music</h3>
-                        <h3><b>Smoking: </b>@Model.Smoking</h3>
-                    </div>
-                </div>
-                <hr />
-                <div class="row">
                     <div class="col-xs-12">
                         <h3><b>Car: </b></h3>
                         <h3><b>Number: </b> @Model.CarNumber <b>Model: </b> @Model.CarModel <b>Color: </b>@Model.CarColor</h3>
@@ -82,7 +70,7 @@
                         <ul>
                             @foreach (var p in Model.Passengers)
                             {
-                                <li><a>@p.User.UserName</a> from @p.Request.Source.City to @p.Request.Destination.City</li>
+                                <li><a id="profile">@p.User.UserName</a> from @p.Request.Source.City to @p.Request.Destination.City</li>
                             }
                         </ul>
                     </div>
@@ -103,4 +91,5 @@
         </div>
     </div>
 </div>
+<script src="~/scripts/Profile.js"></script>
 <script src="~/scripts/Subscribe.js"></script>

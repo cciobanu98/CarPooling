@@ -4,7 +4,7 @@
     ViewBag.Title = "Preferences";
 }
 <div class="col-md-12 col-sm-12 col-xs-12">
-    <form method="post" novalidate autocomplete="off" class="idealforms login">
+    <form method="post" novalidate autocomplete="off" class="idealforms login" asp-controller="Preferences" asp-action="SavePreferences">
         <div class="full-fild">
             <textarea asp-for="Description" cols="5" placeholder="Description" rows="4"></textarea>
         </div>

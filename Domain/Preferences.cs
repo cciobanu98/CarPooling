@@ -5,9 +5,8 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CarPooling.Domain
 {
-    public class Preferences : IEntity<int>
+    public class Preferences 
     {
-        public int Id { get; set; }
         public string UserId { get; set; }
         public User User { get; set; }
         public string Description { get; set; }
@@ -15,5 +14,6 @@ namespace CarPooling.Domain
         public int Talkative { get; set; }
         public bool Allow_smoke { get; set; }
         public bool Allow_pet { get; set; }
+        public byte[] RowVersion { get; set; }
     }
 }

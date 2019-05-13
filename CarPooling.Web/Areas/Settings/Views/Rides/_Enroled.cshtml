@@ -13,12 +13,12 @@
             <ul>
                 @foreach (var p in ride.PassengersName)
                 {
-                    <li><a href="#">@p</a></li>
+                    <li><a id="profile changeToClick">@p</a></li>
                 }
             </ul>
         </td>
         <td>@ride.Price</td>
-        <td>@ride.Rider</td>
+        <td><a id="profile changeToClick">@ride.Rider</a></td>
         @if (ride.RatingId == 0)
         {
             <td><button class="btn btn-primary" value="@ride.RideId" id="RateRide">Rate IT</button></td>
@@ -45,3 +45,4 @@
 </script>
 <script src="~/scripts/Pagination.js"></script>
 <script src="~/scripts/RateRide.js"></script>
+<script src="~/scripts/Profile.js"></script>

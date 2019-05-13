@@ -164,3 +164,4 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Sett
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\SelectRide\_SelectedRides.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_AllRides.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Ratings\_EditRating.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Profile.g.cshtml.cs

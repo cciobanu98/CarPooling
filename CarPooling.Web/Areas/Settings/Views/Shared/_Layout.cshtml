@@ -128,6 +128,9 @@
 
             <ul class="list-unstyled components">
                 <li>
+                    <a asp-action="Index" asp-controller="Home">My Profile</a>
+                </li>
+                <li>
                     <a href="#generalSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">General</a>
                     <ul class="collapse list-unstyled" id="generalSubmenu">
                         <li>
@@ -191,10 +194,10 @@
                     </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
                 </div><!-- end .row -->
             </div><!-- end .container -->
-
+            <div id="ProfileDiv"></div>
             @RenderBody()
         </section>
-</div>
+    </div>
     <footer id="footer">
         <div class="footer-copyright">
             <div class="container">
@@ -227,6 +230,7 @@
     <!-- Slicknav  -->
     <script type="text/javascript" src="~/scripts/jquery.slicknav.min.js"></script>
     <script type="text/javascript" src="~/scripts/car.js"></script>
+    <script src="~/scripts/Profile.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 </body>

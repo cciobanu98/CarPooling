@@ -14,7 +14,7 @@
             <ul>
                 @foreach (var p in ride.PassengersName)
                 {
-                    <li><a href="#">@p</a></li>
+                    <li><a id="profile changeToClick">@p</a></li>
                 }
             </ul>
         </td>
@@ -36,3 +36,4 @@
     $('.changeToDefault').css('cursor', 'default');
 </script>
 <script src="~/scripts/Pagination.js"></script>
+<script src="~/scripts/Profile.js"></script>

@@ -27,6 +27,8 @@ namespace CarPooling.BussinesLogic.Services
             var Ride = _uow.RidesRepository.GetFirstorDefault(
                 predicate: x => x.Id == rideId,
                 include: s => s.Include(x => x.Passengers));
+            if (Ride.Seats == 0)
+                throw new Exception("Seats cannot be negative");
             Passenger passenger = new Passenger();
             passenger.UserId = passengerId;
             passenger.RideId = rideId;

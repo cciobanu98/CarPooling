@@ -20,7 +20,9 @@ namespace CarPooling.Web.Areas.Settings.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            return View();
+            var id = _userService.GetUserIdByClaims(HttpContext.User);
+            var model = _userService.GetUserProfile(id);
+            return View(model);
         }
     }
 }

@@ -35,7 +35,17 @@ namespace CarPooling.Infrastructure
     {
         public Profiles()
         {
+            CreateMap<PreferencesDTO, Preferences>()
+                .ForMember(dest => dest.Allow_pet, opt => opt.MapFrom(src => src.Pets))
+                .ForMember(dest => dest.Allow_smoke, opt => opt.MapFrom(src => src.Smoking))
+                .ForMember(dest => dest.Volume, opt => opt.MapFrom(src => src.Music)).ReverseMap();
             CreateMap<Ride, RideDTO>().ReverseMap();
+            CreateMap<User, ProfileDTO>()
+                .ForMember(dest => dest.Allow_pet, opt => opt.MapFrom(x => x.Preferences.Allow_pet))
+                .ForMember(dest => dest.Allow_smoke, opt => opt.MapFrom(x => x.Preferences.Allow_smoke))
+                .ForMember(dest => dest.Talkative, opt => opt.MapFrom(x => x.Preferences.Talkative))
+                .ForMember(dest => dest.Volume, opt => opt.MapFrom(x => x.Preferences.Volume))
+                .ForMember(dest => dest.Description, opt => opt.MapFrom(x => x.Preferences.Description));
             CreateMap<Ride, SelectedRidesDTO>()
                .ForMember(dest => dest.Destination, opt => opt.MapFrom(x => x.DestinationLocation.City))
                .ForMember(dest => dest.Source, opt => opt.MapFrom(x => x.SourceLocation.City))
