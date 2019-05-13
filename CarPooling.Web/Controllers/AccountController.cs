@@ -40,9 +40,10 @@ namespace CarPooling.Web.Controllers
                     {
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
+                    return RedirectToAction("Index", "Home");
                 }
             }
-            return View("~/Views/Home/Index.cshtml", model);
+            return View("~/Views/Home/Index.cshtml");
         }
         [HttpGet]
         public IActionResult Login(string returnUrl = null)
@@ -72,6 +73,7 @@ namespace CarPooling.Web.Controllers
                 else
                 {
                     ModelState.AddModelError("", "Username/Password incorect");
+                    return RedirectToAction("Index", "Home");
                 }
             }
             return View("~/Views/Home/Index.cshtml", model);

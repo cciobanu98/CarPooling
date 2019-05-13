@@ -84,7 +84,7 @@
                                         </li>
                                     }
                                     <li class="dropdown-footer">
-                                        <form method="post" asp-action="LogOff" asp-controller="Account">
+                                        <form method="post" asp-action="LogOff" asp-controller="Account" asp-area="">
                                             <button type="submit">
                                                 <i class="mdi mdi-logout"> </i>
                                                 Log Out
@@ -175,7 +175,7 @@
             </ul>
             <ul class="main-navigation">
                 <li>
-                    <a asp-action="Index" asp-controller="Home">Home</a>
+                    <a asp-action="Index" asp-controller="Home" asp-area="">Home</a>
                 </li>
             </ul>
         </nav>

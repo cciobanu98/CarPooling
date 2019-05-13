@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CarPooling.DTO.RatingDTO
+<div class="modal fade" id="EditRateModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div><!-- end .modal-header -->
+            <div class="modal-body">
+                <form method="post" novalidate autocomplete="off" class="idealforms login" id="EditRatingForm">
+                    <div class="log-header">
+                        <span class="log-in">Rate Ride</span>
+                        <div class="field">
+                            <input asp-for="General" placeholder="General">
+                            <span asp-validation-for="General" class="text-danger"></span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Accuracy" placeholder="Accuracy">
+                            <span asp-validation-for="Accuracy" class="text-danger"></span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Talkative" placeholder="Talkative">
+                            <span asp-validation-for="Talkative" class="text-danger"></span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="rideId" placeholder="Seats">
+                            <span asp-validation-for="rideId" class="text-danger"></span>
+                        </div>
+                        <div class="field">
+                            <input asp-for="Id" />
+                        </div>
+                        <div class="field buttons">
+                            <button type="button" class="btn green-color" id="SaveRating">Save</button>
+                            <button type="button" class="close btn red-color">Close</button>
+                        </div>
+                    </div>
+                </form><!-- end .login -->
+            </div><!-- end .modal-body -->
+        </div><!-- end .modal-content -->
+    </div><!-- end .modal-dialog -->
+</div><!-- end .modal -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+<script>
+    console.log("dasdadada");
+    $('#EditRateModal').modal('show');
+    $("#SaveRating").click(function (e) {
+        e.preventDefault();
+       data = $("#EditRatingForm").serialize();
+    $.ajax({
+        data:data,
+        method: "POST",
+        url: "/Settings/Ratings/Edit?",
+        success: function () {
+            $('#EditRateModal').modal('hide');
+            console.log("Succes");
+        },
+        error:function(err){
+            console.log(err);
+        }
+    })
+});
+</script>

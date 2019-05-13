@@ -36,13 +36,13 @@ namespace CarPooling.Web.Controllers
         {
             return View();
         }
-        public PartialViewResult OnGetRidesPartial(int pageIndex = 1, int size = 10, string sort = null, string search = null)
+        public PartialViewResult OnGetAllRidesPartial(int pageIndex = 1, int size = 10, string sort = null, string search = null)
         {
             var rides = _selectRideService.GetAllRides(sort, search, pageIndex, size);
             ViewData["Count"] = _selectRideService.GetNumberOfRides(search);
             return new PartialViewResult
             {
-                ViewName = "_Rides",
+                ViewName = "_AllRides",
                 ViewData = new ViewDataDictionary<List<SelectedRidesDTO>>(ViewData, rides)
             };
         }

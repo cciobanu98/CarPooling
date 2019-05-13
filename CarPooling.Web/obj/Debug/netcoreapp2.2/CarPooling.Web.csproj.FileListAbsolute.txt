@@ -130,11 +130,9 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shar
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\_ViewImports.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_LastRide.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\AllRides.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_Rides.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Contact\Index.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\SelectRide\Index.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\SelectRide\SelectedRides.g.cshtml.cs
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\SelectRide\_SelectRides.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Login.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_MoreInformation.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_Register.g.cshtml.cs
@@ -163,3 +161,6 @@ D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Sett
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Ratings\_Rate.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Ratings\_Left.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Ratings\_Received.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\SelectRide\_SelectedRides.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Home\_AllRides.g.cshtml.cs
+D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Ratings\_EditRating.g.cshtml.cs

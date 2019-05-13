@@ -10,7 +10,8 @@
         <td>@rate.Accuracy</td>
         <td>@rate.Talkative</td>
         <td><a href="#">@rate.LeftFor</a></td>
-        <td><button class="btn btn-success" value="@rate" id="EditRate">Edit</button></td>
+        <td><button class="btn btn-success" value="@rate.RatingId" id="EditRating @rate.RatingId">Edit</button></td>
+        <td><button class="btn btn-danger" value="@rate.RatingId" id="DeleteRating @rate.RatingId">Delete</button></td>
     </tr>
 }
 <tr>
@@ -28,3 +29,4 @@
     $('.changeToDefault').css('cursor', 'default');
 </script>
 <script src="~/scripts/Pagination.js"></script>
+<script src="~/scripts/RateRide.js"></script>

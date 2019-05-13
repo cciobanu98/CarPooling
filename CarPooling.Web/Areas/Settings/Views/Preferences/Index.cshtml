@@ -1,7 +1,39 @@
-﻿
+﻿@model CarPooling.DTO.PreferencesDTO
 @{
     Layout = "_Layout";
     ViewBag.Title = "Preferences";
 }
-    <div class="col-md-12 col-sm-12 col-xs-12">
-    </div>
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <form method="post" novalidate autocomplete="off" class="idealforms login">
+        <div class="full-fild">
+            <textarea asp-for="Description" cols="5" placeholder="Description" rows="4"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-xs-6">
+                <input asp-for="Music" placeholder="Music Volume(0/10)" />
+                <span asp-validation-for="Music" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 col-xs-6">
+                <input asp-for="Talkative" placeholder="Talkative(0/10)" />
+                <span asp-validation-for="Talkative" class="text-danger"></span>
+            </div>
+        </div>
+        <div>
+            <label asp-for="Pets"></label>
+            <input asp-for="Pets" type="checkbox" />
+            <span asp-validation-for="Pets" class="text-danger"></span>
+        </div>
+        <hr />
+        <div>
+            <label asp-for="Smoking"></label>
+            <input asp-for="Smoking" type="checkbox" />
+            <span asp-validation-for="Smoking" class="text-danger"></span>
+        </div>
+        <div class="field buttons">
+            <button type="submit" class="submit btn green-color">Save Changes</button>
+        </div>
+    </form>
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>

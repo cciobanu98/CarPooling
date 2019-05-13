@@ -15,12 +15,9 @@ namespace CarPooling.Context
         public DbSet<User> Users { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Preferences> Preferences { get; set; }
-        public DbSet<ChatPreferences> ChatPreferences { get; set; }
-        public DbSet<MusicPreferences> MusicPreferences { get; set; }
         public DbSet<Location> Locations { get; set; }
         public DbSet<Request> Requests { get; set; }
         public DbSet<Ride> Rides { get; set; }
-        public DbSet<GeneralPreferences> GeneralPreferences {get; set;}
         public DbSet<Rating> Ratings { get; set; }
         public CarPoolingContext(DbContextOptions<CarPoolingContext> options)
             : base(options)

@@ -59,7 +59,9 @@ namespace CarPooling.BussinesLogic.Services
                 .Include(x => x.Passengers)
                 .ThenInclude(x => x.Request.Destination)
                 .Include(x => x.Passengers)
-                .ThenInclude(x => x.Request.User));
+                .ThenInclude(x => x.Request.User)
+                .Include(x => x.Passengers)
+                .ThenInclude(x => x.User));
             return _mapper.Map<Ride, RideInformationDTO>(ride);
         }
 

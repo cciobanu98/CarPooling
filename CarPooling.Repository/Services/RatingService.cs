@@ -146,5 +146,24 @@ namespace CarPooling.BussinesLogic.Services
                 include: source => source.Include(x => x.Ride.Car.User),
                 predicate: GetPredicateLeft(userId, search));
         }
+
+        public RatingDTO GetRaiting(int ratingId)
+        {
+            var rating = _uow.RatingsRepository.GetById(ratingId);
+            return _mapper.Map<Rating, RatingDTO>(rating);
+        }
+
+        public void EditRating(RatingDTO model)
+        {
+            Rating rate = _uow.RatingsRepository.GetById(model.Id);
+            Mapper.Map(model, rate);
+            _uow.RatingsRepository.Update(rate);
+            _uow.Save();
+        }
+        public void DeleteRatingById(int id)
+        {
+            _uow.RatingsRepository.Delete(id);
+            _uow.Save();
+        }
     }
 }

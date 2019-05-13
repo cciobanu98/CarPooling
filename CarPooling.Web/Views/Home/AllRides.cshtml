@@ -3,8 +3,6 @@
 *@
 @{
     ViewBag.Title = "Paputka";
-    int? number = ViewData["Count"] as int?;
-    int tpages = (int)(number - 1) / 10;
     Layout = "_Layout";
 }
 <section class="main-content">
@@ -21,7 +19,7 @@
                     </div>
                     <article>
                         <div class="ride-content">
-                            <h3><input id="SearchRidesAll" type="text" placeholder="Search" /></h3>
+                            <h3><input id="Search" type="text" placeholder="Search" /></h3>
                         </div>
                         <div class="container" style="margin-left:-90px">
                             <ul class="ride-meta">
@@ -43,7 +41,7 @@
                         </div>
                     </article>
                     <div class="col-md-12 col-sm-12 col-xs-12" id="rides-list">
-                        <div id="AllRideTable"></div>
+                        <div id="Table"></div>
                         <div class="clearfix"></div>
                     </div><!-- end .col-md-12 col-sm-12 col-xs-12 -->
                 </div><!-- end .last-rides -->
@@ -53,4 +51,5 @@
     </div>
 </section>
 <div id="ModalMoreRead"></div>
+<script src="~/scripts/PaginateAndSort.js"></script>
 <script src="~/scripts/Account.js"></script>

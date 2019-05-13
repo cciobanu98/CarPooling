@@ -15,5 +15,6 @@ namespace CarPooling.DTO
         public string Rider { get; set; }
         public int Price { get; set; }
         public int RideId { get; set; }
+        public int RatingId { get; set; }
     }
 }

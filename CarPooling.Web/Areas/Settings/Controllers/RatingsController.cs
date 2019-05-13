@@ -54,6 +54,15 @@ namespace CarPooling.Web.Areas.Settings.Controllers
                 ViewData = new ViewDataDictionary<List<RatingReceivedDTO>>(ViewData, model)
             };
         }
+        public PartialViewResult EditRatingPartial(int ratingId)
+        {
+            var model = _ratingService.GetRaiting(ratingId);
+            return new PartialViewResult
+            {
+                ViewName = "~/Areas/Settings/Views/Ratings/_EditRating.cshtml",
+                ViewData = new ViewDataDictionary<RatingDTO>(ViewData, model)
+            };
+        }
         [HttpPost]
         public IActionResult AddRating(RatingDTO model)
         {
@@ -73,6 +82,26 @@ namespace CarPooling.Web.Areas.Settings.Controllers
             {
                 ViewName = "~/Areas/Settings/Views/Ratings/_Rate.cshtml",
             };
+        }
+        public IActionResult Edit(RatingDTO ratingModel)
+        {
+             if (ModelState.IsValid)
+            {
+                _ratingService.EditRating(ratingModel);
+                return Ok();
+            }
+
+            ModelState.AddModelError("", "Rating Edit error");
+            return BadRequest();
+        }
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            _ratingService.DeleteRatingById(id ?? default(int));
+            return RedirectToAction("Left");
         }
     }
 }

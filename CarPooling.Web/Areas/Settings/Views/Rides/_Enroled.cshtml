@@ -19,7 +19,14 @@
         </td>
         <td>@ride.Price</td>
         <td>@ride.Rider</td>
-        <td><button class="btn btn-primary" value="@ride.RideId" id="RateRide">Rate IT</button></td>
+        @if (ride.RatingId == 0)
+        {
+            <td><button class="btn btn-primary" value="@ride.RideId" id="RateRide">Rate IT</button></td>
+        }
+        else
+        {
+            <td><button class="btn btn-success" value="@ride.RatingId" id="EditRating @ride.RatingId">Edit IT</button></td>
+        }
     </tr>
 }
 <tr>

@@ -6,11 +6,11 @@
     var modal = $(this)
     var res = recipient.split("<>");
     console.log(res);
-    modal.find('.modal-body #IdInput').val(res[0]);
-    modal.find('.modal-body #NumberInput').val(res[1]);
-    modal.find('.modal-body #ModelInput').val(res[2]);
-    modal.find('.modal-body #ColorInput').val(res[3]);
-    modal.find('.modal-body #SeatsInput').val(res[4]);
+    modal.find('.modal-body #Id').val(res[0]);
+    modal.find('.modal-body #Number').val(res[1]);
+    modal.find('.modal-body #Model').val(res[2]);
+    modal.find('.modal-body #Color').val(res[3]);
+    modal.find('.modal-body #Seats').val(res[4]);
 })
 $(".DeleteButtonCar").click(function(){
     var val = $(this).val();

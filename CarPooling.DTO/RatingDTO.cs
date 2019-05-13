@@ -8,6 +8,8 @@ namespace CarPooling.DTO
 {
     public class RatingDTO
     {
+        [HiddenInput]
+        public int Id { get; set; }
         [Range(1,10)]
         public int General { get; set; }
         [Range(1, 10)]

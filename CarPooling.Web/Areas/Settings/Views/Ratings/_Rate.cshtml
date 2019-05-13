@@ -8,10 +8,10 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" >&times;</button>
             </div><!-- end .modal-header -->
             <div class="modal-body">
-                <form method="post" asp-action="AddRating" asp-controller="Ratings" asp-area="Settings" novalidate autocomplete="off" class="idealforms login">
+                <form method="post"  novalidate autocomplete="off" class="idealforms login" asp-controller="Ratings" asp-action="AddRating">
                     <div class="log-header">
                         <span class="log-in">Rate Ride</span>
                         <div class="field">
@@ -31,7 +31,7 @@
                             <span asp-validation-for="rideId" class="text-danger"></span>
                         </div>
                         <div class="field buttons">
-                            <button type="submit" class="submit btn green-color">Add</button>
+                            <button type="submit" class="btn green-color">Add</button>
                             <button type="button" class="close btn red-color">Close</button> 
                         </div>
                     </div>

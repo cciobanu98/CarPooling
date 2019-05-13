@@ -74,7 +74,18 @@ namespace CarPooling.BussinesLogic.Services
                 .ThenInclude(y => y.User),
                 pageIndex: pageIndex,
                 pageSize: pageSize);
-            return _mapper.Map<List<Ride>, List<EnroledRideDTO>>(rides); 
+            var enroleds = _mapper.Map<List<Ride>, List<EnroledRideDTO>>(rides);
+            foreach( var e in enroleds)
+            {
+                var temp = _uow.RatingsRepository.GetFirstorDefault(
+                    predicate: x => x.UserId == userId &&
+                    x.RideId == e.RideId);
+                if (temp == null)
+                    e.RatingId = 0;
+                else
+                    e.RatingId = temp.Id;
+            }
+            return enroleds;
         }
         private Func<IQueryable<Ride>, IOrderedQueryable<Ride>> GetSortFuncOffered(string sort)
         {

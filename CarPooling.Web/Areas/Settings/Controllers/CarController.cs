@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using CarPooling.BussinesLogic.Interfaces;
 using CarPooling.DTO;
 using System.Collections.Generic;
+using System;
 
 namespace CarPooling.Web.Areas.Settings.Controllers
 {
@@ -38,7 +39,6 @@ namespace CarPooling.Web.Areas.Settings.Controllers
             ModelState.AddModelError("", "Car Add error");
             return RedirectToAction("Index");
         }
-        [Route("Delete/{id?}")]
         [HttpGet]
         public IActionResult Delete(int? id)
         {
@@ -46,21 +46,27 @@ namespace CarPooling.Web.Areas.Settings.Controllers
             {
                 return NotFound();
             }
-            _carService.DeleteCarById(id ?? default(int));
+            try
+            {
+                _carService.DeleteCarById(id ?? default(int));
+            }
+            catch 
+            {
+                return BadRequest();
+            }
             return RedirectToAction("Index");
         }
-        [Route("Edit")]
         [HttpPost]
         public IActionResult Edit(CarInformationDTO carModel)
         {
             if (ModelState.IsValid)
             {
                 _carService.EditCar(carModel);
-                return RedirectToAction();
+                return RedirectToAction("Index");
             }
 
             ModelState.AddModelError("", "Car Edit error");
-            return RedirectToAction();
+            return RedirectToAction("Index");
         }
     }
 }

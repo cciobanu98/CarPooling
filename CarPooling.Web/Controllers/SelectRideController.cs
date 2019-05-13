@@ -38,7 +38,7 @@ namespace CarPooling.Web.Controllers
             ViewData["Count"] = _selectRidesService.GetNumberOfSelectedRides(select, search);
             return new PartialViewResult
             {
-                ViewName = "~/Views/SelectRide/_SelectRides.cshtml",
+                ViewName = "~/Views/SelectRide/_SelectedRides.cshtml",
                 ViewData = new ViewDataDictionary<List<SelectedRidesWithDistanceDTO>>(ViewData, query)
             };
         }

@@ -20,20 +20,7 @@ namespace CarPooling.Web.Areas.Settings.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            GeneralInformationDTO model = _userService.GetInformationAboutUser(HttpContext.User);
-            ViewData["years"] = _listGeneratorService.GetListOfYears(DateTime.Now.Year);
-            ViewData["genders"] = _listGeneratorService.GetListOfGenders(model.Gender);
-            return View(model);
-        }
-        [HttpPost]
-        public IActionResult Index(GeneralInformationDTO model)
-        {
-            if (ModelState.IsValid)
-            {
-                _userService.EditInformationAboutUser(HttpContext.User, model);
-            }
-            ModelState.AddModelError("", "SettingsEditError");
-            return RedirectToAction("Index");
+            return View();
         }
     }
 }

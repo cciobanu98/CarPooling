@@ -13,5 +13,8 @@ namespace CarPooling.BussinesLogic.Interfaces
         List<RatingReceivedDTO>  GetReceivedRatings(string userId, string sort = null, string search = null, int? pageIndex = null, int? pageSize = null);
         int GetNumberOfReceivedRatings(string userId, string search = null);
         int GetNumberOfLeftRatings(string userId, string search = null);
+        RatingDTO GetRaiting(int ratingId);
+        void EditRating(RatingDTO model);
+        void DeleteRatingById(int id);
     }
 }
