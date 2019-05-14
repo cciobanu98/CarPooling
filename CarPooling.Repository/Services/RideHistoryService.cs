@@ -34,6 +34,8 @@ namespace CarPooling.BussinesLogic.Services
                     return s => s.OrderBy(x => x.TravelStartDateTime);
                 case "SortPriceascending":
                     return s => s.OrderBy(x => x.Price);
+                case "SortRiderascending":
+                    return s => s.OrderBy(x => x.Car.User.UserName);
                 case "SortFromdescending":
                     return s => s.OrderByDescending(x => x.SourceLocation.City);
                 case "SortWheredescending":
@@ -42,6 +44,8 @@ namespace CarPooling.BussinesLogic.Services
                     return s => s.OrderByDescending(x => x.TravelStartDateTime);
                 case "SortPricedescending":
                     return s => s.OrderByDescending(x => x.Price);
+                case "SortRiderdescending":
+                    return s => s.OrderByDescending(x => x.Car.User.UserName);
                 default:
                     return s => s.OrderBy(x => x.TravelStartDateTime);
             }
@@ -53,7 +57,8 @@ namespace CarPooling.BussinesLogic.Services
             if (search != null && search != "" && search != "null" && search != "undefined")
             {
                 predicate = c => (c.SourceLocation.City.Contains(search) ||
-                c.DestinationLocation.City.Contains(search)) &&
+                c.DestinationLocation.City.Contains(search) ||
+                c.Car.User.UserName.Contains(search)) &&
                 c.Passengers.Any(y => y.UserId == userId);
             }
             else

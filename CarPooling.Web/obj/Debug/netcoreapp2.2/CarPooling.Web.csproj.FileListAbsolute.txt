@@ -141,7 +141,6 @@ D:\Internship\CarPooling\CarPooling.Web\bin\Debug\netcoreapp2.2\CarPooling.DTO.d
 D:\Internship\CarPooling\CarPooling.Web\bin\Debug\netcoreapp2.2\CarPooling.DTO.pdb
 D:\Internship\CarPooling\CarPooling.Web\bin\Debug\netcoreapp2.2\CarPooling.Helpers.dll
 D:\Internship\CarPooling\CarPooling.Web\bin\Debug\netcoreapp2.2\CarPooling.Helpers.pdb
-D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_AddEnrouteRide.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Car\_AddCar.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Car\_EditCar.g.cshtml.cs
 D:\Internship\CarPooling\CarPooling.Web\obj\Debug\netcoreapp2.2\Razor\Areas\Settings\Views\Security\Index.g.cshtml.cs

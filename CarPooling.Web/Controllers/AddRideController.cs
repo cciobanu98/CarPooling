@@ -66,7 +66,7 @@ namespace CarPooling.Web.Controllers
             }
             catch
             {
-                Response.WriteAsync("<script>alert('Hello');</script>");
+                //Response.WriteAsync("<script>alert('Hello');</script>");
                 return BadRequest();
             }
             _notificationService.SendNotificationToUser(request.Requester);

@@ -63,8 +63,8 @@ namespace CarPooling.BussinesLogic.Services
 
             if (search != null && search != "" && search != "null" && search != "undefined")
             {
-                predicate = c => c.User.UserName.Contains(search) &&
-                                 (c.UserId == userId);
+                predicate = c => c.Ride.Car.User.UserName.Contains(search) &&
+                                    c.UserId == userId;
             }
             else
             {

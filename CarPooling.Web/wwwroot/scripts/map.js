@@ -70,6 +70,7 @@ var placesMarker = algoliasearch.initPlaces('plVH4XT517HR', '1f148d1bd3c617cff9e
 function placeSourceMarker() {
   map.closePopup();
   //sourceMarker = L.marker().setIcon(sourceIcon)
+  console.log(clickPos.lat + ',' + clickPos.lng)
   sourceMarker.setLatLng(clickPos).addTo(map);
   var response = placesMarker.reverse({
     aroundLatLng: clickPos.lat + ',' + clickPos.lng,
@@ -202,7 +203,6 @@ function updateInputSource(res) {
     map.fitBounds(featureGroup.getBounds().pad(0.5), { animate: false });
   }
 })();
-
 (function () {
   var placesAutocomplete = places({
     appId: 'plVH4XT517HR',
@@ -269,6 +269,7 @@ function updateInputSource(res) {
           marker.setZIndexOffset(1000);
           marker.setIcon(destinationIcon);
           destinationMarker = marker
+          updateInputDestination();
         }
         else {
           marker.setZIndexOffset(0);

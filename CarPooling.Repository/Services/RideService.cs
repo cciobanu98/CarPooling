@@ -35,7 +35,6 @@ namespace CarPooling.BussinesLogic.Services
             passenger.RequestId = requestId;
             Ride.Passengers.Add(passenger);
             Ride.Seats--;
-            //Add Error of Seats
             _uow.RidesRepository.Update(Ride);
             _uow.Save();
         }
